@@ -20,7 +20,7 @@ Seçim gerekçesi ve fiyat karşılaştırması: [IMAGE_PROVIDERS.md](IMAGE_PROV
 ## 2. Karakter kütüphanesi
 
 Tanrılar ve varlıklar her videoda aynı görünsün diye her karakterin bir **referans portresi** vardır:
-`assets/characters/<id>/reference.png` (+ `character.yaml`: ad ve İngilizce görünüm tarifi).
+`assets/characters/<id>/reference.png` (+ `character.json`: ad ve İngilizce görünüm tarifi).
 
 - **Otomatik:** `yt images` senaryoda geçen ama kütüphanede olmayan bir karakter görürse, senaryodaki görünüm
   tarifinden bir referans portre üretip kütüphaneye ekler.
@@ -33,7 +33,7 @@ Tanrılar ve varlıklar her videoda aynı görünsün diye her karakterin bir **
   pnpm yt character list
   ```
 
-Referans portreler ve `character.yaml` git'e eklenir (kanalın görsel kimliğinin parçası); adaylar eklenmez.
+Referans portreler ve `character.json` git'e eklenir (kanalın görsel kimliğinin parçası); adaylar eklenmez.
 Senaryo üretimi kütüphaneyi bilir: Claude bilinen karakterlerin id'lerini ve görünüm tariflerini kullanır.
 
 ## 3. Görselleri üret

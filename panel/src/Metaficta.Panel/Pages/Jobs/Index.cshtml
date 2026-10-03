@@ -1,0 +1,23 @@
+@page
+@model Metaficta.Panel.Pages.Jobs.IndexModel
+@{
+    ViewData["Title"] = "İşler";
+    ViewData["AutoRefresh"] = Model.Jobs.Any(j => j.Status is JobStatus.Running or JobStatus.Queued);
+}
+<section class="card">
+    <h1>İşler</h1>
+    <table>
+        <tr><th>#</th><th>İş</th><th>Proje</th><th>Durum</th><th>Oluşturma</th><th>Süre</th></tr>
+        @foreach (var j in Model.Jobs)
+        {
+            <tr>
+                <td><a href="/Jobs/Details/@j.Id">#@j.Id</a></td>
+                <td>@JobTypes.Label(j.Type)</td>
+                <td class="small">@if (j.ProjectId is not null) { <a href="/Projects/@j.ProjectId">@j.ProjectId</a> }</td>
+                <td><partial name="_StatusBadge" model="j.Status" /></td>
+                <td class="small muted">@j.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy HH:mm")</td>
+                <td class="small muted">@(j.StartedAt is { } s ? ((j.FinishedAt ?? DateTime.UtcNow) - s).ToString(@"hh\:mm\:ss") : "")</td>
+            </tr>
+        }
+    </table>
+</section>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"] is string t ? $"{t} · " : "")Metaficta Panel</title>
+    @if (ViewData["AutoRefresh"] is true)
+    {
+        <meta http-equiv="refresh" content="10" />
+    }
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">METAFICTA <span>panel</span></a>
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <nav>
+                <a href="/">Projeler</a>
+                <a href="/Jobs">İşler</a>
+                <a href="/Characters">Karakterler</a>
+                <a href="/Music">Müzik</a>
+                <a href="/Settings">Ayarlar</a>
+                <form method="post" asp-page="/Logout" class="inline"><button class="link">Çıkış</button></form>
+            </nav>
+        }
+    </header>
+    <main class="container">
+        @if (TempData["Message"] is string message)
+        {
+            <div class="flash ok">@message</div>
+        }
+        @if (TempData["Error"] is string error)
+        {
+            <div class="flash err">@error</div>
+        }
+        @RenderBody()
+    </main>
+</body>
+</html>

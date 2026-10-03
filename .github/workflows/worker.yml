@@ -1,0 +1,52 @@
+# Metaficta işçisi: panelden (workflow_dispatch) tetiklenir, işi panelden alır,
+# senaryo/ses/görsel/render adımını çalıştırır ve sonuçları panele yükler.
+name: Metaficta işçi
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: "Panel iş numarası (boş bırakılırsa kuyruktaki tüm işler)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: metaficta-worker-${{ inputs.job_id || 'all' }}
+  cancel-in-progress: false
+
+jobs:
+  work:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Bağımlılıkları kur
+        run: pnpm install --frozen-lockfile
+
+      - name: İşi çalıştır
+        env:
+          JOB_ID: ${{ inputs.job_id }}
+          PANEL_URL: ${{ secrets.PANEL_URL }}
+          WORKER_TOKEN: ${{ secrets.WORKER_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$JOB_ID" ]; then
+            pnpm worker --job "$JOB_ID"
+          else
+            pnpm worker --all
+          fi

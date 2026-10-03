@@ -1,0 +1,182 @@
+@page "/Projects/{id}"
+@model Metaficta.Panel.Pages.Projects.DetailsModel
+@{
+    ViewData["Title"] = Model.Project.Title;
+    ViewData["AutoRefresh"] = Model.HasActiveJob;
+    var p = Model.Project;
+    var approved = p.Stage != "script";
+}
+<section class="card">
+    <div class="row" style="align-items:start">
+        <div style="flex:3 1 400px">
+            <h1>@p.Title</h1>
+            <div class="kv small">
+                <span class="muted">Durum</span><span><partial name="_StatusBadge" model="p.Stage" /></span>
+                <span class="muted">Format</span><span>@(p.Format == "long" ? "Uzun video (16:9)" : "Shorts (9:16)") · @Catalog.SeriesLabel(p.Series) · @Catalog.ThemeLabel(p.Theme)</span>
+                <span class="muted">Kimlik</span><span><code>@p.Id</code>@if (p.ParentId is not null) { <span> · kaynak: <a href="/Projects/@p.ParentId">@p.ParentId</a></span> }</span>
+                @if (Model.Script is not null) { <span class="muted">Anlatım</span><span>@Model.Script.WordCount kelime · @Model.Script.Scenes.Count sahne</span> }
+            </div>
+        </div>
+        <div style="flex:2 1 320px">
+            <div class="actions">
+                @if (!approved)
+                {
+                    <form method="post" asp-page-handler="Approve" asp-route-id="@p.Id" class="inline"><button>✔ Senaryoyu onayla</button></form>
+                }
+                <a class="btn secondary" href="/Projects/@p.Id/Edit">Senaryoyu düzenle</a>
+            </div>
+            <div class="actions">
+                <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline"><input type="hidden" name="type" value="produce" /><button disabled="@(!approved)" title="Seslendirme + görseller + önizleme kareleri + taslak video">⚡ Hepsini üret</button></form>
+                <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline"><input type="hidden" name="type" value="voice" /><button class="secondary" disabled="@(!approved)">🎙 Seslendir</button></form>
+                <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline"><input type="hidden" name="type" value="images" /><button class="secondary">🎨 Görseller</button></form>
+                <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline"><input type="hidden" name="type" value="stills" /><button class="secondary">🖼 Önizleme kareleri</button></form>
+            </div>
+            <div class="actions">
+                <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline"><input type="hidden" name="type" value="render" /><input type="hidden" name="draft" value="true" /><button class="secondary">🎬 Taslak render</button></form>
+                <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline"><input type="hidden" name="type" value="render" /><input type="hidden" name="draft" value="false" /><button class="secondary">🎬 Final render</button></form>
+                @if (p.Format == "long")
+                {
+                    <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline"><input type="hidden" name="type" value="shorts" /><input type="hidden" name="count" value="3" /><button class="secondary">✂️ 3 Shorts türet</button></form>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Model.Jobs.Count > 0)
+{
+    <section class="card">
+        <h2 style="margin-top:0">İşler</h2>
+        <table>
+            @foreach (var j in Model.Jobs)
+            {
+                <tr>
+                    <td><a href="/Jobs/Details/@j.Id">#@j.Id</a></td>
+                    <td>@JobTypes.Label(j.Type)</td>
+                    <td><partial name="_StatusBadge" model="j.Status" /></td>
+                    <td class="small muted">@j.CreatedAt.ToLocalTime().ToString("dd.MM HH:mm")</td>
+                    <td class="small" style="color:var(--err)">@(j.Error ?? (j.Status == JobStatus.Queued ? j.DispatchError : null))</td>
+                </tr>
+            }
+        </table>
+    </section>
+}
+
+@if (Model.Videos.Count > 0)
+{
+    <section class="card">
+        <h2 style="margin-top:0">Video</h2>
+        <div class="grid two">
+            @foreach (var v in Model.Videos)
+            {
+                <figure style="margin:0">
+                    <video controls preload="metadata" src="/media/@v.Path"></video>
+                    <figcaption class="small muted">@System.IO.Path.GetFileName(v.Path) · @(v.Size / 1024 / 1024) MB · <a href="/media/@v.Path" download>İndir</a></figcaption>
+                </figure>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.Thumbnails.Count > 0)
+{
+    <section class="card">
+        <h2 style="margin-top:0">Thumbnail varyasyonları</h2>
+        <div class="gallery">
+            @foreach (var t in Model.Thumbnails)
+            {
+                <figure><a href="/media/@t.Path" target="_blank"><img src="/media/@t.Path" loading="lazy" /></a><figcaption>@System.IO.Path.GetFileName(t.Path)<a href="/media/@t.Path" download>İndir</a></figcaption></figure>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.Previews.Count > 0)
+{
+    <section class="card">
+        <h2 style="margin-top:0">Önizleme kareleri</h2>
+        <div class="gallery @(p.Format == "short" ? "tall" : "")">
+            @foreach (var s in Model.Previews)
+            {
+                <figure><a href="/media/@s.Path" target="_blank"><img src="/media/@s.Path?v=@s.ModifiedUtc.Ticks" loading="lazy" /></a><figcaption>@System.IO.Path.GetFileNameWithoutExtension(s.Path)</figcaption></figure>
+            }
+        </div>
+    </section>
+}
+
+@if (Model.Script is { } script)
+{
+    <section class="card">
+        <h2 style="margin-top:0">Senaryo</h2>
+        <p>@script.Summary</p>
+        <h3>Başlık seçenekleri</h3>
+        <ul>@foreach (var t in script.TitleOptions) { <li>@t <span class="small muted">(@t.Length karakter)</span></li> }</ul>
+
+        <h3>Sahneler</h3>
+        @foreach (var s in script.Scenes)
+        {
+            <div class="scene">
+                <div>
+                    <div class="small muted"><strong>@s.Id</strong> · @s.Type @foreach (var d in s.Details) { <span> · @d</span> }</div>
+                    <p class="narration">@s.Narration</p>
+                    @if (Model.AudioByScene.TryGetValue(s.Id, out var audio)) { <audio controls preload="none" src="/media/@audio"></audio> }
+                </div>
+                @if (s.ImageId is not null && Model.VisualById.TryGetValue(s.ImageId, out var visual))
+                {
+                    <a href="/media/@visual" target="_blank"><img src="/media/@visual" loading="lazy" title="@s.ImageId" /></a>
+                }
+                else if (s.ImageId is not null)
+                {
+                    <span class="small muted">görsel: @s.ImageId</span>
+                }
+            </div>
+        }
+        @if (script.LoopLine is not null) { <p><strong>Döngü cümlesi:</strong> @script.LoopLine</p> }
+
+        @if (script.Characters.Count > 0)
+        {
+            <h3>Karakterler</h3>
+            <ul>@foreach (var c in script.Characters) { <li><a href="/Characters#@c.Id">@c.Name</a> <span class="small muted">— @c.Look</span></li> }</ul>
+        }
+
+        <h3>Doğrulanacak iddialar</h3>
+        <table>
+            <tr><th>Güven</th><th>İddia</th><th>Not</th></tr>
+            @foreach (var f in script.FactChecks) { <tr><td>@ScriptView.ConfidenceLabel(f.Confidence)</td><td>@f.Claim</td><td class="small">@f.Note</td></tr> }
+        </table>
+
+        <h3>Kaynaklar</h3>
+        <ul>@foreach (var src in script.Sources) { <li>@if (src.Url is not null) { <a href="@src.Url" target="_blank" rel="noopener">@src.Title</a> } else { @src.Title }</li> }</ul>
+
+        <h3>YouTube metadata</h3>
+        <div class="kv">
+            <span class="muted">Thumbnail yazısı</span><span>@script.ThumbnailText</span>
+            <span class="muted">Etiketler</span><span>@string.Join(", ", script.Tags)</span>
+            <span class="muted">Hashtag'ler</span><span>@string.Join(" ", script.Hashtags)</span>
+        </div>
+        <pre>@script.Description</pre>
+    </section>
+}
+
+@if (Model.Visuals.Count > 0)
+{
+    <section class="card">
+        <h2 style="margin-top:0">Görseller</h2>
+        <div class="gallery @(p.Format == "short" ? "tall" : "")">
+            @foreach (var v in Model.Visuals)
+            {
+                var imageId = System.IO.Path.GetFileNameWithoutExtension(v.Path);
+                <figure>
+                    <a href="/media/@v.Path" target="_blank"><img src="/media/@v.Path?v=@v.ModifiedUtc.Ticks" loading="lazy" /></a>
+                    <figcaption>@imageId
+                        <form method="post" asp-page-handler="Job" asp-route-id="@p.Id" class="inline">
+                            <input type="hidden" name="type" value="images" /><input type="hidden" name="force" value="true" /><input type="hidden" name="only" value="@imageId" />
+                            <button class="link small" title="Bu görseli yeniden üret">↻ yenile</button>
+                        </form>
+                    </figcaption>
+                </figure>
+            }
+        </div>
+        <p class="small muted">Beğenmediğin görselin prompt'unu "Senaryoyu düzenle" ile değiştirip "↻ yenile"ye bas. "Görseller" düğmesi sadece eksik görselleri üretir.</p>
+    </section>
+}

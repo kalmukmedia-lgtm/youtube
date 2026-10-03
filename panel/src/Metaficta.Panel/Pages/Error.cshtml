@@ -1,0 +1,8 @@
+@page
+@model ErrorModel
+@{ ViewData["Title"] = "Hata"; }
+<div class="card">
+    <h1>Bir hata oluştu</h1>
+    <p class="muted">İstek işlenirken beklenmeyen bir hata oluştu. Sorun sürerse Plesk'teki günlük kayıtlarına (logs) bak.</p>
+    @if (Model.ShowRequestId) { <p class="small muted">İstek kimliği: <code>@Model.RequestId</code></p> }
+</div>

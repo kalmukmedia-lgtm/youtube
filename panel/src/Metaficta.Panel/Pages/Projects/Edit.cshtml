@@ -1,0 +1,15 @@
+@page "/Projects/{id}/Edit"
+@model Metaficta.Panel.Pages.Projects.EditModel
+@{ ViewData["Title"] = "Senaryoyu düzenle"; }
+<section class="card">
+    <h1>Senaryoyu düzenle <span class="small muted">@Model.Id</span></h1>
+    <p class="small muted">
+        Anlatım metinlerini (<code>narration</code>), ekran yazılarını ve görsel prompt'larını buradan değiştirebilirsin.
+        Alan adlarını ve <code>type</code> değerlerini değiştirme; hatalı bir değişiklik bir sonraki işte raporlanır.
+    </p>
+    @if (Model.Error is not null) { <div class="flash err">@Model.Error</div> }
+    <form method="post">
+        <textarea asp-for="Json" class="code" spellcheck="false"></textarea>
+        <div class="actions"><button>Kaydet</button><a class="btn secondary" href="/Projects/@Model.Id">Vazgeç</a></div>
+    </form>
+</section>

@@ -22,6 +22,7 @@
 | **Format** | Yüzsüz (faceless), sinematik anlatım |
 | **Görsel kaynağı** | Ağırlıklı yapay zekâ görselleri (tanrılar/kozmik sahneler stokta yok) + stok video + NASA/kamu malı + Remotion animasyonları |
 | **Dil (yazılım)** | Tüm pipeline **TypeScript / Node.js** (Remotion ile tek dil) |
+| **Çalışma ortamı** | **Panel:** Plesk Windows hosting'de ASP.NET Core + MSSQL · **İşçi:** GitHub Actions — kurulum: [PANEL_SETUP.md](PANEL_SETUP.md) |
 | **Video dili** | Türkçe (İngilizce ses kanalı ileride eklenebilir) |
 | **Ses** | Türkçe yapay zekâ sesi (TTS) |
 | **Bütçe** | Düşük: ücretsiz kotası olan servisler öncelikli |
@@ -43,6 +44,7 @@
 | 2. Remotion Temeli | ✅ Tamamlandı | 7 tema, 10 sahne tipi, logo animasyonu, geçişler, efektler, 3 thumbnail varyasyonu (Faz 6 ve 8'in bir kısmı da yapıldı) |
 | 3. Ses + Altyazı | ✅ Tamamlandı | `pnpm yt voice` — Azure TTS, telaffuz sözlüğü, değişmeyen sahneler için önbellek; Azure'un kelime zamanlarıyla senkron altyazı (whisper gerekmedi); fon müziği + ducking |
 | 4. Görsel Üretim | ✅ Tamamlandı | `pnpm yt images` — Cloudflare FLUX.2 [klein], karakter kütüphanesi + referans portreler, tema stilleri, otomatik yeniden deneme, neuron tahmini |
+| Panel + işçi | ✅ Tamamlandı | Plesk'e yüklenen ASP.NET Core panel (kurulum sihirbazı, projeler, senaryo düzenleme/onay, karakterler, müzik, video izleme) + GitHub Actions işçisi |
 | 5–10 | — | |
 
 > Senaryo maliyeti: bir uzun video için araştırma + taslak + revizyon birkaç Claude çağrısıdır; `pnpm yt new` her çalışmada

@@ -1,0 +1,37 @@
+@page "{id:int}"
+@model Metaficta.Panel.Pages.Jobs.DetailsModel
+@{
+    var j = Model.Job;
+    ViewData["Title"] = $"İş #{j.Id}";
+    ViewData["AutoRefresh"] = j.Status is JobStatus.Running or JobStatus.Queued;
+}
+<section class="card">
+    <h1>İş #@j.Id · @JobTypes.Label(j.Type) <partial name="_StatusBadge" model="j.Status" /></h1>
+    <div class="kv small">
+        @if (j.ProjectId is not null) { <span class="muted">Proje</span><span><a href="/Projects/@j.ProjectId">@j.ProjectId</a></span> }
+        @if (j.ResultProjectIds is not null)
+        {
+            <span class="muted">Oluşan projeler</span>
+            <span>@foreach (var pid in j.ResultProjectIds.Split(',')) { <a href="/Projects/@pid">@pid</a><br /> }</span>
+        }
+        <span class="muted">Parametreler</span><span><code>@j.ParamsJson</code></span>
+        <span class="muted">Oluşturma</span><span>@j.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy HH:mm:ss")</span>
+        @if (j.StartedAt is { } s) { <span class="muted">Başlama</span><span>@s.ToLocalTime().ToString("dd.MM.yyyy HH:mm:ss")</span> }
+        @if (j.FinishedAt is { } f) { <span class="muted">Bitiş</span><span>@f.ToLocalTime().ToString("dd.MM.yyyy HH:mm:ss")</span> }
+    </div>
+    @if (j.DispatchError is not null && j.Status == JobStatus.Queued) { <div class="flash err" style="margin-top:12px">İşçi tetiklenemedi: @j.DispatchError</div> }
+    @if (j.Error is not null) { <div class="flash err" style="margin-top:12px">@j.Error</div> }
+    <div class="actions">
+        @if (j.Status == JobStatus.Queued)
+        {
+            <form method="post" asp-page-handler="Dispatch" asp-route-id="@j.Id" class="inline"><button class="secondary">İşçiyi tekrar tetikle</button></form>
+        }
+        @if (j.Status == JobStatus.Failed)
+        {
+            <form method="post" asp-page-handler="Retry" asp-route-id="@j.Id" class="inline"><button>Yeniden dene</button></form>
+        }
+    </div>
+    @if (j.Status == JobStatus.Queued) { <p class="small muted">İş kuyrukta. GitHub Actions makinesinin açılması genellikle 1 dakikadan kısa sürer.</p> }
+    <h2>Günlük</h2>
+    <pre>@(string.IsNullOrEmpty(j.Log) ? "(henüz kayıt yok)" : j.Log)</pre>
+</section>

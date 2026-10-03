@@ -8,16 +8,22 @@ import { z } from "zod";
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = path.resolve(here, "../../..");
 
+loadEnv({ path: path.join(REPO_ROOT, ".env"), quiet: true });
+
+/**
+ * METAFICTA_DATA_DIR verilirse projeler, karakterler ve müzik o klasörden okunur
+ * (<dir>/projects, <dir>/characters, <dir>/music). İşçi bunu panelden indirilen dosyalar için kullanır.
+ */
+const DATA_DIR = process.env.METAFICTA_DATA_DIR ? path.resolve(process.env.METAFICTA_DATA_DIR) : null;
+
 export const PATHS = {
   config: path.join(REPO_ROOT, "config"),
   prompts: path.join(REPO_ROOT, "prompts"),
-  projects: path.join(REPO_ROOT, "projects"),
+  projects: DATA_DIR ? path.join(DATA_DIR, "projects") : path.join(REPO_ROOT, "projects"),
   videoEntry: path.join(REPO_ROOT, "packages/video/src/index.ts"),
-  music: path.join(REPO_ROOT, "assets/music"),
-  characters: path.join(REPO_ROOT, "assets/characters"),
+  music: DATA_DIR ? path.join(DATA_DIR, "music") : path.join(REPO_ROOT, "assets/music"),
+  characters: DATA_DIR ? path.join(DATA_DIR, "characters") : path.join(REPO_ROOT, "assets/characters"),
 };
-
-loadEnv({ path: path.join(REPO_ROOT, ".env"), quiet: true });
 
 /** Senaryo modeli. Varsayılan Claude Opus 5.5; .env'de METAFICTA_MODEL ile değiştirilebilir. */
 export const MODEL = process.env.METAFICTA_MODEL ?? "claude-opus-5-5";

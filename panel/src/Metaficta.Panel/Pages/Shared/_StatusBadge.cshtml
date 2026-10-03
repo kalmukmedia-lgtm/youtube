@@ -1,0 +1,8 @@
+@model string
+<span class="badge @Model">@(Model switch {
+    "queued" => "Kuyrukta",
+    "running" => "Çalışıyor",
+    "succeeded" => "Tamamlandı",
+    "failed" => "Başarısız",
+    _ => Stages.Label(Model),
+})</span>

@@ -1,0 +1,92 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Projeler";
+    ViewData["AutoRefresh"] = Model.RecentJobs.Any(j => j.Status is JobStatus.Running or JobStatus.Queued);
+}
+<div class="grid two">
+    <section class="card">
+        <h1>Yeni video</h1>
+        <form method="post">
+            <div asp-validation-summary="All" class="flash err" style="display:@(ViewData.ModelState.IsValid ? "none" : "block")"></div>
+            <label asp-for="Topic">Konu</label>
+            <input asp-for="Topic" type="text" placeholder="Zeus vs Odin — kim kazanırdı?" />
+            <div class="row">
+                <div>
+                    <label asp-for="Format">Format</label>
+                    <select asp-for="Format">
+                        <option value="long">Uzun video (16:9)</option>
+                        <option value="short">Shorts (9:16)</option>
+                    </select>
+                </div>
+                <div>
+                    <label asp-for="Series">Seri</label>
+                    <select asp-for="Series">
+                        @foreach (var s in Catalog.Series) { <option value="@s.Id">@s.Label</option> }
+                    </select>
+                </div>
+                <div>
+                    <label asp-for="Theme">Tema</label>
+                    <select asp-for="Theme">
+                        <option value="">Seriye göre</option>
+                        @foreach (var t in Catalog.Themes) { <option value="@t.Id">@t.Label</option> }
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="check"><input asp-for="Research" /> Web araştırması</label>
+                    <label class="check"><input asp-for="Revise" /> Editör revizyonu</label>
+                </div>
+                <div>
+                    <label asp-for="Shorts">Ek Shorts sayısı (uzun video için)</label>
+                    <input asp-for="Shorts" type="number" min="0" max="10" />
+                </div>
+            </div>
+            <div class="actions"><button>Senaryoyu üret</button></div>
+        </form>
+    </section>
+    <section class="card">
+        <h2 style="margin-top:0">Son işler</h2>
+        @if (Model.RecentJobs.Count == 0) { <p class="muted">Henüz iş yok.</p> }
+        <table>
+            @foreach (var j in Model.RecentJobs)
+            {
+                <tr>
+                    <td><a href="/Jobs/Details/@j.Id">#@j.Id</a></td>
+                    <td>@JobTypes.Label(j.Type)</td>
+                    <td class="small muted">@j.ProjectId</td>
+                    <td><partial name="_StatusBadge" model="j.Status" /></td>
+                </tr>
+            }
+        </table>
+        <p class="small"><a href="/Jobs">Tüm işler →</a></p>
+    </section>
+</div>
+
+<section class="card">
+    <div class="row" style="align-items:center">
+        <h2 style="margin:0">Projeler</h2>
+        <form method="post" asp-page-handler="Sync" style="flex:0 0 auto"><button class="secondary">Depoyu yeniden tara</button></form>
+    </div>
+    @if (Model.Projects.Count == 0)
+    {
+        <p class="muted">Henüz proje yok. Yukarıdan bir konu girerek başla.</p>
+    }
+    else
+    {
+        <table>
+            <tr><th>Başlık</th><th>Format</th><th>Seri</th><th>Durum</th><th>Oluşturma</th></tr>
+            @foreach (var p in Model.Projects)
+            {
+                <tr>
+                    <td><a href="/Projects/@p.Id">@p.Title</a>@if (p.ParentId is not null) { <div class="small muted">↳ @p.ParentId</div> }</td>
+                    <td>@(p.Format == "long" ? "Uzun" : "Shorts")</td>
+                    <td class="small">@Catalog.SeriesLabel(p.Series)</td>
+                    <td><partial name="_StatusBadge" model="p.Stage" /></td>
+                    <td class="small muted">@p.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+            }
+        </table>
+    }
+</section>

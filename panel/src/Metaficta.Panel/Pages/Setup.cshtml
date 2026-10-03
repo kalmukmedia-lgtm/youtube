@@ -1,0 +1,17 @@
+@page
+@model SetupModel
+@{ ViewData["Title"] = "Kurulum"; }
+<div class="narrow card">
+    <h1>Metaficta Panel kurulumu</h1>
+    <p class="muted">Veritabanı bağlantısı çalışıyor. Panele giriş için yönetici hesabını oluştur.</p>
+    <form method="post">
+        <div asp-validation-summary="All" class="flash err" style="display:@(ViewData.ModelState.IsValid ? "none" : "block")"></div>
+        <label asp-for="Username">Kullanıcı adı</label>
+        <input asp-for="Username" type="text" autocomplete="username" />
+        <label asp-for="Password">Şifre (en az 10 karakter)</label>
+        <input asp-for="Password" type="password" autocomplete="new-password" />
+        <label asp-for="PasswordAgain">Şifre (tekrar)</label>
+        <input asp-for="PasswordAgain" type="password" autocomplete="new-password" />
+        <div class="actions"><button>Kurulumu tamamla</button></div>
+    </form>
+</div>

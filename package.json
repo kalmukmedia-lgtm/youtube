@@ -7,7 +7,10 @@
     "yt": "pnpm --filter @metaficta/pipeline exec tsx src/cli.ts",
     "studio": "pnpm --filter @metaficta/video studio",
     "typecheck": "pnpm -r typecheck",
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "worker": "pnpm --filter @metaficta/pipeline exec tsx src/worker/main.ts"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -4,7 +4,20 @@
 zincirini otomatikleştiren sistem. Konsept: kadim tarih, tanrılar ve mitoloji, göksel varlıklar, evren ve gelecek.
 Videolar [Remotion](https://www.remotion.dev) ile koddan üretilir; senaryolar Claude ile yazılır.
 
-## Kurulum
+## Yönetim paneli (Plesk) + GitHub Actions işçisi
+
+Sistemi tarayıcıdan kullanmak için **panel** Plesk (Windows) hosting'e yüklenir; ağır işler (senaryo, ses, görsel, render)
+**GitHub Actions** üzerinde çalışan işçi tarafından yapılır ve sonuçlar panele geri yüklenir.
+Kurulum: **[docs/PANEL_SETUP.md](docs/PANEL_SETUP.md)** — panel paketi GitHub Actions → CI → Artifacts'tan indirilir.
+
+| Klasör | İçerik |
+|---|---|
+| `panel/` | ASP.NET Core 10 + MSSQL yönetim paneli (Razor Pages, EF Core) ve testleri |
+| `packages/pipeline/src/worker/` | GitHub Actions işçisi (`pnpm worker --job <id>`) |
+| `.github/workflows/worker.yml` | Panelin tetiklediği işçi iş akışı |
+| `.github/workflows/ci.yml` | Testler + Windows için panel paketleri |
+
+## Yerel kurulum (komut satırı)
 
 Gereksinimler: Node.js 20+, [pnpm](https://pnpm.io) 10+.
 
@@ -82,6 +95,7 @@ istersen kendi görselini de aynı isimle koyabilirsin. Görseli olmayan sahnele
 ```bash
 pnpm test        # birim testler
 pnpm typecheck   # tip kontrolü
+dotnet test panel   # panel testleri (.NET 10 SDK gerekir)
 ```
 
 ## Dokümanlar
@@ -93,3 +107,4 @@ pnpm typecheck   # tip kontrolü
 - [Seslendirme kurulumu (Azure)](docs/VOICE_SETUP.md)
 - [Görsel servisi karşılaştırması](docs/IMAGE_PROVIDERS.md)
 - [Görsel üretim kurulumu (Cloudflare) ve karakter kütüphanesi](docs/IMAGE_SETUP.md)
+- [Panel kurulumu (Plesk + GitHub Actions)](docs/PANEL_SETUP.md)

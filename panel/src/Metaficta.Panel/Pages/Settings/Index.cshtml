@@ -1,0 +1,39 @@
+@page
+@model Metaficta.Panel.Pages.Settings.IndexModel
+@{ ViewData["Title"] = "Ayarlar"; }
+<div class="grid two">
+    <section class="card">
+        <h1>GitHub bağlantısı</h1>
+        <p class="small muted">Panel, ağır işleri (senaryo, ses, görsel, render) GitHub Actions'taki işçiye yaptırır.</p>
+        <form method="post" asp-page-handler="Save">
+            <div class="row">
+                <div><label asp-for="Owner">Hesap / kuruluş</label><input asp-for="Owner" type="text" placeholder="kalmukmedia-lgtm" /></div>
+                <div><label asp-for="Repo">Depo</label><input asp-for="Repo" type="text" placeholder="youtube" /></div>
+            </div>
+            <div class="row">
+                <div><label asp-for="Workflow">İş akışı dosyası</label><input asp-for="Workflow" type="text" /></div>
+                <div><label asp-for="Ref">Dal (branch)</label><input asp-for="Ref" type="text" placeholder="boş: deponun varsayılan dalı" /></div>
+            </div>
+            <label asp-for="Token">GitHub token @(Model.HasToken ? "(kayıtlı — değiştirmek için yeni değer gir)" : "")</label>
+            <input asp-for="Token" type="password" autocomplete="off" placeholder="github_pat_…" />
+            <p class="small muted">Fine-grained token: sadece bu depo · Repository permissions → <strong>Actions: Read and write</strong>.</p>
+            <div class="actions"><button>Kaydet</button></div>
+        </form>
+        <form method="post" asp-page-handler="Test"><button class="secondary">Bağlantıyı test et</button></form>
+    </section>
+
+    <section class="card">
+        <h2 style="margin-top:0">İşçi bağlantısı</h2>
+        <p class="small muted">GitHub deposunda <strong>Settings → Secrets and variables → Actions</strong> altına şu secret'ları ekle:</p>
+        <table class="small">
+            <tr><td><code>PANEL_URL</code></td><td><code>@Model.PanelUrl</code></td></tr>
+            <tr><td><code>WORKER_TOKEN</code></td><td><code style="word-break:break-all">@Model.WorkerToken</code></td></tr>
+            <tr><td><code>ANTHROPIC_API_KEY</code></td><td class="muted">Claude API anahtarı</td></tr>
+            <tr><td><code>AZURE_SPEECH_KEY</code>, <code>AZURE_SPEECH_REGION</code></td><td class="muted">Seslendirme</td></tr>
+            <tr><td><code>CLOUDFLARE_ACCOUNT_ID</code>, <code>CLOUDFLARE_API_TOKEN</code></td><td class="muted">Görseller</td></tr>
+        </table>
+        <form method="post" asp-page-handler="Regenerate" style="margin-top:12px" onsubmit="return confirm('Eski anahtar geçersiz olacak. Devam edilsin mi?')">
+            <button class="danger">İşçi anahtarını yenile</button>
+        </form>
+    </section>
+</div>

@@ -1,0 +1,58 @@
+@page
+@model Metaficta.Panel.Pages.Characters.IndexModel
+@{ ViewData["Title"] = "Karakterler"; }
+<section class="card">
+    <h1>Karakter kütüphanesi</h1>
+    <p class="muted small">Her karakterin referans portresi, o karakterin geçtiği tüm görsellere verilir; böylece her videoda aynı görünür.
+        Senaryoda geçen yeni karakterler görsel üretiminde otomatik eklenir. Önemli karakterler için aşağıdan birkaç aday üretip en iyisini seçebilirsin.</p>
+    @if (Model.Characters.Count == 0) { <p class="muted">Kütüphane boş.</p> }
+    @foreach (var c in Model.Characters)
+    {
+        <div class="card" id="@c.Id" style="background:var(--panel-2)">
+            <div class="row" style="align-items:start">
+                <div style="flex:0 0 180px">
+                    @if (c.Reference is not null) { <img src="/media/@c.Reference?v=@DateTime.UtcNow.Ticks" style="width:180px;border-radius:8px;border:2px solid var(--gold)" /> }
+                    else { <div class="muted small">Referans yok</div> }
+                </div>
+                <div>
+                    <h3>@c.Name <span class="small muted">@c.Id</span></h3>
+                    <p class="small">@c.Look</p>
+                    @if (c.Candidates.Count > 0)
+                    {
+                        <div class="gallery tall">
+                            @foreach (var cand in c.Candidates)
+                            {
+                                var file = System.IO.Path.GetFileName(cand);
+                                <figure>
+                                    <img src="/media/@cand" loading="lazy" />
+                                    <figcaption>@file
+                                        <form method="post" asp-page-handler="Pick" class="inline">
+                                            <input type="hidden" name="id" value="@c.Id" /><input type="hidden" name="candidate" value="@file" />
+                                            <button class="link small">✔ seç</button>
+                                        </form>
+                                    </figcaption>
+                                </figure>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</section>
+
+<section class="card">
+    <h2 style="margin-top:0">Yeni karakter / yeni adaylar</h2>
+    <p class="small muted">Var olan bir kimliği yazarsan o karaktere yeni adaylar eklenir.</p>
+    <form method="post" asp-page-handler="Create">
+        <div asp-validation-summary="All" class="flash err" style="display:@(ViewData.ModelState.IsValid ? "none" : "block")"></div>
+        <div class="row">
+            <div><label asp-for="NewId">Kimlik (İngilizce)</label><input asp-for="NewId" type="text" placeholder="umay" /></div>
+            <div><label asp-for="NewName">Ad</label><input asp-for="NewName" type="text" placeholder="Umay Ana" /></div>
+            <div style="flex:0 0 120px"><label asp-for="Count">Aday sayısı</label><input asp-for="Count" type="number" min="1" max="8" /></div>
+        </div>
+        <label asp-for="NewLook">Görünüm tarifi (İngilizce, kalıcı)</label>
+        <textarea asp-for="NewLook" rows="3" placeholder="motherly Turkic goddess, long black braided hair, white felt robe with red and gold patterns, silver headdress with swan feathers, gentle glowing eyes"></textarea>
+        <div class="actions"><button>Adayları üret</button></div>
+    </form>
+</section>

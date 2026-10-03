@@ -1,12 +1,11 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { type Character, CharacterSchema } from "@metaficta/core";
-import YAML from "yaml";
 import { PATHS } from "../config";
 
 /*
  * Karakter kütüphanesi: assets/characters/<id>/
- *   character.yaml   id, ad, kalıcı görünüm tarifi
+ *   character.json   id, ad, kalıcı görünüm tarifi
  *   reference.png    seçilmiş referans portre (her sahne görseline referans olarak verilir)
  *   candidates/      aday portreler (git'e eklenmez)
  */
@@ -15,8 +14,8 @@ export const characterDir = (id: string, root = PATHS.characters) => path.join(r
 export const referencePath = (id: string, root = PATHS.characters) => path.join(characterDir(id, root), "reference.png");
 
 export const loadCharacter = (id: string, root = PATHS.characters): Character | undefined => {
-  const file = path.join(characterDir(id, root), "character.yaml");
-  return existsSync(file) ? CharacterSchema.parse(YAML.parse(readFileSync(file, "utf8"))) : undefined;
+  const file = path.join(characterDir(id, root), "character.json");
+  return existsSync(file) ? CharacterSchema.parse(JSON.parse(readFileSync(file, "utf8"))) : undefined;
 };
 
 export const listCharacters = (root = PATHS.characters): (Character & { hasReference: boolean })[] =>
@@ -32,7 +31,7 @@ export const listCharacters = (root = PATHS.characters): (Character & { hasRefer
 export const saveCharacter = (character: Character, root = PATHS.characters) => {
   const dir = characterDir(character.id, root);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(path.join(dir, "character.yaml"), YAML.stringify(character));
+  writeFileSync(path.join(dir, "character.json"), `${JSON.stringify(character, null, 2)}\n`);
 };
 
 /** Senaryo prompt'una eklenecek kütüphane özeti (LLM aynı id ve görünümleri kullansın diye). */

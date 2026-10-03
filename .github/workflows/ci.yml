@@ -1,0 +1,51 @@
+# Testler + Plesk'e yüklenecek panel paketleri.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    name: Pipeline & video (TypeScript)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+
+  panel:
+    name: Panel (ASP.NET Core)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Test
+        run: dotnet test panel
+      - name: Windows paketleri (self-contained, sunucuda .NET kurulu olması gerekmez)
+        run: |
+          for rid in win-x64 win-x86; do
+            dotnet publish panel/src/Metaficta.Panel -c Release -r "$rid" --self-contained true -o "publish/$rid"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: metaficta-panel-win-x64
+          path: publish/win-x64
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: metaficta-panel-win-x86
+          path: publish/win-x86
+          retention-days: 30

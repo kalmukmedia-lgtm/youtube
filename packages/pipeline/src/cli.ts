@@ -2,17 +2,13 @@ import { SAMPLE_LONG_SCRIPT, SAMPLE_SHORT_SCRIPT, SERIES_IDS, type SeriesId, THE
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { Command, InvalidArgumentError, Option } from "commander";
-import { azureCredentials, cloudflareCredentials, type ImagesConfig, loadImagesConfig, loadPronunciations, loadVoiceConfig, REPO_ROOT } from "./config";
+import * as actions from "./actions";
+import { azureCredentials, loadPronunciations, loadVoiceConfig, REPO_ROOT } from "./config";
 import { listCharacters } from "./images/characters";
-import { generateCharacterCandidates, generateProjectImages, pickCandidate } from "./images/generate";
-import { CloudflareImageProvider } from "./images/provider";
-import { LlmClient } from "./llm";
-import { createProject, listProjects, loadAudio, loadProject, saveScript, setStage } from "./project";
-import { renderProject, renderSceneStills } from "./render";
-import { DEFAULT_THEME, generateScript, generateShorts, lengthWarning } from "./script-gen";
+import { pickCandidate } from "./images/generate";
+import { createProject, listProjects, loadProject, saveScript, setStage } from "./project";
 import { AzureTts, listTurkishVoices } from "./tts/azure";
 import { buildSsml } from "./tts/ssml";
-import { voiceProject } from "./tts/voice";
 
 const log = (message: string) => console.log(message);
 
@@ -21,20 +17,6 @@ const positiveInt = (value: string) => {
   if (!Number.isInteger(n) || n < 1) throw new InvalidArgumentError("Pozitif bir sayı olmalı.");
   return n;
 };
-
-const printCost = (llm: LlmClient) => {
-  const { input, output, cacheRead, webSearches } = llm.usage;
-  const cost = llm.estimatedCostUsd();
-  log(`💰 Token: ${input} giriş, ${output} çıkış, ${cacheRead} önbellek · web araması: ${webSearches} · tahmini $${Number.isNaN(cost) ? "?" : cost.toFixed(2)} (web arama ücreti hariç)`);
-};
-
-const imageProvider = (config: ImagesConfig) => {
-  const { accountId, apiToken } = cloudflareCredentials();
-  return new CloudflareImageProvider(accountId, apiToken, config.model);
-};
-
-const printNeurons = (neurons: number, config: ImagesConfig) =>
-  log(`💰 Tahmini kullanım: ~${Math.round(neurons)} neuron (günlük ücretsiz kota: ${config.freeNeuronsPerDay}, her gün 00:00 UTC'de yenilenir)`);
 
 const program = new Command().name("yt").description("Metaficta video üretim hattı");
 
@@ -49,29 +31,8 @@ program
   .option("--no-revise", "Editör revizyonunu atla (daha ucuz)")
   .option("--shorts <count>", "Uzun videodan bu kadar Shorts da türet", positiveInt)
   .action(async (topic: string, opts: { format: "long" | "short"; series: SeriesId; theme?: ThemeId; research: boolean; revise: boolean; shorts?: number }) => {
-    const llm = new LlmClient();
-    const { script, research } = await generateScript(llm, {
-      topic,
-      format: opts.format,
-      series: opts.series,
-      theme: opts.theme ?? DEFAULT_THEME[opts.series],
-      research: opts.research,
-      revise: opts.revise,
-      log,
-    });
-    const project = createProject(script, { research: opts.research ? research : undefined });
-    log(`✅ Senaryo hazır: ${project.dir}/script.md`);
-    const warning = lengthWarning(project.script);
-    if (warning) log(`⚠️  ${warning}`);
-
-    if (opts.shorts && opts.format === "long") {
-      log(`✂️  ${opts.shorts} Shorts türetiliyor...`);
-      for (const short of await generateShorts(llm, project.script, opts.shorts)) {
-        log(`   ✅ ${createProject(short).dir}`);
-      }
-    }
-    printCost(llm);
-    log("👉 Senaryoyu oku, gerekirse script.json'u düzenle, sonra: pnpm yt approve <proje>");
+    await actions.newScript({ topic, ...opts }, log);
+    log("👉 Senaryoyu oku (projects/<proje>/script.md), gerekirse script.json'u düzenle, sonra: pnpm yt approve <proje>");
   });
 
 program
@@ -80,11 +41,7 @@ program
   .argument("<project>", "Proje id'si veya klasörü")
   .option("-c, --count <count>", "Shorts sayısı", positiveInt, 3)
   .action(async (id: string, opts: { count: number }) => {
-    const parent = loadProject(id);
-    if (parent.script.format !== "long") throw new Error("Shorts sadece uzun video projelerinden türetilebilir.");
-    const llm = new LlmClient();
-    for (const short of await generateShorts(llm, parent.script, opts.count)) log(`✅ ${createProject(short).dir}`);
-    printCost(llm);
+    await actions.deriveShorts(id, opts.count, log);
   });
 
 program
@@ -115,17 +72,7 @@ program
   .option("--force", "Değişmemiş sahneleri de yeniden seslendir")
   .option("--skip-approval", "Onay beklemeden seslendir")
   .action(async (id: string, opts: { voice?: string; force?: boolean; skipApproval?: boolean }) => {
-    const project = loadProject(id);
-    if (project.status.stage === "script" && !opts.skipApproval) {
-      throw new Error("Senaryo henüz onaylanmadı. Önce: pnpm yt approve <proje> (veya --skip-approval)");
-    }
-    const { key, region } = azureCredentials();
-    const voice = { ...loadVoiceConfig(), ...(opts.voice ? { voice: opts.voice } : {}) };
-    log(`🎙  Seslendiriliyor: ${voice.voice} (${project.script.scenes.length} sahne)`);
-    const summary = await voiceProject(project, new AzureTts(key, region), { voice, pronunciations: loadPronunciations(), force: opts.force, log });
-    if (project.status.stage === "script" || project.status.stage === "approved") setStage(project.dir, "voiced");
-    log(`✅ ${summary.synthesized} sahne seslendirildi, ${summary.skipped} sahne değişmediği için atlandı.`);
-    log(`   Toplam süre: ${Math.floor(summary.totalSeconds / 60)} dk ${Math.round(summary.totalSeconds % 60)} sn · bu çalıştırmada ${summary.characters} karakter kullanıldı`);
+    await actions.voice(id, opts, log);
   });
 
 program
@@ -166,24 +113,8 @@ program
   .option("--force", "Var olan görselleri de yeniden üret")
   .option("--only <ids>", "Sadece bu görsel id'leri (virgülle ayrılmış)")
   .action(async (id: string, opts: { force?: boolean; only?: string }) => {
-    const project = loadProject(id);
-    const config = loadImagesConfig();
-    log(`🎨 Görseller üretiliyor: ${config.model}`);
-    const summary = await generateProjectImages(project, {
-      provider: imageProvider(config),
-      config,
-      force: opts.force,
-      only: opts.only?.split(",").map((s) => s.trim()).filter(Boolean),
-      log,
-    });
-    log(`✅ ${summary.generated.length} görsel üretildi, ${summary.skipped.length} görsel zaten vardı.`);
-    if (summary.createdCharacters.length) log(`🧑‍🎨 Kütüphaneye eklenen karakterler: ${summary.createdCharacters.join(", ")} (beğenmezsen: pnpm yt character create <id> ...)`);
-    printNeurons(summary.neurons, config);
-    if (summary.failed.length) {
-      log(`⚠️  ${summary.failed.length} görsel üretilemedi; komutu tekrar çalıştırınca sadece eksikler denenir:`);
-      for (const f of summary.failed) log(`   - ${f.id}: ${f.error}`);
-      process.exitCode = 1;
-    }
+    const summary = await actions.images(id, { force: opts.force, only: opts.only?.split(",").map((s) => s.trim()).filter(Boolean) }, log);
+    if (summary.failed.length) process.exitCode = 1;
   });
 
 const character = program.command("character").description("Karakter kütüphanesi (assets/characters)");
@@ -196,9 +127,7 @@ character
   .requiredOption("-l, --look <look>", "İngilizce kalıcı görünüm tarifi")
   .option("-c, --count <count>", "Aday portre sayısı", positiveInt, 4)
   .action(async (id: string, opts: { name: string; look: string; count: number }) => {
-    const config = loadImagesConfig();
-    const files = await generateCharacterCandidates({ id, name: opts.name, look: opts.look }, opts.count, imageProvider(config), config);
-    for (const file of files) log(`🖼  ${file}`);
+    await actions.characterCandidates({ id, ...opts }, log);
     log(`👉 Beğendiğini seç: pnpm yt character pick ${id} <numara>`);
   });
 
@@ -239,8 +168,7 @@ program
   .description("Her sahneden bir önizleme karesi (PNG) üretir")
   .argument("<project>")
   .action(async (id: string) => {
-    const outputs = await renderSceneStills(loadProject(id), log);
-    log(`✅ ${outputs.length} kare: ${loadProject(id).dir}/preview`);
+    await actions.stills(id, log);
   });
 
 program
@@ -250,12 +178,7 @@ program
   .option("--draft", "Yarım çözünürlükte hızlı taslak render")
   .option("--no-thumbnails", "Thumbnail üretme")
   .action(async (id: string, opts: { draft?: boolean; thumbnails: boolean }) => {
-    const project = loadProject(id);
-    if (!opts.draft && project.status.stage === "script") log("⚠️  Senaryo henüz onaylanmadı (pnpm yt approve). Final render yine de yapılıyor.");
-    if (Object.keys(loadAudio(project.dir)).length === 0) log("ℹ️  Ses yok: video sessiz render edilecek (seslendirme için: pnpm yt voice <proje>).");
-    const outputs = await renderProject(project, { draft: opts.draft, thumbnails: opts.thumbnails && project.script.format === "long", log });
-    if (!opts.draft) setStage(project.dir, "rendered");
-    for (const output of outputs) log(`✅ ${output}`);
+    await actions.render(id, opts, log);
   });
 
 program.parseAsync().catch((error: unknown) => {

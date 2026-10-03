@@ -1,0 +1,27 @@
+@page
+@model Metaficta.Panel.Pages.Music.IndexModel
+@{ ViewData["Title"] = "Müzik"; }
+<section class="card">
+    <h1>Fon müziği kütüphanesi</h1>
+    <p class="muted small">Render sırasında temanın ruh haline uygun klasörden bir parça seçilir ve anlatım sırasında sesi otomatik kısılır.
+        Telifsiz parçalar için: YouTube Studio → Ses Kitaplığı. Dosya başına en fazla ~25 MB (paylaşımlı hosting sınırı); 3–5 dakikalık bir MP3 genelde 5–10 MB'tır.</p>
+    @foreach (var (mood, label) in Catalog.MusicMoods)
+    {
+        <div class="card" style="background:var(--panel-2)">
+            <h3>@label <span class="small muted">@mood</span></h3>
+            @foreach (var f in Model.Library[mood])
+            {
+                <div class="row" style="align-items:center">
+                    <div style="flex:2 1 240px" class="small">@System.IO.Path.GetFileName(f.Path) <span class="muted">· @(f.Size / 1024) KB</span></div>
+                    <audio controls preload="none" src="/media/@f.Path" style="flex:3 1 260px"></audio>
+                    <form method="post" asp-page-handler="Delete" style="flex:0 0 auto"><input type="hidden" name="path" value="@f.Path" /><button class="danger">Sil</button></form>
+                </div>
+            }
+            <form method="post" asp-page-handler="Upload" enctype="multipart/form-data" class="row" style="margin-top:8px">
+                <input type="hidden" name="mood" value="@mood" />
+                <input type="file" name="files" accept=".mp3,.m4a,.wav,.ogg,audio/*" multiple />
+                <button style="flex:0 0 auto" class="secondary">Yükle</button>
+            </form>
+        </div>
+    }
+</section>
