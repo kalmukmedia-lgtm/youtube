@@ -1,0 +1,13 @@
+{
+  "name": "metaficta",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "yt": "pnpm --filter @metaficta/pipeline exec tsx src/cli.ts",
+    "studio": "pnpm --filter @metaficta/video studio",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test"
+  },
+  "engines": { "node": ">=20" }
+}

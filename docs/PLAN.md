@@ -22,16 +22,31 @@
 | **Format** | Yüzsüz (faceless), sinematik anlatım |
 | **Görsel kaynağı** | Ağırlıklı yapay zekâ görselleri (tanrılar/kozmik sahneler stokta yok) + stok video + NASA/kamu malı + Remotion animasyonları |
 | **Dil (yazılım)** | Tüm pipeline **TypeScript / Node.js** (Remotion ile tek dil) |
+| **Video dili** | Türkçe (İngilizce ses kanalı ileride eklenebilir) |
+| **Ses** | Türkçe yapay zekâ sesi (TTS) |
+| **Bütçe** | Düşük: ücretsiz kotası olan servisler öncelikli |
+| **Başlangıç** | Kanal sıfırdan başlıyor |
 
 ### Bekleyen kararlar ⏳
-| # | Karar | Seçenekler | Varsayılan öneri |
-|---|-------|-----------|------------------|
-| 1 | **Video dili** | Türkçe / İngilizce / ikisi | Türkçe başla, Remotion sayesinde İngilizce versiyon sonradan kolay |
-| 2 | **Ses** | Yapay zekâ TTS / kendi sesin / ses klonu | Derin, sinematik bir TTS sesi (ElevenLabs) veya kendi sesinin klonu |
-| 3 | **Yapay zekâ görsel servisi** | Flux, Imagen, DALL·E, Midjourney (API yok) vb. | API'si olan, tutarlı karakter üretebilen bir servis |
-| 4 | **Otomasyon seviyesi** | Tam otomatik / onaylı | Senaryo ve yükleme öncesi **insan onayı** |
-| 5 | **Yayın sıklığı** | Örn. haftada 2 uzun + günde 1 Shorts | Haftada 2 uzun + günde 1 Shorts |
-| 6 | **Bütçe** | Ücretsiz ağırlıklı / aylık abonelikler | Seslendirme + görsel üretim için küçük aylık bütçe |
+| # | Karar | Seçenekler | Öneri |
+|---|-------|-----------|-------|
+| 1 | **TTS servisi** | Azure Neural TTS (`tr-TR-AhmetNeural`, `tr-TR-EmelNeural`), Google Cloud TTS, ElevenLabs | Düşük bütçe için **Azure**: aylık ücretsiz kotası bu yayın temposuna büyük ihtimalle yeter (güncel kotayı kontrol et). Kanal büyüyünce ElevenLabs'e geçilebilir; kod sağlayıcıdan bağımsız yazılacak. |
+| 2 | **Yapay zekâ görsel servisi** | Flux, Imagen, DALL·E vb. | Görsel başına en ucuz, API'si olan ve tutarlı karakter üretebilen servis (Faz 4'te karşılaştırılacak) |
+| 3 | **Yayın sıklığı** | Örn. haftada 2 uzun + günde 1 Shorts | Başlangıçta haftada 1-2 uzun + 3-5 Shorts; sistem oturdukça artır |
+
+## İlerleme
+
+| Faz | Durum | Not |
+|-----|-------|-----|
+| 0. Hazırlık | ⏳ Kanal sahibi tarafından | [CHANNEL_SETUP.md](CHANNEL_SETUP.md) |
+| 1. İskelet + Senaryo | ✅ Tamamlandı | `pnpm yt new` — araştırma, taslak ve editör revizyonu; şema doğrulama + otomatik onarım |
+| 2. Remotion Temeli | ✅ Tamamlandı | 7 tema, 10 sahne tipi, logo animasyonu, geçişler, efektler, 3 thumbnail varyasyonu (Faz 6 ve 8'in bir kısmı da yapıldı) |
+| 3. Ses + Altyazı | ⏭ Sıradaki | TTS sağlayıcısı + whisper.cpp kelime zamanlaması |
+| 4. Görsel Üretim | — | |
+| 5–10 | — | |
+
+> Senaryo maliyeti: bir uzun video için araştırma + taslak + revizyon birkaç Claude çağrısıdır; `pnpm yt new` her çalışmada
+> tahmini tutarı yazdırır. Daha ucuz deneme için `--no-research` ve `--no-revise` seçenekleri var.
 
 ---
 

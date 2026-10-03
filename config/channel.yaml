@@ -1,0 +1,18 @@
+# Metaficta kanal ayarları — senaryo prompt'larına otomatik eklenir.
+name: Metaficta
+handle: "@Metaficta"
+url: https://www.youtube.com/@Metaficta
+channelId: ""            # `pnpm yt auth` ile doldurulacak (Faz 8)
+language: tr
+tagline: "Efsanenin bittiği yerde gerçek başlar."
+audience: >
+  Türkiye'de yaşayan, 16-40 yaş arası; mitoloji, tarih, uzay ve gelecek konularına meraklı,
+  belgesel ve "bunu biliyor muydun" tarzı içerikleri seven izleyiciler.
+persona: >
+  Gizemli ama güvenilir bir anlatıcı. Belgesel ciddiyetiyle hikâye anlatıcısının sürükleyiciliğini birleştirir.
+  İzleyiciye "sen" diye hitap eder, merak uyandırır, abartmaz ve bilgi uydurmaz.
+defaults:
+  long:
+    targetMinutes: 10
+  short:
+    targetSeconds: 45

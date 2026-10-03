@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+onlyBuiltDependencies:
+  - esbuild
+  - "@remotion/compositor-linux-x64-gnu"
+  - "@remotion/compositor-linux-x64-musl"

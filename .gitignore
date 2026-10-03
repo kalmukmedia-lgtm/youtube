@@ -1,8 +1,9 @@
+node_modules/
 .env
 projects/
-__pycache__/
-*.pyc
-.venv/
+secrets/
 token*.json
 client_secret*.json
-secrets/
+out/
+*.log
+.DS_Store
