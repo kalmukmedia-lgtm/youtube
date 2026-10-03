@@ -88,3 +88,4 @@ pnpm typecheck   # tip kontrolü
 - [Remotion mimarisi](docs/REMOTION_ARCHITECTURE.md)
 - [Kanal bağlantısı (YouTube API)](docs/CHANNEL_SETUP.md)
 - [Seslendirme kurulumu (Azure)](docs/VOICE_SETUP.md)
+- [Görsel servisi karşılaştırması](docs/IMAGE_PROVIDERS.md)

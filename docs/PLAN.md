@@ -31,7 +31,7 @@
 ### Bekleyen kararlar ⏳
 | # | Karar | Seçenekler | Öneri |
 |---|-------|-----------|-------|
-| 2 | **Yapay zekâ görsel servisi** | Flux, Imagen, DALL·E vb. | Görsel başına en ucuz, API'si olan ve tutarlı karakter üretebilen servis (Faz 4'te karşılaştırılacak) |
+| 2 | **Yapay zekâ görsel servisi** | Karşılaştırma: [IMAGE_PROVIDERS.md](IMAGE_PROVIDERS.md) | **Cloudflare Workers AI — FLUX.2 [klein]** (günlük ücretsiz kota, 4 referans görselle karakter tutarlılığı); thumbnail'ler için ileride isteğe bağlı Gemini |
 | 3 | **Yayın sıklığı** | Örn. haftada 2 uzun + günde 1 Shorts | Başlangıçta haftada 1-2 uzun + 3-5 Shorts; sistem oturdukça artır |
 
 ## İlerleme
