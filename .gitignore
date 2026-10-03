@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 token*.json
 client_secret*.json
+secrets/

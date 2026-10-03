@@ -7,6 +7,7 @@
 > **İlgili dokümanlar:**
 > - [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) — kanal konsepti, seriler, başlık/kanca formülleri, ilk 20 video
 > - [REMOTION_ARCHITECTURE.md](REMOTION_ARCHITECTURE.md) — Remotion ile video şablonları, sahne kataloğu, temalar
+> - [CHANNEL_SETUP.md](CHANNEL_SETUP.md) — Metaficta kanalını sisteme bağlama (YouTube API, OAuth, kanal ayarları)
 
 ---
 
@@ -17,6 +18,7 @@
 |-------|-------|
 | **Konsept / niş** | Kadim tarih, tanrılar & mitoloji, göksel varlıklar, evren, ütopik/distopik gelecek, ilginç bilgiler → detay: [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) |
 | **Video motoru** | **Remotion** (React ile kodla video) → detay: [REMOTION_ARCHITECTURE.md](REMOTION_ARCHITECTURE.md) |
+| **Kanal** | **Metaficta** — [youtube.com/@Metaficta](https://www.youtube.com/@Metaficta) → bağlantı adımları: [CHANNEL_SETUP.md](CHANNEL_SETUP.md) |
 | **Format** | Yüzsüz (faceless), sinematik anlatım |
 | **Görsel kaynağı** | Ağırlıklı yapay zekâ görselleri (tanrılar/kozmik sahneler stokta yok) + stok video + NASA/kamu malı + Remotion animasyonları |
 | **Dil (yazılım)** | Tüm pipeline **TypeScript / Node.js** (Remotion ile tek dil) |
@@ -30,7 +32,6 @@
 | 4 | **Otomasyon seviyesi** | Tam otomatik / onaylı | Senaryo ve yükleme öncesi **insan onayı** |
 | 5 | **Yayın sıklığı** | Örn. haftada 2 uzun + günde 1 Shorts | Haftada 2 uzun + günde 1 Shorts |
 | 6 | **Bütçe** | Ücretsiz ağırlıklı / aylık abonelikler | Seslendirme + görsel üretim için küçük aylık bütçe |
-| 7 | **Kanal adı** | Bkz. CONTENT_STRATEGY.md §1 | "Zamanın Ötesi" |
 
 ---
 
@@ -325,7 +326,7 @@ Her faz sonunda **çalışan bir çıktı** olur; bir sonraki faza onunla geçil
 
 | Faz | Kapsam | Teslimat | Tahmini süre |
 |-----|--------|----------|--------------|
-| **0. Hazırlık** | Kanal adı & kurulumu, Google Cloud projesi + YouTube API (audit başvurusu dahil), API anahtarları | `channel.yaml`, `.env` | 1–2 gün |
+| **0. Hazırlık** | Metaficta kanal ayarları & görsel kimlik, Google Cloud projesi + YouTube API + OAuth (audit başvurusu dahil), API anahtarları — bkz. [CHANNEL_SETUP.md](CHANNEL_SETUP.md) | `channel.yaml`, `.env`, OAuth token | 1–2 gün |
 | **1. İskelet + Senaryo** | pnpm monorepo, zod şemaları, senaryo zinciri (uzun + Shorts), sahne planlayıcı, Markdown önizleme | `yt script "Zeus vs Odin"` → `script.json` + `script.md` | 2–3 gün |
 | **2. Remotion Temeli** | Remotion projesi, 2 tema (`olympus-gold`, `cosmic-void`), temel sahneler (`ColdOpen`, `CinematicImage`, `ChapterTitle`), overlay'ler, geçişler | Studio'da örnek veriyle çalışan video | 3–4 gün |
 | **3. Ses + Altyazı** | TTS entegrasyonu, telaffuz sözlüğü, whisper.cpp hizalama, TikTok tarzı altyazı, müzik ducking | Gerçek sesle senkron video | 2–3 gün |

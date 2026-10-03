@@ -9,24 +9,33 @@
 
 ## 1. Kanal Kimliği
 
-**İsim önerileri** (müsaitlik kontrol edilmeli):
-| İsim | His |
-|------|-----|
-| **Kadim Sırlar** | Tarih + mit ağırlıklı, gizemli |
-| **Zamanın Ötesi** | Geçmiş + gelecek arasında köprü — tüm konsepti kapsar |
-| **Kozmik Arşiv** | Evren + tanrılar + tarih "arşivi" |
-| **Efsane ve Evren** | Mitoloji + uzay |
-| **Bilinmeyenin Kapısı** | Gizem, merak |
+**Kanal:** **Metaficta** — [youtube.com/@Metaficta](https://www.youtube.com/@Metaficta)
 
-> Öneri: **"Zamanın Ötesi"** — hem tarihi hem geleceği hem de kozmik konuları tek çatı altında toplar,
-> İngilizce versiyonu da kolay ("Beyond Time").
+**İsmin anlamı:** *Meta* (ötesi) + *ficta* (Latince "kurgulanmış, hayal edilmiş") → **"Kurgunun / efsanenin ötesi"**.
+Mitler, tanrılar, kayıp medeniyetler ve hayal edilen gelecekler: insanlığın kurguladığı her şeyin ardındaki gerçek ve hikâye.
+İsim dilden bağımsız olduğu için hem Türkçe hem uluslararası izleyiciye uygun.
+
+**Slogan önerileri:**
+| Türkçe | İngilizce |
+|--------|-----------|
+| Efsanenin bittiği yerde gerçek başlar. | Where myth ends, truth begins. |
+| Mitlerin, tarihin ve geleceğin ötesinde. | Beyond myth, history and tomorrow. |
+| Hayal edilen her şeyin hikâyesi. | The story behind everything ever imagined. |
+
+**Kanal açıklaması taslağı (Hakkında):**
+> Metaficta'ya hoş geldin. Burada tanrıların savaşlarını, kayıp medeniyetlerin sırlarını,
+> göksel varlıkların efsanelerini ve insanlığın hayal ettiği gelecekleri sinematik videolarla anlatıyoruz.
+> Zeus'tan Tengri'ye, Göbeklitepe'den Yıl 3000'e: efsanenin bittiği yerde gerçek başlar.
+> Her hafta yeni uzun videolar, her gün yeni Shorts. Abone ol, zamanın ve kurgunun ötesine birlikte geçelim.
 
 **Görsel kimlik:**
 - Ana renkler: derin lacivert/siyah zemin + **altın** vurgular (kadim, değerli, epik)
 - Seriye göre vurgu renkleri (bkz. Bölüm 3)
 - Yazı tipleri: başlıklarda serifli epik font (Cinzel, Cormorant), metinde temiz sans (Inter, Montserrat)
 - Ses kimliği: derin, tok erkek veya etkileyici kadın anlatıcı sesi + orkestral/ambient müzik
-- Her videonun girişinde 2 saniyelik animasyonlu logo "imza"sı (Remotion ile)
+- Her videonun girişinde 2 saniyelik animasyonlu **METAFICTA** logo "imza"sı (Remotion ile)
+- Kanal görselleri de Remotion `renderStill` ile üretilebilir: banner (2560×1440, güvenli alan 1546×423),
+  profil fotoğrafı (800×800), filigran (150×150), seri kapakları (oynatma listesi görselleri)
 
 ---
 
@@ -146,5 +155,5 @@ Seri mantığı izleyiciyi kanala bağlar ve her seri için **tek bir Remotion �
 Bu nişte İngilizce pazar çok daha büyük ve reklam gelirleri genelde daha yüksek. Remotion mimarisi sayesinde
 **aynı görsel kurgu** korunup sadece anlatım sesi + altyazı + ekran yazıları değiştirilerek
 İngilizce (ve ileride İspanyolca, Arapça vb.) versiyon üretilebilir:
-- Seçenek A: Ayrı İngilizce kanal ("Beyond Time")
-- Seçenek B: YouTube'un çok dilli ses kanalı özelliği (aynı videoya ek ses kanalı)
+- Seçenek A: YouTube'un **çok dilli ses kanalı** özelliği — aynı videoya ek dil ses kanalı (Metaficta adı uluslararası olduğu için önerilen)
+- Seçenek B: Ayrı bir İngilizce kanal
