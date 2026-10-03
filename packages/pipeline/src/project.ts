@@ -20,7 +20,11 @@ export interface Project {
 
 const IMAGE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"];
 
-export const projectDir = (idOrPath: string): string => (idOrPath.includes(path.sep) || idOrPath.startsWith(".") ? path.resolve(idOrPath) : path.join(PATHS.projects, idOrPath));
+/** Proje kimliği (projects/<id>) veya klasör yolu. Göreli yollar komutun çalıştırıldığı klasöre göre çözülür. */
+export const projectDir = (idOrPath: string): string =>
+  idOrPath.includes("/") || idOrPath.includes(path.sep) || idOrPath.startsWith(".")
+    ? path.resolve(process.env.INIT_CWD ?? process.cwd(), idOrPath)
+    : path.join(PATHS.projects, idOrPath);
 
 const writeJson = (file: string, data: unknown) => writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`);
 

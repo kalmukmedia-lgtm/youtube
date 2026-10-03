@@ -1,0 +1,608 @@
+{
+  "id": "2026-10-03-zeus-vs-odin",
+  "topic": "Zeus vs Odin — kim kazanırdı?",
+  "format": "long",
+  "language": "tr",
+  "series": "gods-battle",
+  "theme": "olympus-gold",
+  "createdAt": "2026-10-03T20:00:00.000Z",
+  "workingTitle": "Zeus vs Odin: Kim Kazanırdı?",
+  "titleOptions": [
+    "Zeus vs Odin: Kim Kazanırdı?",
+    "Yıldırım mı Bilgelik mi? Zeus vs Odin",
+    "Olimpos ile Asgard Savaşsaydı Kim Kazanırdı?"
+  ],
+  "hook": "Biri gökyüzünü yönetir ve tek bir hareketle şimşek çaktırır.",
+  "summary": "Yunan mitolojisinin kralı Zeus ile İskandinav mitolojisinin Her Şeyin Babası Odin'in kökenlerini, güçlerini ve korkularını karşılaştırıp bir karşılaşmada kimin kazanacağını tartışıyoruz.",
+  "scenes": [
+    {
+      "type": "ColdOpen",
+      "headline": "YILDIRIM VS BİLGELİK",
+      "image": {
+        "id": "zeus-odin-clash",
+        "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) and Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) facing each other from opposite sides of a stormy sky, golden lightning on the left half and icy aurora on the right half, wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus",
+          "odin"
+        ]
+      },
+      "narration": "Biri gökyüzünü yönetir ve tek bir hareketle şimşek çaktırır. Diğeri, evrenin sırlarını öğrenmek için kendi gözünü feda etti. İkisi de kendi dünyasının en güçlü tanrısı. Peki Zeus ile Odin karşı karşıya gelseydi, ayakta kalan kim olurdu?",
+      "id": "s01"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "transition": "fade",
+      "image": {
+        "id": "olympus-asgard",
+        "prompt": "A split landscape: the marble palaces of Mount Olympus above golden clouds on the left, the frozen golden halls of Asgard under the aurora on the right, connected by a rainbow of light, ultra wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Bu soruya cevap vermek için önce iki tanrıyı yakından tanımamız gerekiyor. Nereden geldiklerini, kimlerle savaştıklarını ve en çok neyden korktuklarını. Çünkü bu iki tanrı, birbirine hem çok benzeyen hem de tamamen zıt iki dünyanın hükümdarı.",
+      "id": "s02"
+    },
+    {
+      "type": "ChapterTitle",
+      "chapterNumber": 1,
+      "title": "Gök Gürültüsünün Efendisi",
+      "subtitle": "Zeus",
+      "transition": "wipe",
+      "narration": "İlk durağımız, Olimpos Dağı.",
+      "id": "s03"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "image": {
+        "id": "kronos-titan",
+        "prompt": "Kronos, a colossal dark Titan king with a long black beard and a sickle, sitting on a stone throne inside a vast shadowy cave, paranoid glowing eyes, ominous red light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "KRONOS",
+      "narration": "Zeus'un hikâyesi bir kehanetle başlar. Babası Titan Kronos, kendi çocuklarından biri tarafından tahttan indirileceğini öğrenir. Bunu önlemek için doğan her çocuğunu yutar.",
+      "id": "s04"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pan-right",
+      "image": {
+        "id": "rhea-stone",
+        "prompt": "Rhea, a sorrowful Titan queen in flowing robes, secretly handing a stone wrapped in swaddling cloth to the giant Titan Kronos in a torch-lit hall, tense atmosphere. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Ama annesi Rhea, son bebeğini kurtarmaya karar verir. Kronos'a kundağa sarılmış bir taş uzatır. Kronos taşı yutar. Gerçek bebek ise Girit'te, bir mağarada gizlice büyütülür. O bebeğin adı Zeus'tur.",
+      "id": "s05"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "transition": "flash",
+      "image": {
+        "id": "titanomachy",
+        "prompt": "The Titanomachy: young Olympian gods led by Zeus battling giant Titans on a burning battlefield, mountains split apart, volcanic fire and lightning everywhere, ultra wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus"
+        ]
+      },
+      "overlayText": "TİTANLARIN SAVAŞI",
+      "narration": "Zeus büyüdüğünde bir hileyle babasına kardeşlerini kusturur. Sonra onlarla birlikte Titanlara savaş açar. Titanomakhia denen bu savaş tam on yıl sürer. Dağlar yerinden oynar, gökyüzü alev alır, toprak inler.",
+      "id": "s06"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pan-left",
+      "image": {
+        "id": "cyclops-forge",
+        "prompt": "Three giant one-eyed Cyclopes forging a blazing golden thunderbolt in an underground volcanic forge, sparks flying, molten metal glow. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Savaşın kaderini ise yeraltından gelen bir hediye değiştirir. Zeus'un serbest bıraktığı Kykloplar, ona minnetlerini bir silahla gösterirler. O silah, yıldırımdır. Bundan sonra Zeus'un adı, gök gürültüsüyle birlikte anılacaktır.",
+      "id": "s07"
+    },
+    {
+      "type": "CharacterCard",
+      "name": "ZEUS",
+      "epithet": "Olimpos'un Kralı",
+      "mythology": "Yunan Mitolojisi",
+      "image": {
+        "id": "zeus-portrait",
+        "prompt": "Portrait of Zeus, king of the Greek gods: a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown, holding a crackling golden thunderbolt, standing on Mount Olympus above the clouds, golden rim light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus"
+        ]
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 95
+        },
+        {
+          "label": "Zekâ",
+          "value": 75
+        },
+        {
+          "label": "Büyü",
+          "value": 70
+        },
+        {
+          "label": "Etki",
+          "value": 98
+        }
+      ],
+      "narration": "Zeus böylece tanrıların kralı olur. Gökyüzü, fırtınalar, yeminler ve adalet onun alanıdır. Kardeşleri arasında kura çekilir. Poseidon denizleri, Hades ise yeraltını alır. Ama Zeus'un gücü sadece yıldırımdan gelmez. O, düzenin ve verilen sözün bekçisidir. Yemin bozanı cezalandıran odur.",
+      "id": "s08"
+    },
+    {
+      "type": "Quote",
+      "quote": "Gökten altın bir zincir sarkıtın ve hepiniz ona asılın. Beni yerimden oynatamazsınız. Ama ben isteseydim, sizi yerle ve denizle birlikte yukarı çekerdim.",
+      "attribution": "Homeros, İlyada, 8. Kitap",
+      "narration": "Homeros'un İlyada'sında Zeus, gücünü öbür tanrılara böyle anlatır. Hepsi bir altın zincire asılsa bile, onu yerinden kıpırdatamazlar.",
+      "id": "s09"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pull-out",
+      "transition": "fade",
+      "image": {
+        "id": "nyx-night",
+        "prompt": "Nyx, the primordial goddess of night, an enormous ethereal woman made of starry darkness and black mist, towering over a tiny Mount Olympus, silver moonlight, awe-inspiring and mysterious. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "NYX: GECE",
+      "narration": "Ama Zeus'un bile çekindiği biri vardı. İlyada'ya göre uyku tanrısı Hypnos, Zeus'un öfkesinden kaçarken Gece'ye, yani Nyx'e sığınır. Ve Zeus, Gece'yi kızdırmamak için öfkesini yutar.",
+      "id": "s10"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "image": {
+        "id": "zeus-prophecy",
+        "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) sitting alone on his golden throne in a dark marble hall, worried expression, ghostly glowing visions of a prophecy swirling around him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus"
+        ]
+      },
+      "narration": "Zeus'u asıl korkutan ise babasını korkutanla aynı şeydi. Bir gün kendi çocuğu tarafından devrilmek. Bu yüzden, kehanete konu olan ilk eşi Metis'i yuttu. Tarih, neredeyse kendini tekrar ediyordu.",
+      "id": "s11"
+    },
+    {
+      "type": "ChapterTitle",
+      "chapterNumber": 2,
+      "title": "Her Şeyin Babası",
+      "subtitle": "Odin",
+      "transition": "zoom",
+      "narration": "Şimdi kuzeye, buzların ve fırtınaların diyarına gidiyoruz.",
+      "id": "s12"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "image": {
+        "id": "ymir-creation",
+        "prompt": "Norse creation myth: three godly brothers standing before the colossal frozen body of the primordial giant Ymir, shaping a new world from it, mountains and seas forming, misty primordial void, icy blue and fiery orange light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "İskandinav mitlerinde dünya, Ymir adlı dev bir varlığın bedeninden yaratılır. Onu alt edip dünyayı kuranlar üç kardeştir. Ve bu kardeşlerin en önde geleni, Odin'dir.",
+      "id": "s13"
+    },
+    {
+      "type": "CharacterCard",
+      "name": "ODİN",
+      "epithet": "Her Şeyin Babası",
+      "mythology": "İskandinav Mitolojisi",
+      "image": {
+        "id": "odin-portrait",
+        "prompt": "Portrait of Odin the Allfather: a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir, two black ravens on his shoulders, snowy mountains and green aurora behind him, cold blue rim light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "odin"
+        ]
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 82
+        },
+        {
+          "label": "Zekâ",
+          "value": 99
+        },
+        {
+          "label": "Büyü",
+          "value": 96
+        },
+        {
+          "label": "Etki",
+          "value": 88
+        }
+      ],
+      "narration": "Odin, Asgard'ın hükümdarıdır. Savaşın, şiirin, ölümün ve bilgeliğin tanrısı. Ama Zeus'tan farklı olarak gücünü kaslarından değil, bildiklerinden alır. Savaşta ölen kahramanların yarısını Valhalla'ya kendisi seçer.",
+      "id": "s14"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "transition": "flash",
+      "image": {
+        "id": "mimir-well",
+        "prompt": "Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) kneeling at Mimir's glowing well beneath the giant roots of the world tree Yggdrasil, offering his eye, mystical blue light rising from the water, ancient runes carved on stones. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "odin"
+        ]
+      },
+      "overlayText": "MİMİR'İN KUYUSU",
+      "narration": "Efsaneye göre Odin, dünya ağacının köklerindeki Mímir'in kuyusundan tek bir yudum içebilmek için gözlerinden birini verdi. Çünkü o kuyunun suyu, evrenin bilgeliğini taşıyordu.",
+      "id": "s15"
+    },
+    {
+      "type": "Quote",
+      "quote": "Rüzgârlı ağaçta asılı kaldığımı bilirim, tam dokuz gece, mızrakla yaralanmış, Odin'e adanmış, kendim kendime.",
+      "attribution": "Hávamál, 138. kıta",
+      "narration": "Ama bu da yetmedi. Rünlerin sırrını öğrenmek için kendini dünya ağacı Yggdrasil'e astı. Bir mızrakla yaralanmış halde, kendini kendine kurban etti.",
+      "id": "s16"
+    },
+    {
+      "type": "StatCounter",
+      "value": 9,
+      "suffix": " GECE",
+      "label": "Odin'in Yggdrasil'de asılı kaldığı süre",
+      "image": {
+        "id": "yggdrasil-storm",
+        "prompt": "The gigantic world tree Yggdrasil in a violent night storm, a lone cloaked figure bound to its trunk far in the distance, lightning, swirling clouds, cosmic scale. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Tam dokuz gece. Ne ekmek, ne su. Sonunda rünleri kavradı ve büyünün efendisi oldu.",
+      "id": "s17"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pan-left",
+      "image": {
+        "id": "odin-ravens",
+        "prompt": "Two large black ravens, Huginn and Muninn, flying over snowy Nordic mountains and a Viking village at dawn, aerial view, mist and golden first light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "HUGİNN & MUNİNN",
+      "narration": "Odin'in gözleri ve kulakları iki kuzgundur. Huginn ve Muninn, yani Düşünce ve Hafıza. Her sabah bütün dünyayı dolaşır, akşam dönüp ona gördükleri her şeyi anlatırlar. Ama ilginç bir ayrıntı var. Şiirde Odin, Düşünce'nin geri dönmemesinden korktuğunu, ama Hafıza için daha da çok endişelendiğini söyler.",
+      "id": "s18"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pull-out",
+      "image": {
+        "id": "sleipnir-gungnir",
+        "prompt": "Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) riding the eight-legged grey horse Sleipnir across the stormy sky, raising the glowing spear Gungnir, aurora behind, dynamic action shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "odin"
+        ]
+      },
+      "narration": "Elinde cüceler tarafından dövülen ve efsaneye göre hedefinden asla sapmayan mızrak Gungnir vardır. Altında ise sekiz bacaklı atı Sleipnir.",
+      "id": "s19"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "transition": "flash",
+      "image": {
+        "id": "ragnarok-fenrir",
+        "prompt": "Ragnarok: the colossal wolf Fenrir with glowing eyes breaking free from its chains, burning sky, collapsing world, a lone god with a spear standing before it, apocalyptic red and black palette. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "RAGNARÖK",
+      "narration": "Ama Odin'in de bir korkusu vardı. O, geleceği bilen bir tanrıydı ve kendi sonunu da biliyordu. Ragnarök günü, dev kurt Fenrir onu yutacaktı. Bütün bilgeliğine rağmen, bu kaderi değiştiremeyecekti.",
+      "id": "s20"
+    },
+    {
+      "type": "Timeline",
+      "title": "Bu Mitleri Nereden Biliyoruz?",
+      "focusIndex": 2,
+      "events": [
+        {
+          "date": "MÖ 8. yüzyıl",
+          "label": "Homeros, İlyada"
+        },
+        {
+          "date": "MÖ 700 civarı",
+          "label": "Hesiodos, Theogonia"
+        },
+        {
+          "date": "MS 1220 civarı",
+          "label": "Snorri, Düzyazı Edda"
+        },
+        {
+          "date": "MS 1270 civarı",
+          "label": "Codex Regius"
+        }
+      ],
+      "narration": "Bir ayrıntı daha. Zeus'u anlatan metinler yaklaşık iki bin yedi yüz yıllık. Odin'in hikâyeleri ise çok daha sonra, Orta Çağ İzlanda'sında yazıya geçirildi.",
+      "id": "s21"
+    },
+    {
+      "type": "ChapterTitle",
+      "chapterNumber": 3,
+      "title": "Karşılaşma",
+      "transition": "wipe",
+      "narration": "Ve şimdi asıl soru.",
+      "id": "s22"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pan-right",
+      "transition": "fade",
+      "image": {
+        "id": "olympus-asgard",
+        "prompt": "A split landscape: the marble palaces of Mount Olympus above golden clouds on the left, the frozen golden halls of Asgard under the aurora on the right, connected by a rainbow of light, ultra wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Şunu da söylemek gerek: Bu iki tanrı mitlerde hiç karşılaşmaz. Ama aralarında şaşırtıcı bir benzerlik var. İkisi de eski bir düzeni yıkarak tahta çıkar. Zeus Titanları, Odin ise ilk devleri devirir. İkisi de bir dünyanın yıkıntıları üzerine yeni bir dünya kurar.",
+      "overlayText": "İKİ DÜNYA, TEK KADER",
+      "id": "s23"
+    },
+    {
+      "type": "Versus",
+      "verdict": "hidden",
+      "transition": "flash",
+      "left": {
+        "name": "ZEUS",
+        "epithet": "Yıldırım",
+        "image": {
+          "id": "zeus-portrait",
+          "prompt": "Portrait of Zeus, king of the Greek gods: a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown, holding a crackling golden thunderbolt, standing on Mount Olympus above the clouds, golden rim light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+          "characters": [
+            "zeus"
+          ]
+        },
+        "stats": [
+          {
+            "label": "Güç",
+            "value": 95
+          },
+          {
+            "label": "Zekâ",
+            "value": 75
+          },
+          {
+            "label": "Büyü",
+            "value": 70
+          }
+        ]
+      },
+      "right": {
+        "name": "ODİN",
+        "epithet": "Bilgelik",
+        "image": {
+          "id": "odin-portrait",
+          "prompt": "Portrait of Odin the Allfather: a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir, two black ravens on his shoulders, snowy mountains and green aurora behind him, cold blue rim light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+          "characters": [
+            "odin"
+          ]
+        },
+        "stats": [
+          {
+            "label": "Güç",
+            "value": 82
+          },
+          {
+            "label": "Zekâ",
+            "value": 99
+          },
+          {
+            "label": "Büyü",
+            "value": 96
+          }
+        ]
+      },
+      "narration": "Yan yana koyduğumuzda tablo netleşiyor. Kaba güçte ve doğrudan yıkımda Zeus açık ara önde. Ama zekâ ve büyüde Odin'in rakibi yok. Zeus'un yıldırımı, Titanları bile alt eden bir silah. Odin'in mızrağı ise hedefinden asla sapmıyor.",
+      "id": "s24"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pan-right",
+      "image": {
+        "id": "zeus-storm",
+        "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) hurling a massive golden thunderbolt from the clouds, the sky splitting with blinding lightning, low angle heroic shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus"
+        ]
+      },
+      "narration": "Kısa bir savaşta ilk darbeyi vuran kazanır. Ve o darbe büyük ihtimalle Zeus'un yıldırımı olur.",
+      "id": "s25"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pan-left",
+      "image": {
+        "id": "odin-runes",
+        "prompt": "Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) standing calmly inside a circle of glowing runes that shield him from a storm, his ravens circling above, mystical blue light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "odin"
+        ]
+      },
+      "narration": "Ama Odin sahaya asla hazırlıksız çıkmaz. Kuzgunları rakibini önceden izler, rünleri onu korur, kehanetler ise savaşın nasıl biteceğini ona önceden fısıldar.",
+      "id": "s26"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "push-in",
+      "transition": "zoom",
+      "image": {
+        "id": "final-duel",
+        "prompt": "Final duel between Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) and Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) on a cliff above a sea of clouds, golden lightning clashing with a glowing spear, explosive light at the point of impact, epic wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus",
+          "odin"
+        ]
+      },
+      "narration": "Uzun bir savaşta ise plan yapan, bekleyen ve rakibinin zaafını bilen kazanır. O da büyük ihtimalle Odin'dir. Kısacası: yıldırım ilk raundu alır, bilgelik ise savaşı.",
+      "id": "s27"
+    },
+    {
+      "type": "CinematicImage",
+      "motion": "pull-out",
+      "image": {
+        "id": "gods-fate",
+        "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) and Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) standing side by side in silence on a mountain peak at night, looking up at a vast sky full of stars shaped like threads of fate, contemplative mood. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus",
+          "odin"
+        ]
+      },
+      "narration": "Belki de en ilginç olan şu. İki tanrı da en büyük düşmanını kaderde gördü. Zeus, kehanet gerçekleşmesin diye her şeyi yaptı. Odin ise kaderinin gerçekleşeceğini bildiği halde ona hazırlandı.",
+      "id": "s28"
+    },
+    {
+      "type": "Outro",
+      "cta": "Sence kim kazanırdı? Yorumlara yaz!",
+      "nextVideoTeaser": "Sıradaki karşılaşma: Ra vs Thor",
+      "narration": "Peki sen ne düşünüyorsun? Yıldırım mı, bilgelik mi? Cevabını yorumlara yaz. Bir sonraki karşılaşmada güneş tanrısı Ra, gök gürültüsü tanrısı Thor'a karşı. Kaçırmamak için abone olmayı unutma.",
+      "id": "s29"
+    }
+  ],
+  "description": "Zeus ve Odin karşı karşıya gelseydi kim kazanırdı? Yunan mitolojisinin gök gürültüsü tanrısı ile İskandinav mitolojisinin bilge hükümdarını; kökenleri, silahları, zaafları ve korkularıyla karşılaştırıyoruz. Kronos'un kehanetinden Mímir'in kuyusuna, Titanlar Savaşı'ndan Ragnarök'e kadar.\n\nKaynaklar: Hesiodos (Theogonia), Homeros (İlyada), Şiirsel Edda (Völuspá, Hávamál, Grímnismál), Snorri Sturluson (Düzyazı Edda).",
+  "tags": [
+    "zeus",
+    "odin",
+    "zeus vs odin",
+    "yunan mitolojisi",
+    "iskandinav mitolojisi",
+    "mitoloji",
+    "tanrılar",
+    "olimpos",
+    "asgard",
+    "ragnarök",
+    "titanlar savaşı",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#mitoloji",
+    "#zeus",
+    "#odin"
+  ],
+  "thumbnail": {
+    "text": "ZEUS vs ODİN",
+    "concept": "İki tanrı karşı karşıya: solda altın yıldırımlı Zeus, sağda buz mavisi auroralı Odin, ortada parlayan VS",
+    "image": {
+      "id": "zeus-odin-clash",
+      "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) and Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) facing each other from opposite sides of a stormy sky, golden lightning on the left half and icy aurora on the right half, wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": [
+        "zeus",
+        "odin"
+      ]
+    }
+  },
+  "characters": [
+    {
+      "id": "zeus",
+      "name": "Zeus",
+      "look": "a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown"
+    },
+    {
+      "id": "odin",
+      "name": "Odin",
+      "look": "a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir"
+    }
+  ],
+  "factChecks": [
+    {
+      "claim": "Kronos çocuklarını yuttu, Rhea yerine kundağa sarılı bir taş verdi; Zeus Girit'te gizlice büyütüldü",
+      "confidence": "high",
+      "note": "Hesiodos, Theogonia 453–491"
+    },
+    {
+      "claim": "Zeus bir hileyle Kronos'a kardeşlerini kusturdu",
+      "confidence": "high",
+      "note": "Apollodorus, Bibliotheca 1.2.1 (Metis'in verdiği iksir); Theogonia'da Gaia'nın hilesi"
+    },
+    {
+      "claim": "Titanlar Savaşı on yıl sürdü",
+      "confidence": "high",
+      "note": "Theogonia 635–636"
+    },
+    {
+      "claim": "Kykloplar Zeus'a yıldırımı verdi",
+      "confidence": "high",
+      "note": "Theogonia 139–146, 501–506"
+    },
+    {
+      "claim": "Zeus, Poseidon ve Hades dünyayı kurayla paylaştı",
+      "confidence": "high",
+      "note": "İlyada 15.187–193"
+    },
+    {
+      "claim": "Altın zincir sözü",
+      "confidence": "high",
+      "note": "İlyada 8.18–27; metin serbest Türkçe çeviridir"
+    },
+    {
+      "claim": "Zeus, Nyx'i kızdırmamak için Hypnos'a öfkesini yuttu",
+      "confidence": "high",
+      "note": "İlyada 14.256–261"
+    },
+    {
+      "claim": "Zeus kehanet yüzünden Metis'i yuttu",
+      "confidence": "high",
+      "note": "Theogonia 886–900"
+    },
+    {
+      "claim": "Odin ve kardeşleri dünyayı Ymir'in bedeninden yarattı",
+      "confidence": "high",
+      "note": "Düzyazı Edda, Gylfaginning 7–8"
+    },
+    {
+      "claim": "Odin gözünü Mímir'in kuyusuna verdi",
+      "confidence": "high",
+      "note": "Völuspá 28; Gylfaginning 15"
+    },
+    {
+      "claim": "Odin dokuz gece Yggdrasil'de asılı kaldı, yiyecek ve içecek almadı",
+      "confidence": "high",
+      "note": "Hávamál 138–139; dize serbest Türkçe çeviridir"
+    },
+    {
+      "claim": "Huginn ve Muninn her gün dünyayı dolaşır",
+      "confidence": "high",
+      "note": "Grímnismál 20; Gylfaginning 38"
+    },
+    {
+      "claim": "Gungnir cüceler tarafından yapıldı ve hedefinden sapmaz",
+      "confidence": "medium",
+      "note": "Skáldskaparmál: İvaldi'nin oğulları yaptı; 'saplandığı yerde durmaz' diye anlatılır, 'asla ıskalamaz' popüler yorumdur"
+    },
+    {
+      "claim": "Ragnarök'te Fenrir Odin'i yutar",
+      "confidence": "high",
+      "note": "Völuspá 53; Gylfaginning 51"
+    },
+    {
+      "claim": "Karşılaşma sonucu",
+      "confidence": "low",
+      "note": "Mitlerde böyle bir karşılaşma yoktur; puanlar ve sonuç kanalın yorumudur ve videoda böyle sunulur"
+    },
+    {
+      "claim": "Odin savaşta ölenlerin yarısını Valhalla'ya seçer",
+      "confidence": "high",
+      "note": "Grímnismál 14: yarısı Freyja'nın Fólkvangr'ına gider"
+    },
+    {
+      "claim": "Odin, Muninn için Huginn'den daha çok endişelenir",
+      "confidence": "high",
+      "note": "Grímnismál 20"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hesiodos, Theogonia"
+    },
+    {
+      "title": "Homeros, İlyada"
+    },
+    {
+      "title": "Apollodorus, Bibliotheca"
+    },
+    {
+      "title": "Şiirsel Edda: Völuspá, Hávamál, Grímnismál"
+    },
+    {
+      "title": "Snorri Sturluson, Düzyazı Edda (Gylfaginning, Skáldskaparmál)"
+    }
+  ]
+}

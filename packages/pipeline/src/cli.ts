@@ -8,6 +8,7 @@ import { listCharacters } from "./images/characters";
 import { pickCandidate } from "./images/generate";
 import { createProject, listProjects, loadProject, saveScript, setStage } from "./project";
 import { AzureTts, listTurkishVoices } from "./tts/azure";
+import { importSceneAudio } from "./tts/import";
 import { buildSsml } from "./tts/ssml";
 
 const log = (message: string) => console.log(message);
@@ -73,6 +74,14 @@ program
   .option("--skip-approval", "Onay beklemeden seslendir")
   .action(async (id: string, opts: { voice?: string; force?: boolean; skipApproval?: boolean }) => {
     await actions.voice(id, opts, log);
+  });
+
+program
+  .command("import-audio")
+  .description("Elle hazırlanmış sahne seslerini (audio/s01.mp3 …) videoya bağlar")
+  .argument("<project>")
+  .action(async (id: string) => {
+    await importSceneAudio(loadProject(id), log);
   });
 
 program

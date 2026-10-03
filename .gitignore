@@ -13,3 +13,8 @@ assets/music/**/*.wav
 assets/music/**/*.ogg
 voice-tests/
 assets/characters/*/candidates/
+
+# Üretilen video çıktıları (büyük dosyalar)
+videos/*/render/
+videos/*/preview/
+videos/*/thumbnail/
