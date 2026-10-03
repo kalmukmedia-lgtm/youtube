@@ -36,7 +36,7 @@ public class InstallerTests
     [Theory]
     [InlineData(@".\MSSQLSERVER2022:0", @".\MSSQLSERVER2022")]
     [InlineData(@" .\MSSQLSERVER2022 ", @".\MSSQLSERVER2022")]
-    [InlineData("104.247.167.130:1433", "104.247.167.130,1433")]
+    [InlineData("203.0.113.10:1433", "203.0.113.10,1433")]
     [InlineData("mssql.example.com", "mssql.example.com")]
     [InlineData("localhost,1433", "localhost,1433")]
     [InlineData("tcp:server.example.com", "tcp:server.example.com")]
