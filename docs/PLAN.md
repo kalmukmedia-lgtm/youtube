@@ -3,23 +3,34 @@
 > Amaç: **Fikir → Senaryo → Seslendirme → Görseller → Montaj → Thumbnail → SEO → Yükleme → Analiz**
 > zincirini, insan onayı gereken noktalar dışında otomatik çalışan bir sistemle kurmak.
 > Her uzun videodan 3–5 adet Shorts türetmek (repurpose) temel stratejidir.
+>
+> **İlgili dokümanlar:**
+> - [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) — kanal konsepti, seriler, başlık/kanca formülleri, ilk 20 video
+> - [REMOTION_ARCHITECTURE.md](REMOTION_ARCHITECTURE.md) — Remotion ile video şablonları, sahne kataloğu, temalar
 
 ---
 
-## 0. Önce Karar Verilmesi Gerekenler
+## 0. Kararlar
 
-Bu kararlar sistemin tasarımını doğrudan etkiler. Varsayılanlar parantez içinde.
+### Alınan kararlar ✅
+| Karar | Seçim |
+|-------|-------|
+| **Konsept / niş** | Kadim tarih, tanrılar & mitoloji, göksel varlıklar, evren, ütopik/distopik gelecek, ilginç bilgiler → detay: [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) |
+| **Video motoru** | **Remotion** (React ile kodla video) → detay: [REMOTION_ARCHITECTURE.md](REMOTION_ARCHITECTURE.md) |
+| **Format** | Yüzsüz (faceless), sinematik anlatım |
+| **Görsel kaynağı** | Ağırlıklı yapay zekâ görselleri (tanrılar/kozmik sahneler stokta yok) + stok video + NASA/kamu malı + Remotion animasyonları |
+| **Dil (yazılım)** | Tüm pipeline **TypeScript / Node.js** (Remotion ile tek dil) |
 
+### Bekleyen kararlar ⏳
 | # | Karar | Seçenekler | Varsayılan öneri |
 |---|-------|-----------|------------------|
-| 1 | **Niş / konu** | Tarih, bilim, finans, teknoloji, gizem, motivasyon, belgesel, liste videoları… | Arama hacmi yüksek, "evergreen" bir niş (örn. tarih/bilim anlatımı) |
-| 2 | **Dil** | Türkçe, İngilizce, ikisi birden | Türkçe ile başla, sistem çok dilli tasarlansın |
-| 3 | **Format** | Yüzsüz (faceless) / kamera karşısı / karma | Yüzsüz (tam otomasyona uygun) |
-| 4 | **Ses** | Yapay zekâ TTS / kendi sesin / ses klonu | Kaliteli TTS (ElevenLabs vb.) veya kendi sesinin klonu |
-| 5 | **Görsel kaynağı** | Stok video, yapay zekâ görsel, yapay zekâ video, ekran kaydı, animasyon | Stok video + yapay zekâ görsel karışımı |
-| 6 | **Otomasyon seviyesi** | Tam otomatik / her aşamada onay / sadece senaryo + yükleme onayı | Senaryo ve yükleme öncesi **insan onayı** |
-| 7 | **Yayın sıklığı** | Örn. haftada 2 uzun + 7–10 Shorts | Haftada 2 uzun + günde 1 Shorts |
-| 8 | **Bütçe** | Ücretsiz araçlar / aylık abonelikler | Başlangıçta düşük, sonuçlara göre artır |
+| 1 | **Video dili** | Türkçe / İngilizce / ikisi | Türkçe başla, Remotion sayesinde İngilizce versiyon sonradan kolay |
+| 2 | **Ses** | Yapay zekâ TTS / kendi sesin / ses klonu | Derin, sinematik bir TTS sesi (ElevenLabs) veya kendi sesinin klonu |
+| 3 | **Yapay zekâ görsel servisi** | Flux, Imagen, DALL·E, Midjourney (API yok) vb. | API'si olan, tutarlı karakter üretebilen bir servis |
+| 4 | **Otomasyon seviyesi** | Tam otomatik / onaylı | Senaryo ve yükleme öncesi **insan onayı** |
+| 5 | **Yayın sıklığı** | Örn. haftada 2 uzun + günde 1 Shorts | Haftada 2 uzun + günde 1 Shorts |
+| 6 | **Bütçe** | Ücretsiz ağırlıklı / aylık abonelikler | Seslendirme + görsel üretim için küçük aylık bütçe |
+| 7 | **Kanal adı** | Bkz. CONTENT_STRATEGY.md §1 | "Zamanın Ötesi" |
 
 ---
 
@@ -49,8 +60,8 @@ Bu kararlar sistemin tasarımını doğrudan etkiler. Varsayılanlar parantez i�
 └────────────┘   └────────────┘   └──────────┘         │
                                                         ▼
 ┌────────────┐   ┌────────────┐   ┌────────────┐   ┌────────────┐
-│ 8. Yükleme │◀──│ 7. SEO &   │◀──│ 6. Montaj  │◀──│ 5. Altyazı │
-│ & Planlama │   │ Thumbnail  │   │ (FFmpeg)   │   │ + Görseller│
+│ 8. Yükleme │◀──│ 7. SEO &   │◀──│ 6. Remotion│◀──│ 5. Altyazı │
+│ & Planlama │   │ Thumbnail  │   │  Render    │   │ + Görseller│
 └─────┬──────┘   └────────────┘   └────────────┘   └────────────┘
       ▼
 ┌────────────┐
@@ -90,7 +101,7 @@ Bu kararlar sistemin tasarımını doğrudan etkiler. Varsayılanlar parantez i�
 2. **Taslak (outline)** – kanca, bölümler, her bölümün amacı, merak boşlukları
 3. **Tam metin** – konuşma diliyle, kısa cümlelerle, seslendirmeye uygun
 4. **Öz-eleştiri ve revizyon** – tempo, tekrar, sıkıcı bölüm, doğruluk kontrolü
-5. **Sahne bölme** – her cümle grubuna görsel ipucu, ekran yazısı, ses efekti
+5. **Sahne bölme** – her cümle grubu için Remotion **sahne kataloğundan** bir tip seçilir (`CharacterCard`, `MapScene`, `TimelineScene`…) ve props'ları doldurulur ([sahne kataloğu](REMOTION_ARCHITECTURE.md#3-sahne-kataloğu-bileşen-kütüphanesi))
 6. **Shorts çıkarımı** – uzun senaryodan 3–5 bağımsız, kancalı kısa senaryo
 7. **Metadata** – başlık varyasyonları, açıklama, etiketler, chapter'lar
 
@@ -115,8 +126,10 @@ Bu kararlar sistemin tasarımını doğrudan etkiler. Varsayılanlar parantez i�
 **`script.json` şeması (özet):**
 ```json
 {
-  "id": "2026-10-03-roma-imparatorlugu-cokus",
+  "id": "2026-10-03-zeus-vs-odin",
   "format": "long",
+  "series": "gods-battle",
+  "theme": "olympus-gold",
   "language": "tr",
   "title_options": ["...", "...", "..."],
   "hook": "...",
@@ -126,11 +139,12 @@ Bu kararlar sistemin tasarımını doğrudan etkiler. Varsayılanlar parantez i�
       "heading": "Bölüm başlığı (chapter için)",
       "scenes": [
         {
+          "type": "CinematicImage | CharacterCard | MapScene | TimelineScene | VersusScene | ...",
           "narration": "Seslendirilecek metin",
-          "visual": {"type": "stock|ai_image|ai_video|text_card", "query": "ancient rome ruins aerial", "prompt": "..."},
-          "on_screen_text": "Kısa vurgu yazısı",
-          "sfx": "whoosh",
-          "duration_hint_sec": 6
+          "props": { "image": "zeus_portrait", "overlayText": "Kısa vurgu yazısı" },
+          "assets": [{"kind": "ai_image|stock_video|nasa|map", "prompt_or_query": "..."}],
+          "transition": "fade | flash | zoom-through | ink-bleed | glitch",
+          "sfx": "whoosh"
         }
       ]
     }
@@ -170,47 +184,50 @@ Bu kararlar sistemin tasarımını doğrudan etkiler. Varsayılanlar parantez i�
 - Telaffuz sözlüğü: özel isimler, kısaltmalar (`config/pronunciation.yaml`).
 
 ### 3.5 Altyazı & Zamanlama
-- **faster-whisper** ile kelime düzeyinde zaman damgaları → `subtitles.srt` / `.ass`
+- **whisper.cpp** (`@remotion/install-whisper-cpp`) ile kelime düzeyinde zaman damgaları → `captions.json` (+ YouTube için `.srt`)
 - Bu zamanlamalar **montajın iskeletidir**: her sahnenin süresi gerçek ses süresinden hesaplanır.
-- Shorts için kelime kelime renk vurgulu (karaoke) ASS altyazı.
+- `@remotion/captions` (`createTikTokStyleCaptions`) ile Shorts'ta kelime kelime vurgulu altyazı.
 
 ### 3.6 Görsel Varlıklar
 **Çıktı:** `visuals/` klasörü + `assets.json` (kaynak ve lisans kaydıyla)
+**Detay:** [REMOTION_ARCHITECTURE.md §7](REMOTION_ARCHITECTURE.md#7-görsel-varlık-üretimi-bu-niş-için-kritik)
 
 | Kaynak | Kullanım | Lisans |
 |--------|---------|--------|
-| Pexels / Pixabay API | Stok video ve fotoğraf (ücretsiz) | Ticari kullanım serbest, kayıt tutulmalı |
-| Yapay zekâ görsel (Flux, SD, DALL·E, Imagen) | Stokta olmayan sahneler, tarihî/kurgusal | Sağlayıcı şartlarına bağlı |
-| Yapay zekâ video (Veo, Runway, Kling) | Önemli sahneler için (pahalı) | Sağlayıcı şartlarına bağlı |
-| Metin kartı / grafik / harita | Sayılar, listeler, karşılaştırmalar | Kendi üretimimiz |
+| **Yapay zekâ görsel** (ana kaynak) | Tanrılar, mitolojik sahneler, kozmik varlıklar, gelecek şehirleri | Sağlayıcı şartlarına bağlı |
+| **Karakter kütüphanesi** | Her tanrı/varlık için sabit görünüm → videolar arası tutarlılık | Kendi üretimimiz |
+| Pexels / Pixabay API | Uzay, doğa, antik kalıntı, gökyüzü stok videoları | Ticari kullanım serbest, kayıt tutulmalı |
+| NASA / müze açık koleksiyonları | Gezegenler, galaksiler, tarihî eserler | Çoğu kamu malı (tek tek kontrol) |
+| Yapay zekâ video (image-to-video) | Videonun en önemli 2–3 "hero" sahnesi | Sağlayıcı şartlarına bağlı |
+| Remotion bileşenleri | Haritalar, zaman çizelgeleri, kartlar, 3D gezegenler, sayılar | Kendi kodumuz |
 
-- Senaryodaki `visual.query` ile arama → LLM ile en uygun sonucu seçme (opsiyonel görsel puanlama).
-- Durağan görsellere **Ken Burns** (yavaş zoom/pan) efekti.
-- Aynı görselin tekrar kullanımını engelleyen önbellek.
-- Uzun video için yatay, Shorts için dikey (veya yataydan akıllı kırpma) arama.
+- Görseller hem 16:9 hem 9:16 için uygun üretilir (veya güvenli kırpma alanıyla).
+- Parallax için arka plan kaldırma / derinlik haritası.
+- Aynı görselin tekrar kullanımını ve gereksiz yeniden üretimi engelleyen önbellek.
 
 ### 3.7 Müzik & Ses Efektleri
 - Kaynak: YouTube Ses Kitaplığı, Pixabay Music (Content ID sorunu olmayanlar)
-- Ruh haline göre etiketli müzik kütüphanesi: `assets/music/{gizemli,epik,sakin,...}`
+- Ruh haline göre etiketli müzik kütüphanesi: `assets/music/{epik-orkestral,gizemli,kozmik-ambient,synthwave,...}` — temaya göre otomatik seçim
 - **Ducking:** konuşma varken müzik −18/−20 dB'e iner
 - SFX: geçişlerde whoosh, vurgu için "pop", ekran yazılarında "click"
 
-### 3.8 Montaj / Render
-**Araç:** FFmpeg + MoviePy (Python) — ileride daha zengin animasyon için **Remotion** (React) seçeneği
+### 3.8 Montaj / Render — Remotion
+**Araç:** Remotion (React) → detay: [REMOTION_ARCHITECTURE.md](REMOTION_ARCHITECTURE.md)
 
 Adımlar:
-1. Zaman çizelgesi (`timeline.json`) oluştur: sahne → ses aralığı → görsel → efekt
-2. Klipleri kes/ölçekle/kırp, Ken Burns uygula, geçişleri ekle
-3. Ekran yazıları ve altyazıyı bindir
-4. Ses katmanları: anlatım + müzik (ducking) + SFX
-5. Render: H.264, yüksek bitrate, AAC 320 kbps
-6. Shorts için ayrı 9:16 render; ilk karede güçlü görsel + metin
+1. `script.json` + ses dosyaları + görseller → zod ile doğrulanmış `inputProps`
+2. `calculateMetadata` ses sürelerinden toplam kare sayısını hesaplar
+3. `<LongVideo>` (1920×1080) / `<ShortVideo>` (1080×1920) kompozisyonları sahne kataloğundaki bileşenleri sırayla (`TransitionSeries`) render eder
+4. Kalıcı katmanlar: altyazı, film greni, parçacıklar, filigran, Shorts ilerleme çubuğu
+5. Ses: anlatım + müzik (ducking) + SFX + atmosfer — hepsi Remotion içinde
+6. `renderMedia()` ile H.264 çıktı; önce yarım çözünürlükte hızlı önizleme, onaydan sonra final
 
-**Önizleme modu:** düşük çözünürlükte hızlı render (onay öncesi kontrol).
+**Remotion Studio** ile her şablon tarayıcıda canlı önizlenip ince ayar yapılır.
 
 ### 3.9 Thumbnail (Uzun Video)
-- Şablon tabanlı (Pillow): büyük 2–4 kelimelik yazı, yüksek kontrast, tek odak noktası
-- Arka plan: yapay zekâ görseli veya videodan en çarpıcı kare
+- **Remotion `<Thumbnail>` kompozisyonu + `renderStill()`**: videoyla aynı tema/font; büyük 2–4 kelimelik yazı, yüksek kontrast, tek odak noktası
+- Bu nişte işe yarayan kalıplar: iki tanrı karşı karşıya + "VS", dev bir varlık karşısında küçük insan, parlayan gözler, karanlık zemin + altın yazı
+- Görsel: karakter kütüphanesindeki portreler veya özel üretilmiş yapay zekâ görseli
 - Her video için **3 varyasyon** → YouTube'un "Test & Compare" özelliğiyle A/B testi
 - 1280×720, < 2 MB
 
@@ -243,69 +260,64 @@ Adımlar:
 
 | Katman | Seçim |
 |--------|-------|
-| Dil | Python 3.11+ |
-| CLI | Typer (`yt idea`, `yt script`, `yt voice`, `yt render`, `yt upload`, `yt run`) |
-| Şema doğrulama | Pydantic |
-| LLM | Anthropic Python SDK (Claude) |
-| TTS | ElevenLabs / OpenAI / Azure (soyutlanmış arayüz, değiştirilebilir) |
-| Altyazı | faster-whisper |
-| Görsel | Pexels/Pixabay API, görsel üretim API'si |
-| Montaj | FFmpeg, MoviePy |
-| Thumbnail | Pillow |
-| YouTube | google-api-python-client, google-auth-oauthlib |
+| Dil / çalışma ortamı | **TypeScript**, Node.js 20+ |
+| Paket yöneticisi | pnpm (workspace / monorepo) |
+| CLI | `yt` komutu (commander veya citty): `yt idea`, `yt script`, `yt voice`, `yt assets`, `yt render`, `yt upload`, `yt run` |
+| Şema doğrulama | **zod** (hem pipeline hem Remotion props şeması — tek kaynak) |
+| LLM | Anthropic TypeScript SDK (Claude) |
+| TTS | ElevenLabs / OpenAI / Azure — ortak arayüz, değiştirilebilir sağlayıcı |
+| Altyazı / hizalama | whisper.cpp (`@remotion/install-whisper-cpp`), `@remotion/captions` |
+| Görsel | Yapay zekâ görsel API'si, Pexels/Pixabay API, NASA Images API |
+| **Video motoru** | **Remotion** + `@remotion/transitions`, `@remotion/three`, `@remotion/noise`, `@remotion/motion-blur`, `@remotion/light-leaks`, `@remotion/lottie`, `@remotion/google-fonts`, `@remotion/media-utils` |
+| Render | `@remotion/renderer` (yerel), ileride `@remotion/lambda` (bulut) |
+| Thumbnail | Remotion `renderStill` |
+| YouTube | `googleapis` (YouTube Data API v3 + Analytics API), OAuth 2.0 |
 | Yapılandırma | YAML + `.env` (API anahtarları, asla repoya girmez) |
-| Zamanlama | cron / GitHub Actions (render için yerel makine veya GPU sunucu) |
-| Test | pytest (şema, zamanlama hesapları, metadata üretimi) |
+| Zamanlama | cron / GitHub Actions (render yerel makine veya sunucuda) |
+| Test | vitest (şemalar, zamanlama hesapları, metadata) |
 
----
-
-## 5. Klasör Yapısı
+## 5. Klasör Yapısı (pnpm monorepo)
 
 ```
 youtube/
-├── docs/PLAN.md                 # bu doküman
+├── docs/
+│   ├── PLAN.md                      # bu doküman
+│   ├── CONTENT_STRATEGY.md          # konsept, seriler, fikirler
+│   └── REMOTION_ARCHITECTURE.md     # video mimarisi
 ├── config/
-│   ├── channel.yaml             # niş, persona, ton, hedef kitle, dil
-│   ├── style_guide.md           # senaryo yazım kuralları
-│   ├── pronunciation.yaml       # TTS telaffuz sözlüğü
-│   └── render.yaml              # çözünürlük, font, renkler, altyazı stili
-├── prompts/
-│   ├── research.md
-│   ├── outline_long.md
-│   ├── script_long.md
-│   ├── script_short.md
-│   ├── critique.md
-│   ├── shorts_extract.md
-│   └── metadata.md
-├── src/ytpipe/
-│   ├── cli.py
-│   ├── models.py                # Pydantic şemaları (Script, Scene, Timeline…)
-│   ├── ideas/                   # trend & rakip analizi
-│   ├── script/                  # LLM senaryo zinciri
-│   ├── voice/                   # TTS sağlayıcıları (ortak arayüz)
-│   ├── subtitles/               # whisper hizalama, SRT/ASS
-│   ├── visuals/                 # stok arama, YZ görsel, önbellek
-│   ├── audio/                   # müzik, ducking, normalizasyon
-│   ├── render/                  # timeline → video (long & shorts)
-│   ├── thumbnail/
-│   ├── seo/
-│   ├── upload/                  # YouTube API
-│   └── analytics/
+│   ├── channel.yaml                 # kanal adı, persona, ton, hedef kitle, dil
+│   ├── style_guide.md               # senaryo yazım kuralları
+│   ├── series.yaml                  # seriler → tema, format, süre, sahne tercihleri
+│   └── pronunciation.yaml           # TTS telaffuz sözlüğü (Tengri, Ereşkigal…)
+├── prompts/                         # LLM prompt şablonları
+│   ├── research.md  outline_long.md  script_long.md  script_short.md
+│   ├── critique.md  scene_planner.md  shorts_extract.md  metadata.md
+├── packages/
+│   ├── core/                        # zod şemaları (Script, Scene, Theme…), ortak tipler
+│   ├── pipeline/                    # CLI + aşamalar
+│   │   └── src/{ideas,script,voice,captions,assets,render,seo,upload,analytics}/
+│   └── video/                       # Remotion projesi
+│       └── src/
+│           ├── Root.tsx             # LongVideo, ShortVideo, Thumbnail kompozisyonları
+│           ├── compositions/        # LongVideo.tsx, ShortVideo.tsx, Thumbnail.tsx
+│           ├── scenes/              # CharacterCard, MapScene, TimelineScene, VersusScene…
+│           ├── overlays/            # Captions, FilmGrain, Particles, ProgressBar…
+│           ├── transitions/         # FlashCut, ZoomThrough, InkBleed, Glitch, Portal
+│           ├── themes/              # olympus-gold, norse-frost, cosmic-void…
+│           └── three/               # Planet3D, StarField
 ├── assets/
-│   ├── fonts/  music/  sfx/  templates/
-├── projects/                    # (gitignore) her video için çalışma klasörü
-│   └── 2026-10-03-ornek-konu/
+│   ├── characters/<id>/             # tanrı/varlık kütüphanesi: bible.md + görseller
+│   ├── fonts/  music/<ruh-hali>/  sfx/  textures/  maps/  logo/
+├── projects/                        # (gitignore) her video için çalışma klasörü
+│   └── 2026-10-03-zeus-vs-odin/
 │       ├── script.json  script.md  status.json
-│       ├── audio/  visuals/  subtitles/
-│       ├── render/long.mp4  render/short_01.mp4 ...
+│       ├── audio/  captions/  visuals/
+│       ├── render/long.mp4  render/short_01.mp4 …
 │       ├── thumbnail/  metadata.json
-├── tests/
 ├── .env.example
-├── pyproject.toml
+├── package.json  pnpm-workspace.yaml
 └── README.md
 ```
-
----
 
 ## 6. Yol Haritası (Aşamalı Geliştirme)
 
@@ -313,19 +325,20 @@ Her faz sonunda **çalışan bir çıktı** olur; bir sonraki faza onunla geçil
 
 | Faz | Kapsam | Teslimat | Tahmini süre |
 |-----|--------|----------|--------------|
-| **0. Hazırlık** | Kanal kurulumu, Google Cloud projesi + YouTube API, API anahtarları, niş & persona kararı | `channel.yaml`, `.env` | 1–2 gün |
-| **1. Senaryo MVP** | Proje iskeleti, Pydantic şemaları, senaryo zinciri (uzun + Shorts), Markdown önizleme | `yt script "konu"` → `script.json` + `script.md` | 2–3 gün |
-| **2. Ses + Altyazı** | TTS entegrasyonu, normalizasyon, whisper hizalama | `narration.wav` + `.srt/.ass` | 2 gün |
-| **3. Shorts Render** | Stok görsel arama, 9:16 montaj, karaoke altyazı, müzik | İlk otomatik Shorts videosu | 3–4 gün |
-| **4. Uzun Video Render** | 16:9 montaj, Ken Burns, geçişler, ekran yazıları, chapter'lar | İlk otomatik uzun video | 3–5 gün |
-| **5. Thumbnail + SEO** | Thumbnail şablonları, başlık/açıklama/etiket üretimi | `thumbnail_*.png`, `metadata.json` | 2 gün |
-| **6. Yükleme** | OAuth, zamanlanmış yükleme, oynatma listesi, API audit başvurusu | `yt upload` | 1–2 gün |
-| **7. Tam Otomasyon** | `yt run` tek komut, haftalık takvim, cron, bildirimler | Haftalık içerik kuyruğu | 2–3 gün |
-| **8. Analiz Döngüsü** | Analytics API, haftalık rapor, stil rehberine geri besleme | Haftalık performans raporu | 2–3 gün |
+| **0. Hazırlık** | Kanal adı & kurulumu, Google Cloud projesi + YouTube API (audit başvurusu dahil), API anahtarları | `channel.yaml`, `.env` | 1–2 gün |
+| **1. İskelet + Senaryo** | pnpm monorepo, zod şemaları, senaryo zinciri (uzun + Shorts), sahne planlayıcı, Markdown önizleme | `yt script "Zeus vs Odin"` → `script.json` + `script.md` | 2–3 gün |
+| **2. Remotion Temeli** | Remotion projesi, 2 tema (`olympus-gold`, `cosmic-void`), temel sahneler (`ColdOpen`, `CinematicImage`, `ChapterTitle`), overlay'ler, geçişler | Studio'da örnek veriyle çalışan video | 3–4 gün |
+| **3. Ses + Altyazı** | TTS entegrasyonu, telaffuz sözlüğü, whisper.cpp hizalama, TikTok tarzı altyazı, müzik ducking | Gerçek sesle senkron video | 2–3 gün |
+| **4. Görsel Üretim** | Yapay zekâ görsel entegrasyonu, karakter kütüphanesi, stok/NASA arama, önbellek | Senaryodan otomatik görsel seti | 3–4 gün |
+| **5. İlk Shorts** 🎯 | `ShortVideo` kompozisyonu, `StatCounter`, `ScaleComparison`, ilerleme çubuğu, uçtan uca `yt run --short` | **İlk otomatik Shorts yayında** | 2–3 gün |
+| **6. Gelişmiş Sahneler** | `CharacterCard`, `VersusScene`, `MapScene`, `TimelineScene`, `CountdownItem`, `TierList`, `Planet3D`, `StarField`, kalan temalar | Tüm seriler için şablonlar | 5–7 gün |
+| **7. İlk Uzun Video** 🎯 | `LongVideo` kompozisyonu, chapter'lar, CTA, bitiş ekranı | **İlk otomatik uzun video** | 2–3 gün |
+| **8. Thumbnail + SEO + Yükleme** | `Thumbnail` kompozisyonu (3 varyasyon), metadata üretimi, OAuth, zamanlanmış yükleme, oynatma listeleri | `yt upload` | 3 gün |
+| **9. Otomasyon + Analiz** | Haftalık içerik kuyruğu, cron, Analytics API raporu, stil rehberine geri besleme | Haftalık performans raporu | 3–4 gün |
+| **10. Çok Dil** (opsiyonel) | İngilizce senaryo/ses/altyazı, aynı görsel kurgu | İngilizce versiyonlar | 2–3 gün |
 
-> İlk hedef: **Faz 1–3** → 1–2 hafta içinde ilk Shorts'u yayınlamak (en hızlı geri bildirim Shorts'tan gelir).
-
----
+> İlk hedef: **Faz 1–5** → yaklaşık 2–3 hafta içinde ilk Shorts'un yayınlanması
+> (Shorts en hızlı geri bildirimi verir; uzun video şablonları bu sürede olgunlaşır).
 
 ## 7. Haftalık Üretim Akışı (Sistem Oturduktan Sonra)
 
@@ -364,9 +377,10 @@ Her faz sonunda **çalışan bir çıktı** olur; bir sonraki faza onunla geçil
 |-------|------------------|-----------------|
 | Senaryo (LLM) | — | Claude API (kullanım başına; video başı genelde düşük) |
 | Seslendirme | Yerel TTS (Piper/XTTS), kendi sesin | ElevenLabs / OpenAI / Azure |
-| Görsel | Pexels, Pixabay | Yapay zekâ görsel/video API'leri |
+| Görsel | Pexels, Pixabay, NASA | Yapay zekâ görsel/video API'leri (bu nişte ana kalem) |
 | Müzik | YouTube Ses Kitaplığı, Pixabay | Epidemic Sound, Artlist |
-| Render | Kendi bilgisayarın | Bulut sunucu / GPU |
+| Render (Remotion) | Kendi bilgisayarın | `@remotion/lambda` (AWS kullanım başı) |
+| Remotion lisansı | Bireyler / küçük ekipler ücretsiz | Belirli büyüklükteki şirketler için şirket lisansı (güncel şartları kontrol et) |
 | Yükleme / Analiz | YouTube API (ücretsiz) | — |
 
 > Kesin fiyatlar sağlayıcılara göre değiştiği için Faz 0'da seçilen araçlara göre bütçe tablosu çıkarılacak.
@@ -397,6 +411,7 @@ Her faz sonunda **çalışan bir çıktı** olur; bir sonraki faza onunla geçil
 
 ## 11. Sıradaki Adımlar
 
-1. Bölüm 0'daki kararları netleştir (özellikle **niş, dil, ses, bütçe**).
-2. Faz 0: YouTube kanalı + Google Cloud projesi + gerekli API anahtarları.
-3. Faz 1'e başla: proje iskeleti + senaryo üretim zinciri → ilk 3 örnek senaryo üretip birlikte değerlendir.
+1. Bölüm 0'daki **bekleyen kararları** netleştir (özellikle video dili, ses, görsel servisi, bütçe).
+2. Faz 0: Kanal + Google Cloud projesi + gerekli API anahtarları.
+3. Faz 1–2'ye başla: monorepo iskeleti + senaryo zinciri + Remotion temeli
+   → "Zeus vs Odin" için örnek senaryo ve Studio'da ilk sahneler.
