@@ -93,6 +93,7 @@ GitHub'da depo → *Settings* → *Secrets and variables* → *Actions* → **Ne
 
 | Belirti | Çözüm |
 |---|---|
+| **HTTP 500.30** veya "Panel başlatılamadı" sayfası | Panel, başlatılamadığında sebebini ve çözümünü gösteren bir sayfa açar. En sık sebep `App_Data` klasörüne yazma izninin olmamasıdır → *Hosting Settings* → "Additional write/modify permissions" seçeneğini aç. Ayrıntı ayrıca `App_Data/metaficta-startup-error.log` dosyasına yazılır |
 | **HTTP 500.19** | Sunucuda ASP.NET Core Module yok → hosting firmasından "ASP.NET Core Hosting Bundle" iste |
 | **HTTP 500.30 / 500.32** | Uygulama havuzu 32-bit olabilir → Plesk'te *Dedicated IIS Application Pool* ayarlarında 32-bit'i kapat veya `win-x86` paketini kullan |
 | Uygulama açılmıyor, sebep belli değil | `web.config` içinde `stdoutLogEnabled="true"` yap, kökte `logs` klasörü oluştur, siteyi aç ve `logs` içindeki dosyaya bak |
