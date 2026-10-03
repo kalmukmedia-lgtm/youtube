@@ -4,3 +4,4 @@ export * from "./timeline";
 export * from "./preview";
 export * from "./samples";
 export * from "./slug";
+export * from "./captions";

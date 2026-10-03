@@ -77,3 +77,25 @@ describe("helpers", () => {
     expect(md).toContain("## Bölümler (YouTube)");
   });
 });
+
+describe("captions", () => {
+  it("uses TTS word timings when present", async () => {
+    const { captionWords } = await import("../src");
+    const words = [{ text: "Merhaba", start: 0.1, end: 0.5 }];
+    expect(captionWords("Merhaba", { src: "a.mp3", durationSec: 1, words })).toBe(words);
+  });
+
+  it("estimates timings across the audio duration otherwise", async () => {
+    const { captionWords } = await import("../src");
+    const words = captionWords("bir iki üç dört", { src: "a.mp3", durationSec: 4 });
+    expect(words[0].start).toBe(0);
+    expect(words.at(-1)?.end).toBeCloseTo(4);
+  });
+
+  it("starts a new chunk after each sentence", async () => {
+    const { chunkWords } = await import("../src");
+    const w = (text: string) => ({ text, start: 0, end: 0 });
+    const chunks = chunkWords(["Dokuz", "gece.", "Ne", "yemek,", "ne", "su."].map(w), 3);
+    expect(chunks.map((c) => c.map((x) => x.text).join(" "))).toEqual(["Dokuz gece.", "Ne yemek, ne", "su."]);
+  });
+});

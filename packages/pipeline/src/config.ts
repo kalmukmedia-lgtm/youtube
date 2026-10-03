@@ -13,6 +13,7 @@ export const PATHS = {
   prompts: path.join(REPO_ROOT, "prompts"),
   projects: path.join(REPO_ROOT, "projects"),
   videoEntry: path.join(REPO_ROOT, "packages/video/src/index.ts"),
+  music: path.join(REPO_ROOT, "assets/music"),
 };
 
 loadEnv({ path: path.join(REPO_ROOT, ".env"), quiet: true });
@@ -42,3 +43,26 @@ export type ChannelConfig = z.infer<typeof ChannelSchema>;
 export const loadChannel = (): ChannelConfig => ChannelSchema.parse(YAML.parse(readFileSync(path.join(PATHS.config, "channel.yaml"), "utf8")));
 
 export const loadStyleGuide = (): string => readFileSync(path.join(PATHS.config, "style_guide.md"), "utf8");
+
+const VoiceSchema = z.object({
+  provider: z.literal("azure"),
+  voice: z.string(),
+  rate: z.string(),
+  pitch: z.string(),
+  sentencePauseMs: z.number(),
+  musicVolume: z.number(),
+});
+export type VoiceConfig = z.infer<typeof VoiceSchema>;
+
+export const loadVoiceConfig = (): VoiceConfig => VoiceSchema.parse(YAML.parse(readFileSync(path.join(PATHS.config, "voice.yaml"), "utf8")));
+
+/** Telaffuz sözlüğü: yazım → okunuş. */
+export const loadPronunciations = (): Record<string, string> =>
+  z.record(z.string(), z.string()).parse(YAML.parse(readFileSync(path.join(PATHS.config, "pronunciation.yaml"), "utf8")) ?? {});
+
+export const azureCredentials = (): { key: string; region: string } => {
+  const key = process.env.AZURE_SPEECH_KEY;
+  const region = process.env.AZURE_SPEECH_REGION;
+  if (!key || !region) throw new Error("AZURE_SPEECH_KEY ve AZURE_SPEECH_REGION .env dosyasında tanımlı olmalı (bkz. docs/VOICE_SETUP.md).");
+  return { key, region };
+};

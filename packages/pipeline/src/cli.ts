@@ -1,9 +1,15 @@
 import { SAMPLE_LONG_SCRIPT, SAMPLE_SHORT_SCRIPT, SERIES_IDS, type SeriesId, THEME_IDS, type ThemeId } from "@metaficta/core";
+import { mkdirSync, writeFileSync } from "node:fs";
+import path from "node:path";
 import { Command, InvalidArgumentError, Option } from "commander";
+import { azureCredentials, loadPronunciations, loadVoiceConfig, REPO_ROOT } from "./config";
 import { LlmClient } from "./llm";
-import { createProject, listProjects, loadProject, saveScript, setStage } from "./project";
+import { createProject, listProjects, loadAudio, loadProject, saveScript, setStage } from "./project";
 import { renderProject, renderSceneStills } from "./render";
 import { DEFAULT_THEME, generateScript, generateShorts, lengthWarning } from "./script-gen";
+import { AzureTts, listTurkishVoices } from "./tts/azure";
+import { buildSsml } from "./tts/ssml";
+import { voiceProject } from "./tts/voice";
 
 const log = (message: string) => console.log(message);
 
@@ -91,6 +97,58 @@ program
   });
 
 program
+  .command("voice")
+  .description("Onaylı senaryoyu Azure ile seslendirir (sahne başına MP3 + kelime zamanları)")
+  .argument("<project>")
+  .option("-v, --voice <voice>", "Ses (varsayılan: config/voice.yaml)")
+  .option("--force", "Değişmemiş sahneleri de yeniden seslendir")
+  .option("--skip-approval", "Onay beklemeden seslendir")
+  .action(async (id: string, opts: { voice?: string; force?: boolean; skipApproval?: boolean }) => {
+    const project = loadProject(id);
+    if (project.status.stage === "script" && !opts.skipApproval) {
+      throw new Error("Senaryo henüz onaylanmadı. Önce: pnpm yt approve <proje> (veya --skip-approval)");
+    }
+    const { key, region } = azureCredentials();
+    const voice = { ...loadVoiceConfig(), ...(opts.voice ? { voice: opts.voice } : {}) };
+    log(`🎙  Seslendiriliyor: ${voice.voice} (${project.script.scenes.length} sahne)`);
+    const summary = await voiceProject(project, new AzureTts(key, region), { voice, pronunciations: loadPronunciations(), force: opts.force, log });
+    if (project.status.stage === "script" || project.status.stage === "approved") setStage(project.dir, "voiced");
+    log(`✅ ${summary.synthesized} sahne seslendirildi, ${summary.skipped} sahne değişmediği için atlandı.`);
+    log(`   Toplam süre: ${Math.floor(summary.totalSeconds / 60)} dk ${Math.round(summary.totalSeconds % 60)} sn · bu çalıştırmada ${summary.characters} karakter kullanıldı`);
+  });
+
+program
+  .command("voices")
+  .description("Türkçe konuşabilen Azure seslerini listeler")
+  .action(async () => {
+    const { key, region } = azureCredentials();
+    const voices = await listTurkishVoices(key, region);
+    for (const v of voices) {
+      const kind = v.Locale === "tr-TR" ? "Türkçe" : "çok dilli";
+      log(`${v.ShortName.padEnd(44)} ${v.Gender.padEnd(7)} ${kind}${v.StyleList?.length ? ` · stiller: ${v.StyleList.join(", ")}` : ""}`);
+    }
+  });
+
+program
+  .command("voice-test")
+  .description("Bir metni seçilen sesle seslendirip voice-tests/ klasörüne kaydeder")
+  .argument("<text>")
+  .option("-v, --voice <voice>", "Ses (varsayılan: config/voice.yaml)")
+  .option("-r, --rate <rate>", 'Hız, ör. "-6%"')
+  .option("-p, --pitch <pitch>", 'Ton, ör. "-3%"')
+  .action(async (text: string, opts: { voice?: string; rate?: string; pitch?: string }) => {
+    const { key, region } = azureCredentials();
+    const config = loadVoiceConfig();
+    const voice = { ...config, voice: opts.voice ?? config.voice, rate: opts.rate ?? config.rate, pitch: opts.pitch ?? config.pitch };
+    const result = await new AzureTts(key, region).synthesize(buildSsml(text, voice, loadPronunciations()));
+    const dir = path.join(REPO_ROOT, "voice-tests");
+    mkdirSync(dir, { recursive: true });
+    const file = path.join(dir, `${voice.voice}_${voice.rate}_${voice.pitch}.mp3`.replace(/%/g, "pct"));
+    writeFileSync(file, result.audio);
+    log(`✅ ${file} (${result.durationSec.toFixed(1)} sn)`);
+  });
+
+program
   .command("list")
   .description("Projeleri ve durumlarını listeler")
   .action(() => {
@@ -124,6 +182,7 @@ program
   .action(async (id: string, opts: { draft?: boolean; thumbnails: boolean }) => {
     const project = loadProject(id);
     if (!opts.draft && project.status.stage === "script") log("⚠️  Senaryo henüz onaylanmadı (pnpm yt approve). Final render yine de yapılıyor.");
+    if (Object.keys(loadAudio(project.dir)).length === 0) log("ℹ️  Ses yok: video sessiz render edilecek (seslendirme için: pnpm yt voice <proje>).");
     const outputs = await renderProject(project, { draft: opts.draft, thumbnails: opts.thumbnails && project.script.format === "long", log });
     if (!opts.draft) setStage(project.dir, "rendered");
     for (const output of outputs) log(`✅ ${output}`);

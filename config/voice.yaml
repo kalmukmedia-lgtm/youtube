@@ -1,0 +1,17 @@
+# Seslendirme ayarları (Azure Neural TTS)
+provider: azure
+
+# Türkçe sesler: tr-TR-AhmetNeural (erkek), tr-TR-EmelNeural (kadın).
+# Türkçe konuşabilen çok dilli sesleri görmek için: pnpm yt voices
+# Sesleri denemek için: pnpm yt voice-test "Efsanenin bittiği yerde gerçek başlar." --voice tr-TR-EmelNeural
+voice: tr-TR-AhmetNeural
+
+# Belgesel anlatımı için biraz yavaş ve tok. Değerler: "-10%" … "+10%" gibi.
+rate: "-6%"
+pitch: "-3%"
+
+# Cümleler arası duraklama (milisaniye). Dramatik anlatım için 300-450 arası iyi çalışır.
+sentencePauseMs: 350
+
+# Fon müziği seviyesi (0-1). Konuşma sırasında otomatik olarak yaklaşık yarıya iner.
+musicVolume: 0.22

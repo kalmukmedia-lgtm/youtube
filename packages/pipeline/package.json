@@ -14,6 +14,7 @@
     "@remotion/renderer": "4.0.532",
     "commander": "^14.0.0",
     "dotenv": "^17.2.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.52.0",
     "yaml": "^2.8.0",
     "zod": "4.5.4"
   },

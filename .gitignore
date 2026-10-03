@@ -7,3 +7,8 @@ client_secret*.json
 out/
 *.log
 .DS_Store
+assets/music/**/*.mp3
+assets/music/**/*.m4a
+assets/music/**/*.wav
+assets/music/**/*.ogg
+voice-tests/

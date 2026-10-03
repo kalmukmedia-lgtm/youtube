@@ -26,11 +26,11 @@
 | **Ses** | Türkçe yapay zekâ sesi (TTS) |
 | **Bütçe** | Düşük: ücretsiz kotası olan servisler öncelikli |
 | **Başlangıç** | Kanal sıfırdan başlıyor |
+| **TTS servisi** | **Azure Neural TTS** (Free F0) — kurulum: [VOICE_SETUP.md](VOICE_SETUP.md). Kod sağlayıcıdan bağımsız; ileride ElevenLabs eklenebilir. |
 
 ### Bekleyen kararlar ⏳
 | # | Karar | Seçenekler | Öneri |
 |---|-------|-----------|-------|
-| 1 | **TTS servisi** | Azure Neural TTS (`tr-TR-AhmetNeural`, `tr-TR-EmelNeural`), Google Cloud TTS, ElevenLabs | Düşük bütçe için **Azure**: aylık ücretsiz kotası bu yayın temposuna büyük ihtimalle yeter (güncel kotayı kontrol et). Kanal büyüyünce ElevenLabs'e geçilebilir; kod sağlayıcıdan bağımsız yazılacak. |
 | 2 | **Yapay zekâ görsel servisi** | Flux, Imagen, DALL·E vb. | Görsel başına en ucuz, API'si olan ve tutarlı karakter üretebilen servis (Faz 4'te karşılaştırılacak) |
 | 3 | **Yayın sıklığı** | Örn. haftada 2 uzun + günde 1 Shorts | Başlangıçta haftada 1-2 uzun + 3-5 Shorts; sistem oturdukça artır |
 
@@ -41,8 +41,8 @@
 | 0. Hazırlık | ⏳ Kanal sahibi tarafından | [CHANNEL_SETUP.md](CHANNEL_SETUP.md) |
 | 1. İskelet + Senaryo | ✅ Tamamlandı | `pnpm yt new` — araştırma, taslak ve editör revizyonu; şema doğrulama + otomatik onarım |
 | 2. Remotion Temeli | ✅ Tamamlandı | 7 tema, 10 sahne tipi, logo animasyonu, geçişler, efektler, 3 thumbnail varyasyonu (Faz 6 ve 8'in bir kısmı da yapıldı) |
-| 3. Ses + Altyazı | ⏭ Sıradaki | TTS sağlayıcısı + whisper.cpp kelime zamanlaması |
-| 4. Görsel Üretim | — | |
+| 3. Ses + Altyazı | ✅ Tamamlandı | `pnpm yt voice` — Azure TTS, telaffuz sözlüğü, değişmeyen sahneler için önbellek; Azure'un kelime zamanlarıyla senkron altyazı (whisper gerekmedi); fon müziği + ducking |
+| 4. Görsel Üretim | ⏭ Sıradaki | |
 | 5–10 | — | |
 
 > Senaryo maliyeti: bir uzun video için araştırma + taslak + revizyon birkaç Claude çağrısıdır; `pnpm yt new` her çalışmada
@@ -200,7 +200,7 @@
 - Telaffuz sözlüğü: özel isimler, kısaltmalar (`config/pronunciation.yaml`).
 
 ### 3.5 Altyazı & Zamanlama
-- **whisper.cpp** (`@remotion/install-whisper-cpp`) ile kelime düzeyinde zaman damgaları → `captions.json` (+ YouTube için `.srt`)
+- Azure TTS'in kelime sınırı olaylarıyla kelime düzeyinde zaman damgaları → `audio/manifest.json` (ayrı bir konuşma tanıma adımı gerekmez)
 - Bu zamanlamalar **montajın iskeletidir**: her sahnenin süresi gerçek ses süresinden hesaplanır.
 - `@remotion/captions` (`createTikTokStyleCaptions`) ile Shorts'ta kelime kelime vurgulu altyazı.
 
@@ -281,8 +281,8 @@ Adımlar:
 | CLI | `yt` komutu (commander veya citty): `yt idea`, `yt script`, `yt voice`, `yt assets`, `yt render`, `yt upload`, `yt run` |
 | Şema doğrulama | **zod** (hem pipeline hem Remotion props şeması — tek kaynak) |
 | LLM | Anthropic TypeScript SDK (Claude) |
-| TTS | ElevenLabs / OpenAI / Azure — ortak arayüz, değiştirilebilir sağlayıcı |
-| Altyazı / hizalama | whisper.cpp (`@remotion/install-whisper-cpp`), `@remotion/captions` |
+| TTS | Azure Neural TTS (ortak `TtsProvider` arayüzü; ElevenLabs vb. eklenebilir) |
+| Altyazı / hizalama | Azure TTS kelime sınırı olayları (`microsoft-cognitiveservices-speech-sdk`) |
 | Görsel | Yapay zekâ görsel API'si, Pexels/Pixabay API, NASA Images API |
 | **Video motoru** | **Remotion** + `@remotion/transitions`, `@remotion/three`, `@remotion/noise`, `@remotion/motion-blur`, `@remotion/light-leaks`, `@remotion/lottie`, `@remotion/google-fonts`, `@remotion/media-utils` |
 | Render | `@remotion/renderer` (yerel), ileride `@remotion/lambda` (bulut) |
@@ -344,7 +344,7 @@ Her faz sonunda **çalışan bir çıktı** olur; bir sonraki faza onunla geçil
 | **0. Hazırlık** | Metaficta kanal ayarları & görsel kimlik, Google Cloud projesi + YouTube API + OAuth (audit başvurusu dahil), API anahtarları — bkz. [CHANNEL_SETUP.md](CHANNEL_SETUP.md) | `channel.yaml`, `.env`, OAuth token | 1–2 gün |
 | **1. İskelet + Senaryo** | pnpm monorepo, zod şemaları, senaryo zinciri (uzun + Shorts), sahne planlayıcı, Markdown önizleme | `yt script "Zeus vs Odin"` → `script.json` + `script.md` | 2–3 gün |
 | **2. Remotion Temeli** | Remotion projesi, 2 tema (`olympus-gold`, `cosmic-void`), temel sahneler (`ColdOpen`, `CinematicImage`, `ChapterTitle`), overlay'ler, geçişler | Studio'da örnek veriyle çalışan video | 3–4 gün |
-| **3. Ses + Altyazı** | TTS entegrasyonu, telaffuz sözlüğü, whisper.cpp hizalama, TikTok tarzı altyazı, müzik ducking | Gerçek sesle senkron video | 2–3 gün |
+| **3. Ses + Altyazı** | TTS entegrasyonu, telaffuz sözlüğü, kelime zamanı hizalama, TikTok tarzı altyazı, müzik ducking | Gerçek sesle senkron video | 2–3 gün |
 | **4. Görsel Üretim** | Yapay zekâ görsel entegrasyonu, karakter kütüphanesi, stok/NASA arama, önbellek | Senaryodan otomatik görsel seti | 3–4 gün |
 | **5. İlk Shorts** 🎯 | `ShortVideo` kompozisyonu, `StatCounter`, `ScaleComparison`, ilerleme çubuğu, uçtan uca `yt run --short` | **İlk otomatik Shorts yayında** | 2–3 gün |
 | **6. Gelişmiş Sahneler** | `CharacterCard`, `VersusScene`, `MapScene`, `TimelineScene`, `CountdownItem`, `TierList`, `Planet3D`, `StarField`, kalan temalar | Tüm seriler için şablonlar | 5–7 gün |

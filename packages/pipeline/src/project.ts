@@ -1,8 +1,8 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { renderScriptMarkdown, type RenderInput, type Script, ScriptSchema, SceneAudioSchema } from "@metaficta/core";
+import { getTheme, renderScriptMarkdown, type RenderInput, type Script, ScriptSchema, SceneAudioSchema } from "@metaficta/core";
 import { z } from "zod";
-import { PATHS } from "./config";
+import { loadVoiceConfig, PATHS } from "./config";
 
 export const STAGES = ["script", "approved", "voiced", "rendered", "uploaded"] as const;
 const StatusSchema = z.object({
@@ -82,8 +82,34 @@ export const loadAudio = (dir: string): RenderInput["audio"] => {
   return z.record(z.string(), SceneAudioSchema).parse(JSON.parse(readFileSync(manifest, "utf8")));
 };
 
-export const renderInputFor = (project: Project): RenderInput => ({
-  script: project.script,
-  assets: loadAssets(project.dir),
-  audio: loadAudio(project.dir),
-});
+const MUSIC_EXTENSIONS = [".mp3", ".m4a", ".wav", ".ogg"];
+
+/**
+ * Fon müziği: proje klasöründe `music.*` varsa o; yoksa temanın ruh haline uygun kütüphane
+ * klasöründen (assets/music/<mood>/) proje id'sine göre sabit bir parça seçilip projeye kopyalanır.
+ */
+export const resolveMusic = (project: Project): string | undefined => {
+  const own = MUSIC_EXTENSIONS.map((ext) => `music${ext}`).find((file) => existsSync(path.join(project.dir, file)));
+  if (own) return own;
+  const library = path.join(PATHS.music, getTheme(project.script.theme).musicMood);
+  if (!existsSync(library)) return undefined;
+  const tracks = readdirSync(library)
+    .filter((file) => MUSIC_EXTENSIONS.includes(path.extname(file).toLowerCase()))
+    .sort();
+  if (tracks.length === 0) return undefined;
+  const hash = [...project.script.id].reduce((acc, ch) => (acc * 31 + ch.charCodeAt(0)) >>> 0, 7);
+  const track = tracks[hash % tracks.length];
+  const target = `music${path.extname(track).toLowerCase()}`;
+  copyFileSync(path.join(library, track), path.join(project.dir, target));
+  return target;
+};
+
+export const renderInputFor = (project: Project): RenderInput => {
+  const music = resolveMusic(project);
+  return {
+    script: project.script,
+    assets: loadAssets(project.dir),
+    audio: loadAudio(project.dir),
+    music: music ? { src: music, volume: loadVoiceConfig().musicVolume } : undefined,
+  };
+};

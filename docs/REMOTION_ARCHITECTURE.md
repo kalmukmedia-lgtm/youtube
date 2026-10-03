@@ -13,7 +13,7 @@
 | Senaryodan otomatik video | Senaryo JSON'u → `inputProps` → aynı şablon her video için farklı içerik |
 | Çok gelişmiş görsel efektler | React + CSS + SVG + Canvas + WebGL/Three.js — web'de yapılabilen her şey |
 | 3D gezegenler, yıldız alanları | `@remotion/three` (React Three Fiber) |
-| TikTok tarzı kelime kelime altyazı | `@remotion/captions` + `@remotion/install-whisper-cpp` |
+| TikTok tarzı kelime kelime altyazı | Azure TTS kelime zamanları + kendi `Captions` bileşenimiz |
 | Profesyonel geçişler | `@remotion/transitions` (`TransitionSeries`, fade, slide, wipe, özel geçişler) |
 | Organik hareket / parçacıklar | `@remotion/noise`, `@remotion/motion-blur`, `@remotion/light-leaks` |
 | Lottie animasyonları | `@remotion/lottie` |

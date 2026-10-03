@@ -10,7 +10,7 @@ Gereksinimler: Node.js 20+, [pnpm](https://pnpm.io) 10+.
 
 ```bash
 pnpm install
-cp .env.example .env      # ANTHROPIC_API_KEY'i doldur
+cp .env.example .env      # ANTHROPIC_API_KEY ve Azure anahtarlarını doldur (docs/VOICE_SETUP.md)
 ```
 
 ## Kullanım
@@ -26,7 +26,10 @@ pnpm yt new "Göbeklitepe'nin sırrı" --series lost-civilizations --shorts 3   
 pnpm yt preview <proje>
 pnpm yt approve <proje>
 
-# 3) Görsel kontrol ve render
+# 3) Seslendirme (Azure) — sadece değişen sahneler yeniden seslendirilir
+pnpm yt voice <proje>
+
+# 4) Görsel kontrol ve render
 pnpm yt stills <proje>            # her sahneden bir PNG → projects/<proje>/preview/
 pnpm yt render <proje> --draft    # yarım çözünürlükte hızlı taslak
 pnpm yt render <proje>            # final MP4 (+ uzun videolar için 3 thumbnail)
@@ -35,6 +38,8 @@ pnpm yt render <proje>            # final MP4 (+ uzun videolar için 3 thumbnail
 pnpm yt list                      # projeler ve durumları
 pnpm yt shorts <proje> -c 3       # mevcut uzun videodan Shorts türet
 pnpm yt sample                    # API anahtarı olmadan örnek projeler oluştur
+pnpm yt voices                    # Türkçe konuşabilen Azure sesleri
+pnpm yt voice-test "metin" -v tr-TR-EmelNeural   # sesi dinleyerek seç
 pnpm studio                       # Remotion Studio: şablonları tarayıcıda canlı önizle
 ```
 
@@ -50,7 +55,8 @@ projects/2026-10-03-zeus-vs-odin/
 ├── research.md     # web araştırması özeti ve kaynaklar
 ├── status.json     # script → approved → voiced → rendered → uploaded
 ├── visuals/        # <görsel-id>.png  (Faz 4'te otomatik; şimdilik elle konabilir)
-├── audio/          # sahne sesleri + manifest.json (Faz 3)
+├── audio/          # sahne sesleri (s01.mp3…) + manifest.json (süreler, kelime zamanları)
+├── music.mp3       # seçilen fon müziği (assets/music'ten otomatik veya elle)
 ├── preview/        # yt stills çıktısı
 ├── render/         # MP4 çıktıları
 └── thumbnail/      # thumbnail_v1..v3.png
@@ -66,7 +72,8 @@ dosya koyarsan render'da otomatik kullanılır. Görseli olmayan sahnelerde tema
 | `packages/core` | Senaryo şeması (zod), sahne tipleri, temalar, zaman çizelgesi, önizleme |
 | `packages/pipeline` | `yt` komut satırı: Claude ile senaryo üretimi, proje yönetimi, render |
 | `packages/video` | Remotion projesi: sahne bileşenleri, efektler, geçişler, thumbnail |
-| `config/` | Kanal ayarları ve senaryo stil rehberi |
+| `config/` | Kanal ayarları, senaryo stil rehberi, ses ayarları, telaffuz sözlüğü |
+| `assets/music/` | Temaya göre fon müziği kütüphanesi (dosyalar git'e eklenmez) |
 | `prompts/` | Claude prompt şablonları |
 
 ```bash
@@ -80,3 +87,4 @@ pnpm typecheck   # tip kontrolü
 - [İçerik stratejisi](docs/CONTENT_STRATEGY.md)
 - [Remotion mimarisi](docs/REMOTION_ARCHITECTURE.md)
 - [Kanal bağlantısı (YouTube API)](docs/CHANNEL_SETUP.md)
+- [Seslendirme kurulumu (Azure)](docs/VOICE_SETUP.md)

@@ -8,9 +8,21 @@ export const STING_FRAMES = 75;
 /** Türkçe anlatım hızı (kelime/sn) — gerçek ses gelene kadar süre tahmini için. */
 export const WORDS_PER_SECOND = 2.4;
 
+export const WordTimingSchema = z.object({
+  text: z.string(),
+  /** Sahne sesinin başından itibaren saniye. */
+  start: z.number(),
+  end: z.number(),
+});
+export type WordTiming = z.infer<typeof WordTimingSchema>;
+
 export const SceneAudioSchema = z.object({
   src: z.string(),
   durationSec: z.number(),
+  /** Kelime zamanları (TTS'ten); altyazılar bunlarla senkronlanır. Yoksa tahmin edilir. */
+  words: z.array(WordTimingSchema).optional(),
+  /** Seslendirilen SSML'in özeti: metin değişmediyse sahne yeniden seslendirilmez. */
+  hash: z.string().optional(),
 });
 export type SceneAudio = z.infer<typeof SceneAudioSchema>;
 
@@ -21,6 +33,7 @@ export const RenderInputSchema = z.object({
   assets: z.record(z.string(), z.string()),
   /** Sahne id → anlatım sesi. Yoksa süre metinden tahmin edilir. */
   audio: z.record(z.string(), SceneAudioSchema),
+  /** Fon müziği; konuşma sırasında otomatik kısılır (ducking). */
   music: z.object({ src: z.string(), volume: z.number() }).optional(),
 });
 export type RenderInput = z.infer<typeof RenderInputSchema>;
