@@ -42,7 +42,7 @@
 | 1. İskelet + Senaryo | ✅ Tamamlandı | `pnpm yt new` — araştırma, taslak ve editör revizyonu; şema doğrulama + otomatik onarım |
 | 2. Remotion Temeli | ✅ Tamamlandı | 7 tema, 10 sahne tipi, logo animasyonu, geçişler, efektler, 3 thumbnail varyasyonu (Faz 6 ve 8'in bir kısmı da yapıldı) |
 | 3. Ses + Altyazı | ✅ Tamamlandı | `pnpm yt voice` — Azure TTS, telaffuz sözlüğü, değişmeyen sahneler için önbellek; Azure'un kelime zamanlarıyla senkron altyazı (whisper gerekmedi); fon müziği + ducking |
-| 4. Görsel Üretim | ⏭ Sıradaki | |
+| 4. Görsel Üretim | ✅ Tamamlandı | `pnpm yt images` — Cloudflare FLUX.2 [klein], karakter kütüphanesi + referans portreler, tema stilleri, otomatik yeniden deneme, neuron tahmini |
 | 5–10 | — | |
 
 > Senaryo maliyeti: bir uzun video için araştırma + taslak + revizyon birkaç Claude çağrısıdır; `pnpm yt new` her çalışmada

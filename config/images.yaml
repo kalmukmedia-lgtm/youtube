@@ -1,0 +1,23 @@
+# Yapay zekâ görsel üretimi — karşılaştırma ve gerekçe: docs/IMAGE_PROVIDERS.md
+provider: cloudflare
+
+# FLUX.2 [klein] 4B: en ucuz, günlük ücretsiz kotaya en çok görsel sığan model.
+# Daha yüksek kalite için: "@cf/black-forest-labs/flux-2-klein-9b" (neuron maliyetini aşağıda güncelle).
+model: "@cf/black-forest-labs/flux-2-klein-4b"
+
+# Çıktı boyutları (16'nın katları). Remotion videoyu 1080p'ye ölçekler.
+sizes:
+  long: [1536, 864]
+  short: [864, 1536]
+  portrait: [1024, 1024]   # karakter referans portreleri
+
+# Referans görseller 512x512'den küçük olmalı (Cloudflare sınırı).
+referenceSize: 496
+
+# Tüm görsellere eklenen ortak stil ve kısıtlar.
+globalStyle: "highly detailed, cinematic composition, main subject centered, no text, no letters, no watermark, no logo"
+
+# Maliyet tahmini (neuron / 512x512 karo). Kaynak: Cloudflare Workers AI fiyat sayfası, klein 4B.
+neuronsPerOutputTile: 26.05
+neuronsPerInputTile: 5.37
+freeNeuronsPerDay: 10000

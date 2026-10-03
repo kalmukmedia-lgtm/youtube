@@ -38,6 +38,8 @@ export interface Theme {
   particles: ParticleKind;
   /** 0–1 film grain strength. */
   grain: number;
+  /** Bu temadaki tüm yapay zekâ görsellerine eklenen İngilizce stil tarifi (görsel bütünlüğü için). */
+  imageStyle: string;
   /** Mood tag used to pick background music. */
   musicMood: "epic-orchestral" | "nordic" | "ethnic-mystery" | "steppe" | "ambient" | "cosmic-ambient" | "synthwave";
 }
@@ -50,6 +52,7 @@ export const THEMES: Record<ThemeId, Theme> = {
     fonts: { display: "Cinzel", body: "Inter" },
     particles: "embers",
     grain: 0.08,
+    imageStyle: "epic cinematic digital painting, golden hour light, white marble and gold, dramatic rim lighting, volumetric clouds",
     musicMood: "epic-orchestral",
   },
   "norse-frost": {
@@ -59,6 +62,7 @@ export const THEMES: Record<ThemeId, Theme> = {
     fonts: { display: "Cinzel", body: "Inter" },
     particles: "snow",
     grain: 0.07,
+    imageStyle: "epic cinematic digital painting, cold blue light, snow and ice, aurora in the sky, misty fjords, dramatic rim lighting",
     musicMood: "nordic",
   },
   "egypt-sand": {
@@ -68,6 +72,7 @@ export const THEMES: Record<ThemeId, Theme> = {
     fonts: { display: "Cormorant Garamond", body: "Inter" },
     particles: "sand",
     grain: 0.09,
+    imageStyle: "epic cinematic digital painting, warm desert light, sandstone and gold, lapis lazuli blue accents, hazy atmosphere",
     musicMood: "ethnic-mystery",
   },
   "turkic-steppe": {
@@ -77,6 +82,7 @@ export const THEMES: Record<ThemeId, Theme> = {
     fonts: { display: "Cinzel", body: "Inter" },
     particles: "embers",
     grain: 0.08,
+    imageStyle: "epic cinematic digital painting, vast Central Asian steppe, eternal blue sky, wind and fire, felt and leather textures, dramatic light",
     musicMood: "steppe",
   },
   "ancient-sepia": {
@@ -86,6 +92,7 @@ export const THEMES: Record<ThemeId, Theme> = {
     fonts: { display: "Cormorant Garamond", body: "Inter" },
     particles: "dust",
     grain: 0.12,
+    imageStyle: "cinematic historical illustration, warm sepia tones, ancient ruins, dust in the air, soft volumetric light, archaeological atmosphere",
     musicMood: "ambient",
   },
   "cosmic-void": {
@@ -95,6 +102,7 @@ export const THEMES: Record<ThemeId, Theme> = {
     fonts: { display: "Space Grotesk", body: "Inter" },
     particles: "stars",
     grain: 0.05,
+    imageStyle: "cinematic space art, deep purple and blue nebulae, glowing stars, vast cosmic scale, volumetric light",
     musicMood: "cosmic-ambient",
   },
   "future-neon": {
@@ -104,6 +112,7 @@ export const THEMES: Record<ThemeId, Theme> = {
     fonts: { display: "Space Grotesk", body: "Space Grotesk" },
     particles: "data",
     grain: 0.04,
+    imageStyle: "cinematic sci-fi concept art, futuristic megastructures, neon cyan and magenta lights, clean high-tech atmosphere",
     musicMood: "synthwave",
   },
 };

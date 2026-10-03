@@ -8,10 +8,23 @@ import type { Script } from "./script";
 const zeus = {
   id: "zeus-portrait",
   prompt: "Zeus, king of the Greek gods, muscular bearded elder with storm-grey hair, holding a crackling golden thunderbolt, standing on Mount Olympus above the clouds, dramatic rim lighting, epic cinematic digital painting",
+  characters: ["zeus"],
 };
 const odin = {
   id: "odin-portrait",
   prompt: "Odin the Allfather, one-eyed Norse god with long grey beard, wide-brimmed hood, spear Gungnir, two ravens on his shoulders, frost and aurora behind him, dramatic cinematic digital painting",
+  characters: ["odin"],
+};
+
+const ZEUS = {
+  id: "zeus",
+  name: "Zeus",
+  look: "muscular elder man in his fifties, long storm-grey hair and full beard, piercing blue eyes, white and gold Greek chiton, golden laurel crown, holding a crackling golden thunderbolt",
+};
+const ODIN = {
+  id: "odin",
+  name: "Odin",
+  look: "tall old man with a long grey braided beard, missing right eye, dark blue wide-brimmed hood and cloak, silver runic armor, spear Gungnir, two black ravens",
 };
 
 export const SAMPLE_LONG_SCRIPT: Script = {
@@ -32,7 +45,11 @@ export const SAMPLE_LONG_SCRIPT: Script = {
       type: "ColdOpen",
       headline: "YILDIRIM VS BİLGELİK",
       narration: "Biri yıldırımları yönetir. Diğeri, bilgelik için kendi gözünü feda etti. Peki bu iki tanrı karşılaşsaydı, kim ayakta kalırdı?",
-      image: { id: "zeus-odin-clash", prompt: "Zeus and Odin facing each other across a stormy sky split between golden lightning and icy aurora, epic cinematic wide shot" },
+      image: {
+        id: "zeus-odin-clash",
+        prompt: "Zeus and Odin facing each other across a stormy sky split between golden lightning and icy aurora, epic cinematic wide shot",
+        characters: ["zeus", "odin"],
+      },
     },
     { id: "s02", type: "ChapterTitle", chapterNumber: 1, title: "Gök Gürültüsünün Efendisi", subtitle: "Zeus", narration: "Önce Olimpos'a gidelim.", transition: "wipe" },
     {
@@ -53,7 +70,11 @@ export const SAMPLE_LONG_SCRIPT: Script = {
     {
       id: "s04",
       type: "CinematicImage",
-      image: { id: "titanomachy", prompt: "The Titanomachy, Olympian gods battling giant Titans amid volcanic fire and lightning, epic cinematic wide shot" },
+      image: {
+        id: "titanomachy",
+        prompt: "The Titanomachy, Olympian gods battling giant Titans amid volcanic fire and lightning, epic cinematic wide shot",
+        characters: ["zeus"],
+      },
       motion: "push-in",
       overlayText: "TİTANLARIN SAVAŞI",
       narration: "On yıl süren Titanlar Savaşı'nda, Kykloplar'ın onun için dövdüğü yıldırım, savaşın kaderini değiştirdi.",
@@ -124,7 +145,12 @@ export const SAMPLE_LONG_SCRIPT: Script = {
   description: "Yunan mitolojisinin kralı Zeus ile İskandinav mitolojisinin Her Şeyin Babası Odin'i karşılaştırıyoruz.",
   tags: ["zeus", "odin", "mitoloji", "yunan mitolojisi", "iskandinav mitolojisi", "tanrılar"],
   hashtags: ["#mitoloji", "#zeus", "#odin"],
-  thumbnail: { text: "ZEUS vs ODİN", concept: "İki tanrı karşı karşıya, ortada parlayan VS", image: { id: "zeus-odin-clash", prompt: "Zeus and Odin facing each other" } },
+  thumbnail: {
+    text: "ZEUS vs ODİN",
+    concept: "İki tanrı karşı karşıya, ortada parlayan VS",
+    image: { id: "zeus-odin-clash", prompt: "Zeus and Odin facing each other", characters: ["zeus", "odin"] },
+  },
+  characters: [ZEUS, ODIN],
   factChecks: [
     { claim: "Odin Yggdrasil'de dokuz gece asılı kaldı", confidence: "high", note: "Hávamál 138. kıta" },
     { claim: "Titanlar Savaşı on yıl sürdü", confidence: "high", note: "Hesiodos, Theogonia" },
@@ -156,7 +182,11 @@ export const SAMPLE_SHORT_SCRIPT: Script = {
     {
       id: "s02",
       type: "CinematicImage",
-      image: { id: "mimir-well", prompt: "Mimir's well beneath the roots of Yggdrasil, glowing water, ancient runes, mist, vertical cinematic composition" },
+      image: {
+        id: "mimir-well",
+        prompt: "Mimir's well beneath the roots of Yggdrasil, glowing water, ancient runes, mist, vertical cinematic composition",
+        characters: [],
+      },
       motion: "push-in",
       overlayText: "MİMİR'İN KUYUSU",
       narration: "Dünya ağacının köklerinde, Mímir'in kuyusu vardı. Suyundan içen, evrenin tüm bilgeliğine sahip olurdu.",
@@ -185,6 +215,7 @@ export const SAMPLE_SHORT_SCRIPT: Script = {
   tags: ["odin", "iskandinav mitolojisi", "mitoloji"],
   hashtags: ["#Shorts", "#odin", "#mitoloji"],
   thumbnail: { text: "ODİN'İN GÖZÜ", concept: "Tek gözlü Odin, parlayan kuyu", image: odin },
+  characters: [ODIN],
   factChecks: [{ claim: "Odin bilgelik için gözünü Mímir'in kuyusuna verdi", confidence: "high", note: "Völuspá ve Düzyazı Edda (Gylfaginning)" }],
   sources: [{ title: "Völuspá (Şiirsel Edda)" }, { title: "Snorri Sturluson, Gylfaginning" }],
 };

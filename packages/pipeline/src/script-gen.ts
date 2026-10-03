@@ -12,6 +12,7 @@ import {
 } from "@metaficta/core";
 import { z } from "zod";
 import { type ChannelConfig, loadChannel, loadStyleGuide } from "./config";
+import { characterLibraryPrompt } from "./images/characters";
 import type { LlmClient } from "./llm";
 import { renderPrompt } from "./prompts";
 
@@ -53,7 +54,8 @@ const exampleFor = (format: VideoFormat): string => {
   return JSON.stringify(toDraft(sample), null, 1);
 };
 
-export const systemPrompt = (channel = loadChannel()): string => renderPrompt("system", { channel, styleGuide: loadStyleGuide() });
+export const systemPrompt = (channel = loadChannel()): string =>
+  renderPrompt("system", { channel, styleGuide: loadStyleGuide(), characterLibrary: characterLibraryPrompt() });
 
 export interface ScriptRequest {
   topic: string;

@@ -2,7 +2,10 @@ import { SAMPLE_LONG_SCRIPT, SAMPLE_SHORT_SCRIPT, SERIES_IDS, type SeriesId, THE
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { Command, InvalidArgumentError, Option } from "commander";
-import { azureCredentials, loadPronunciations, loadVoiceConfig, REPO_ROOT } from "./config";
+import { azureCredentials, cloudflareCredentials, type ImagesConfig, loadImagesConfig, loadPronunciations, loadVoiceConfig, REPO_ROOT } from "./config";
+import { listCharacters } from "./images/characters";
+import { generateCharacterCandidates, generateProjectImages, pickCandidate } from "./images/generate";
+import { CloudflareImageProvider } from "./images/provider";
 import { LlmClient } from "./llm";
 import { createProject, listProjects, loadAudio, loadProject, saveScript, setStage } from "./project";
 import { renderProject, renderSceneStills } from "./render";
@@ -24,6 +27,14 @@ const printCost = (llm: LlmClient) => {
   const cost = llm.estimatedCostUsd();
   log(`💰 Token: ${input} giriş, ${output} çıkış, ${cacheRead} önbellek · web araması: ${webSearches} · tahmini $${Number.isNaN(cost) ? "?" : cost.toFixed(2)} (web arama ücreti hariç)`);
 };
+
+const imageProvider = (config: ImagesConfig) => {
+  const { accountId, apiToken } = cloudflareCredentials();
+  return new CloudflareImageProvider(accountId, apiToken, config.model);
+};
+
+const printNeurons = (neurons: number, config: ImagesConfig) =>
+  log(`💰 Tahmini kullanım: ~${Math.round(neurons)} neuron (günlük ücretsiz kota: ${config.freeNeuronsPerDay}, her gün 00:00 UTC'de yenilenir)`);
 
 const program = new Command().name("yt").description("Metaficta video üretim hattı");
 
@@ -146,6 +157,65 @@ program
     const file = path.join(dir, `${voice.voice}_${voice.rate}_${voice.pitch}.mp3`.replace(/%/g, "pct"));
     writeFileSync(file, result.audio);
     log(`✅ ${file} (${result.durationSec.toFixed(1)} sn)`);
+  });
+
+program
+  .command("images")
+  .description("Senaryodaki görselleri yapay zekâ ile üretir (karakter referanslarıyla)")
+  .argument("<project>")
+  .option("--force", "Var olan görselleri de yeniden üret")
+  .option("--only <ids>", "Sadece bu görsel id'leri (virgülle ayrılmış)")
+  .action(async (id: string, opts: { force?: boolean; only?: string }) => {
+    const project = loadProject(id);
+    const config = loadImagesConfig();
+    log(`🎨 Görseller üretiliyor: ${config.model}`);
+    const summary = await generateProjectImages(project, {
+      provider: imageProvider(config),
+      config,
+      force: opts.force,
+      only: opts.only?.split(",").map((s) => s.trim()).filter(Boolean),
+      log,
+    });
+    log(`✅ ${summary.generated.length} görsel üretildi, ${summary.skipped.length} görsel zaten vardı.`);
+    if (summary.createdCharacters.length) log(`🧑‍🎨 Kütüphaneye eklenen karakterler: ${summary.createdCharacters.join(", ")} (beğenmezsen: pnpm yt character create <id> ...)`);
+    printNeurons(summary.neurons, config);
+    if (summary.failed.length) {
+      log(`⚠️  ${summary.failed.length} görsel üretilemedi; komutu tekrar çalıştırınca sadece eksikler denenir:`);
+      for (const f of summary.failed) log(`   - ${f.id}: ${f.error}`);
+      process.exitCode = 1;
+    }
+  });
+
+const character = program.command("character").description("Karakter kütüphanesi (assets/characters)");
+
+character
+  .command("create")
+  .description("Karakter tanımlar ve aday referans portreler üretir")
+  .argument("<id>", "İngilizce kebab-case kimlik, ör. zeus")
+  .requiredOption("-n, --name <name>", "Türkçe görünen ad")
+  .requiredOption("-l, --look <look>", "İngilizce kalıcı görünüm tarifi")
+  .option("-c, --count <count>", "Aday portre sayısı", positiveInt, 4)
+  .action(async (id: string, opts: { name: string; look: string; count: number }) => {
+    const config = loadImagesConfig();
+    const files = await generateCharacterCandidates({ id, name: opts.name, look: opts.look }, opts.count, imageProvider(config), config);
+    for (const file of files) log(`🖼  ${file}`);
+    log(`👉 Beğendiğini seç: pnpm yt character pick ${id} <numara>`);
+  });
+
+character
+  .command("pick")
+  .description("Aday portrelerden birini karakterin referansı yapar")
+  .argument("<id>")
+  .argument("<candidate>", "Aday numarası", positiveInt)
+  .action((id: string, candidate: number) => log(`✅ Referans: ${pickCandidate(id, candidate)}`));
+
+character
+  .command("list")
+  .description("Kütüphanedeki karakterleri listeler")
+  .action(() => {
+    const characters = listCharacters();
+    if (characters.length === 0) return log("Kütüphane boş. Karakterler ilk görsel üretiminde otomatik eklenir veya: pnpm yt character create <id> ...");
+    for (const c of characters) log(`${c.hasReference ? "✅" : "⏳"} ${c.id.padEnd(20)} ${c.name} — ${c.look}`);
   });
 
 program

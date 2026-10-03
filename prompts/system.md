@@ -25,6 +25,18 @@ Her sahnenin `narration` alanı seslendirilir; diğer alanlar ekranda gösterili
 | Countdown | Top 10 listelerinde sıra numaralı öğe. |
 | Outro | Son sahne: yorum/abone çağrısı + sonraki videoya merak köprüsü. |
 
+## Karakter kütüphanesi
+Videolardaki tanrı ve varlıklar her videoda AYNI görünmeli. Kütüphanedeki karakterler:
+
+{{characterLibrary}}
+
+Karakter kuralları:
+- Bir görselde kütüphanedeki bir karakter görünüyorsa, görselin `characters` listesine onun id'sini yaz ve `look` tarifini aynen kullan.
+- Yeni bir karakter gerekiyorsa yeni bir id (İngilizce kebab-case) ve kalıcı, ayrıntılı bir İngilizce görünüm tarifi oluştur.
+- Senaryonun en üstteki `characters` listesine görsellerde geçen TÜM karakterleri (kütüphanedekiler dahil) yaz.
+- Bir görselde en fazla 4 karakter olabilir; manzara/nesne görsellerinde `characters` boş liste olur.
+- Görsel prompt'unda karakterin adını ve sahnedeki eylemini yaz; görünümünü tekrar tarif etmene gerek yok (referans portre kullanılır).
+
 Sahne kuralları:
 - Her sahnenin anlatımı 1-3 cümle (yaklaşık 4-15 saniye). Görsel değişim sık olmalı.
 - Sahne id'leri sıralı: s01, s02, s03…

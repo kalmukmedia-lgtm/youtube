@@ -29,6 +29,9 @@ pnpm yt approve <proje>
 # 3) Seslendirme (Azure) — sadece değişen sahneler yeniden seslendirilir
 pnpm yt voice <proje>
 
+# 3b) Görseller (Cloudflare FLUX.2) — karakterler her videoda aynı görünür
+pnpm yt images <proje>
+
 # 4) Görsel kontrol ve render
 pnpm yt stills <proje>            # her sahneden bir PNG → projects/<proje>/preview/
 pnpm yt render <proje> --draft    # yarım çözünürlükte hızlı taslak
@@ -62,8 +65,8 @@ projects/2026-10-03-zeus-vs-odin/
 └── thumbnail/      # thumbnail_v1..v3.png
 ```
 
-Görsel üretimi gelene kadar `visuals/` klasörüne senaryodaki görsel id'siyle (`zeus-portrait.png` gibi)
-dosya koyarsan render'da otomatik kullanılır. Görseli olmayan sahnelerde tema arka planı ve "GÖRSEL BEKLENİYOR" etiketi görünür.
+`pnpm yt images` görselleri `visuals/` klasörüne senaryodaki görsel id'siyle (`zeus-portrait.png` gibi) kaydeder;
+istersen kendi görselini de aynı isimle koyabilirsin. Görseli olmayan sahnelerde tema arka planı ve "GÖRSEL BEKLENİYOR" etiketi görünür.
 
 ## Yapı
 
@@ -89,3 +92,4 @@ pnpm typecheck   # tip kontrolü
 - [Kanal bağlantısı (YouTube API)](docs/CHANNEL_SETUP.md)
 - [Seslendirme kurulumu (Azure)](docs/VOICE_SETUP.md)
 - [Görsel servisi karşılaştırması](docs/IMAGE_PROVIDERS.md)
+- [Görsel üretim kurulumu (Cloudflare) ve karakter kütüphanesi](docs/IMAGE_SETUP.md)

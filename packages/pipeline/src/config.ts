@@ -14,6 +14,7 @@ export const PATHS = {
   projects: path.join(REPO_ROOT, "projects"),
   videoEntry: path.join(REPO_ROOT, "packages/video/src/index.ts"),
   music: path.join(REPO_ROOT, "assets/music"),
+  characters: path.join(REPO_ROOT, "assets/characters"),
 };
 
 loadEnv({ path: path.join(REPO_ROOT, ".env"), quiet: true });
@@ -65,4 +66,29 @@ export const azureCredentials = (): { key: string; region: string } => {
   const region = process.env.AZURE_SPEECH_REGION;
   if (!key || !region) throw new Error("AZURE_SPEECH_KEY ve AZURE_SPEECH_REGION .env dosyasında tanımlı olmalı (bkz. docs/VOICE_SETUP.md).");
   return { key, region };
+};
+
+const ImagesSchema = z.object({
+  provider: z.literal("cloudflare"),
+  model: z.string(),
+  sizes: z.object({
+    long: z.tuple([z.number(), z.number()]),
+    short: z.tuple([z.number(), z.number()]),
+    portrait: z.tuple([z.number(), z.number()]),
+  }),
+  referenceSize: z.number(),
+  globalStyle: z.string(),
+  neuronsPerOutputTile: z.number(),
+  neuronsPerInputTile: z.number(),
+  freeNeuronsPerDay: z.number(),
+});
+export type ImagesConfig = z.infer<typeof ImagesSchema>;
+
+export const loadImagesConfig = (): ImagesConfig => ImagesSchema.parse(YAML.parse(readFileSync(path.join(PATHS.config, "images.yaml"), "utf8")));
+
+export const cloudflareCredentials = (): { accountId: string; apiToken: string } => {
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN;
+  if (!accountId || !apiToken) throw new Error("CLOUDFLARE_ACCOUNT_ID ve CLOUDFLARE_API_TOKEN .env dosyasında tanımlı olmalı (bkz. docs/IMAGE_SETUP.md).");
+  return { accountId, apiToken };
 };

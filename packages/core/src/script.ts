@@ -31,13 +31,25 @@ export const TransitionSchema = z
   .describe("Bu sahneye GİRİŞ geçişi. Vurgu anlarında 'flash', bölüm geçişlerinde 'wipe' veya 'zoom', genelde 'fade'.");
 export type TransitionKind = z.infer<typeof TransitionSchema>;
 
+export const CharacterSchema = z.object({
+  id: z.string().describe("Karakter kütüphanesi kimliği, İngilizce kebab-case (ör. 'zeus', 'umay')"),
+  name: z.string().describe("Türkçe görünen ad"),
+  look: z
+    .string()
+    .describe("İngilizce, kalıcı görünüm tarifi: yaş, yüz, saç/sakal, kıyafet, sembol nesneler, renkler. Her videoda aynı karakter için aynı tarif."),
+});
+export type Character = z.infer<typeof CharacterSchema>;
+
 export const ImageRefSchema = z.object({
   id: z
     .string()
     .describe("Tekrar kullanılabilir görsel kimliği, İngilizce kebab-case (ör. 'zeus-portrait'). Aynı karakter veya mekân için her yerde aynı id."),
   prompt: z
     .string()
-    .describe("İngilizce görsel üretim prompt'u: konu, kompozisyon, ışık, atmosfer. Yazı/metin içermesin."),
+    .describe("İngilizce görsel üretim prompt'u: konu, kompozisyon, ışık, atmosfer. Ana özne ortada. Yazı/metin içermesin."),
+  characters: z
+    .array(z.string())
+    .describe("Görselde görünen karakterlerin id'leri (en fazla 4, `characters` listesinden). Karakter yoksa boş liste."),
 });
 export type ImageRef = z.infer<typeof ImageRefSchema>;
 
@@ -182,6 +194,7 @@ export const ScriptDraftSchema = z.object({
     concept: z.string().describe("Thumbnail görsel fikri"),
     image: ImageRefSchema,
   }),
+  characters: z.array(CharacterSchema).describe("Senaryodaki görsellerde görünen TÜM karakterler (kütüphanede olanlar dahil)"),
   factChecks: z.array(FactCheckSchema).describe("Senaryodaki doğrulanması gereken tüm önemli iddialar"),
   sources: z.array(z.object({ title: z.string(), url: z.string().optional() })),
 });
