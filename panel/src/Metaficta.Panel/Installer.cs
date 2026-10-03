@@ -30,7 +30,7 @@ public static class Installer
             string F(string key) => form[key].ToString().Trim();
             var connection = new SqlConnectionStringBuilder
             {
-                DataSource = F("server"),
+                DataSource = NormalizeServer(F("server")),
                 InitialCatalog = F("database"),
                 UserID = F("user"),
                 Password = form["password"].ToString(),
@@ -62,6 +62,21 @@ public static class Installer
         app.Run();
     }
 
+    /// <summary>
+    /// Plesk sunucu adresini "host:port" biçiminde gösterir (ör. ".\MSSQLSERVER2022:0"); SQL Server ise port için virgül bekler.
+    /// ":0" (varsayılan/dinamik port) atılır, diğer portlar "host,port" biçimine çevrilir.
+    /// </summary>
+    public static string NormalizeServer(string server)
+    {
+        var value = server.Trim();
+        var colon = value.LastIndexOf(':');
+        if (colon <= 0 || value.StartsWith("tcp:", StringComparison.OrdinalIgnoreCase) && colon == 3) return value;
+        var port = value[(colon + 1)..];
+        if (!port.All(char.IsDigit) || port.Length == 0) return value;
+        var host = value[..colon];
+        return port == "0" ? host : $"{host},{port}";
+    }
+
     private static string E(string value) => WebUtility.HtmlEncode(value);
 
     private static string Shell(string body) => $$"""
@@ -84,7 +99,7 @@ public static class Installer
         Bilgiler sunucuda <code>App_Data/{LocalSettingsFile}</code> dosyasına kaydedilir.</p>
         {(error is null ? "" : $"<div class=\"err\">{E(error)}</div>")}
         <form method="post">
-          <label>Sunucu (ör. localhost veya mssql.alanadin.com)</label><input name="server" value="{E(server)}" required>
+          <label>Sunucu (Plesk'te "Host" olarak görünen değer, ör. .\MSSQLSERVER2022:0)</label><input name="server" value="{E(server)}" required>
           <label>Veritabanı adı</label><input name="database" value="{E(database)}" required>
           <label>Kullanıcı adı</label><input name="user" value="{E(user)}" required autocomplete="off">
           <label>Şifre</label><input name="password" type="password" required autocomplete="new-password">
