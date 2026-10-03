@@ -1,0 +1,87 @@
+# Paneli derleyip FTP ile Plesk'e yükler. FTP bilgileri repo Secrets'ta durur:
+# FTP_HOST, FTP_USER, FTP_PASSWORD, FTP_DIR (ör. /httpdocs veya /panel.alanadin.com)
+# Sunucudaki App_Data (veritabanı ayarı, anahtarlar, projeler) hiçbir zaman silinmez veya ezilmez.
+name: Paneli yayınla
+
+on:
+  workflow_dispatch:
+    inputs:
+      architecture:
+        description: "Paket mimarisi (500.32 hatası alınırsa win-x86 seç)"
+        type: choice
+        options: [win-x64, win-x86]
+        default: win-x64
+      verify_certificate:
+        description: "FTP sertifikasını doğrula (Plesk'te sertifika alan adıyla eşleşmiyorsa kapalı bırak)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-panel
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Test
+        run: dotnet test panel
+
+      - name: Paketle
+        run: dotnet publish panel/src/Metaficta.Panel -c Release -r "${{ inputs.architecture }}" --self-contained true -o publish
+
+      - name: FTP aracını kur
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: FTP ile yükle
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIR: ${{ secrets.FTP_DIR }}
+          VERIFY: ${{ inputs.verify_certificate && 'true' || 'false' }}
+        run: |
+          set -euo pipefail
+          for v in FTP_HOST FTP_USER LFTP_PASSWORD FTP_DIR; do
+            if [ -z "${!v}" ]; then echo "::error::GitHub secret eksik: ${v/LFTP_PASSWORD/FTP_PASSWORD}"; exit 1; fi
+          done
+          # Yükleme sırasında IIS uygulamayı durdurur (kilitli DLL'ler serbest kalır) ve ziyaretçiye bilgi sayfası gösterir.
+          printf '%s' '<!DOCTYPE html><html lang="tr"><meta charset="utf-8"><title>Güncelleniyor</title><body style="background:#0b0a0e;color:#f1ebdf;font-family:sans-serif;text-align:center;padding-top:20vh"><h1>Metaficta Panel güncelleniyor…</h1><p>Birkaç dakika sonra sayfayı yenile.</p></body></html>' > app_offline.htm
+          cat > deploy.lftp <<LFTP
+          set ftp:ssl-allow true
+          set ssl:verify-certificate ${VERIFY}
+          set ftp:passive-mode true
+          set net:max-retries 3
+          set net:timeout 30
+          set net:reconnect-interval-base 5
+          open --env-password -u "${FTP_USER}" "${FTP_HOST}"
+          cd "${FTP_DIR}"
+          put app_offline.htm
+          !sleep 8
+          mirror --reverse --parallel=4 --exclude-glob App_Data/ --exclude-glob logs/ publish/ ./
+          rm -f app_offline.htm
+          bye
+          LFTP
+          lftp -f deploy.lftp
+          echo "✅ Panel yüklendi."
+
+      - name: Hata olursa siteyi tekrar aç
+        if: failure()
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIR: ${{ secrets.FTP_DIR }}
+          VERIFY: ${{ inputs.verify_certificate && 'true' || 'false' }}
+        run: |
+          lftp -e "set ftp:ssl-allow true; set ssl:verify-certificate ${VERIFY}; open --env-password -u \"${FTP_USER}\" \"${FTP_HOST}\"; cd \"${FTP_DIR}\"; rm -f app_offline.htm; bye" || true

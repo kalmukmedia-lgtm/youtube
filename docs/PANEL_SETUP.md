@@ -41,7 +41,27 @@ Panel her kod değişikliğinde GitHub'da otomatik paketlenir; bilgisayarına .N
 3. Paket "self-contained"dır: sunucuda .NET kurulu olmasına gerek yoktur, sadece IIS'in
    **ASP.NET Core Module**'ü gerekir (ASP.NET Core destekleyen Plesk paketlerinde vardır).
 
-## 3. Yükle ve çalıştır
+## 3a. Otomatik yükleme (FTP ile, önerilen)
+
+Dosyaları elle yüklemek yerine GitHub her seferinde paneli derleyip FTP ile senin hosting'ine yükleyebilir.
+FTP şifren sadece GitHub Secrets'ta durur.
+
+1. Plesk → *FTP Access* → sadece panel klasörüne erişen ayrı bir FTP hesabı oluştur (önerilir).
+2. GitHub → depo → *Settings* → *Secrets and variables* → *Actions* → şu secret'ları ekle:
+
+   | Secret | Örnek |
+   |---|---|
+   | `FTP_HOST` | `ftp.alanadin.com` veya sunucu IP'si |
+   | `FTP_USER` | FTP kullanıcı adı |
+   | `FTP_PASSWORD` | FTP şifresi |
+   | `FTP_DIR` | Panelin klasörü, ör. `/httpdocs` veya `/panel.alanadin.com` |
+
+3. GitHub → *Actions* → **Paneli yayınla** → *Run workflow*. İş akışı önce testleri çalıştırır, paketi oluşturur,
+   siteyi kısa süreliğine "güncelleniyor" moduna alır, dosyaları yükler ve siteyi tekrar açar.
+   Sunucudaki `App_Data` klasörüne (veritabanı ayarı, anahtarlar, projeler) **hiç dokunulmaz**.
+4. Güncellemeler için aynı işi tekrar çalıştırman yeterli; "6. Güncelleme" adımlarına gerek kalmaz.
+
+## 3b. Elle yükleme ve ilk çalıştırma
 
 1. Plesk → *Files* → sitenin kök klasörü (`httpdocs` veya alt alan adının klasörü)
 2. İndirdiğin zip'i yükle ve **Extract** ile aç (zip büyükse FTP ile de yükleyebilirsin).
