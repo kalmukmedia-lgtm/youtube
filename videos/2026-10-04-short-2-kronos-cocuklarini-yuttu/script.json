@@ -1,0 +1,91 @@
+{
+  "id": "2026-10-04-short-2-kronos-cocuklarini-yuttu",
+  "topic": "Çocuklarını Yutan Titan",
+  "format": "short",
+  "language": "tr",
+  "series": "did-you-know",
+  "theme": "olympus-gold",
+  "createdAt": "2026-10-04T23:00:00.000Z",
+  "parentId": "2026-10-03-zeus-vs-odin",
+  "workingTitle": "Çocuklarını Yutan Titan",
+  "titleOptions": [
+    "Çocuklarını Yutan Titan: Kronos #Shorts",
+    "Zeus'un Babası Onu Yutmak İstedi #Shorts",
+    "Bir Taş Zeus’u Kurtardı #Shorts"
+  ],
+  "hook": "Zeus'un hikâyesi bir kehanetle başlar.",
+  "summary": "Titan Kronos, tahttan indirilmemek için doğan her çocuğunu yuttu. Ama Rhea son bebeği kurtardı: o bebeğin adı Zeus'tu.",
+  "scenes": [
+    {
+      "id": "s01",
+      "type": "ColdOpen",
+      "headline": "ÇOCUKLARINI YUTAN BABA",
+      "image": {
+        "id": "kronos-titan",
+        "prompt": "Kronos, a colossal dark Titan king with a long black beard and a sickle, sitting on a stone throne inside a vast shadowy cave, paranoid glowing eyes, ominous red light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Zeus'un hikâyesi bir kehanetle başlar. Babası Titan Kronos, kendi çocuklarından biri tarafından tahttan indirileceğini öğrenir. Bunu önlemek için doğan her çocuğunu yutar."
+    },
+    {
+      "id": "s02",
+      "narration": "Ama annesi Rhea, son bebeğini kurtarmaya karar verir. Kronos'a kundağa sarılmış bir taş uzatır. Kronos taşı yutar. Gerçek bebek ise Girit'te, bir mağarada gizlice büyütülür. O bebeğin adı Zeus'tur.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "rhea-stone",
+        "prompt": "Rhea, a sorrowful Titan queen in flowing robes, secretly handing a stone wrapped in swaddling cloth to the giant Titan Kronos in a torch-lit hall, tense atmosphere. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "motion": "pan-right",
+      "transition": "flash"
+    }
+  ],
+  "description": "Titan Kronos, tahttan indirilmemek için doğan her çocuğunu yuttu. Ama Rhea son bebeği kurtardı: o bebeğin adı Zeus'tu.\n\nTam video: Zeus vs Odin — Kim Kazanırdı? (Metaficta kanalında)",
+  "tags": [
+    "zeus",
+    "kronos",
+    "rhea",
+    "yunan mitolojisi",
+    "mitoloji",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#Shorts",
+    "#zeus",
+    "#mitoloji"
+  ],
+  "thumbnail": {
+    "text": "ÇOCUKLARINI YUTAN BABA",
+    "concept": "İlk sahnenin görseli",
+    "image": {
+      "id": "kronos-titan",
+      "prompt": "Kronos, a colossal dark Titan king with a long black beard and a sickle, sitting on a stone throne inside a vast shadowy cave, paranoid glowing eyes, ominous red light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": []
+    }
+  },
+  "characters": [
+    {
+      "id": "zeus",
+      "name": "Zeus",
+      "look": "a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown"
+    }
+  ],
+  "factChecks": [],
+  "sources": [
+    {
+      "title": "Hesiodos, Theogonia"
+    },
+    {
+      "title": "Homeros, İlyada"
+    },
+    {
+      "title": "Apollodorus, Bibliotheca"
+    },
+    {
+      "title": "Şiirsel Edda: Völuspá, Hávamál, Grímnismál"
+    },
+    {
+      "title": "Snorri Sturluson, Düzyazı Edda (Gylfaginning, Skáldskaparmál)"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "2026-10-04-short-1-odin-gozu",
+  "topic": "Odin Neden Tek Gözlü?",
+  "format": "short",
+  "language": "tr",
+  "series": "did-you-know",
+  "theme": "norse-frost",
+  "createdAt": "2026-10-04T23:00:00.000Z",
+  "parentId": "2026-10-03-zeus-vs-odin",
+  "workingTitle": "Odin Neden Tek Gözlü?",
+  "titleOptions": [
+    "Odin Neden Tek Gözlü? #Shorts",
+    "Bilgelik İçin Gözünü Veren Tanrı #Shorts",
+    "Odin'in En Büyük Fedakârlığı #Shorts"
+  ],
+  "hook": "Efsaneye göre Odin, dünya ağacının köklerindeki Mímir'in kuyusundan tek bir yudum içebilmek için gözlerinden birini verdi.",
+  "summary": "Odin, Mímir'in kuyusundan tek bir yudum içebilmek için gözlerinden birini verdi; sonra rünlerin sırrı için dokuz gece Yggdrasil'de asılı kaldı.",
+  "scenes": [
+    {
+      "id": "s01",
+      "type": "ColdOpen",
+      "headline": "GÖZÜNÜ FEDA ETTİ",
+      "image": {
+        "id": "mimir-well",
+        "prompt": "Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) kneeling at Mimir's glowing well beneath the giant roots of the world tree Yggdrasil, offering his eye, mystical blue light rising from the water, ancient runes carved on stones. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "odin"
+        ]
+      },
+      "narration": "Efsaneye göre Odin, dünya ağacının köklerindeki Mímir'in kuyusundan tek bir yudum içebilmek için gözlerinden birini verdi. Çünkü o kuyunun suyu, evrenin bilgeliğini taşıyordu."
+    },
+    {
+      "id": "s02",
+      "narration": "Ama bu da yetmedi. Rünlerin sırrını öğrenmek için kendini dünya ağacı Yggdrasil'e astı. Bir mızrakla yaralanmış halde, kendini kendine kurban etti.",
+      "type": "Quote",
+      "quote": "Rüzgârlı ağaçta asılı kaldığımı bilirim, tam dokuz gece, mızrakla yaralanmış, Odin'e adanmış, kendim kendime.",
+      "attribution": "Hávamál, 138. kıta",
+      "transition": "flash"
+    },
+    {
+      "id": "s03",
+      "narration": "Tam dokuz gece. Ne ekmek, ne su. Sonunda rünleri kavradı ve büyünün efendisi oldu.",
+      "type": "StatCounter",
+      "value": 9,
+      "suffix": " GECE",
+      "label": "Odin'in Yggdrasil'de asılı kaldığı süre",
+      "image": {
+        "id": "yggdrasil-storm",
+        "prompt": "The gigantic world tree Yggdrasil in a violent night storm, a lone cloaked figure bound to its trunk far in the distance, lightning, swirling clouds, cosmic scale. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "transition": "zoom"
+    }
+  ],
+  "description": "Odin, Mímir'in kuyusundan tek bir yudum içebilmek için gözlerinden birini verdi; sonra rünlerin sırrı için dokuz gece Yggdrasil'de asılı kaldı.\n\nTam video: Zeus vs Odin — Kim Kazanırdı? (Metaficta kanalında)",
+  "tags": [
+    "odin",
+    "iskandinav mitolojisi",
+    "mitoloji",
+    "yggdrasil",
+    "rünler",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#Shorts",
+    "#odin",
+    "#mitoloji"
+  ],
+  "thumbnail": {
+    "text": "GÖZÜNÜ FEDA ETTİ",
+    "concept": "İlk sahnenin görseli",
+    "image": {
+      "id": "mimir-well",
+      "prompt": "Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) kneeling at Mimir's glowing well beneath the giant roots of the world tree Yggdrasil, offering his eye, mystical blue light rising from the water, ancient runes carved on stones. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": [
+        "odin"
+      ]
+    }
+  },
+  "characters": [
+    {
+      "id": "odin",
+      "name": "Odin",
+      "look": "a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir"
+    }
+  ],
+  "factChecks": [],
+  "sources": [
+    {
+      "title": "Hesiodos, Theogonia"
+    },
+    {
+      "title": "Homeros, İlyada"
+    },
+    {
+      "title": "Apollodorus, Bibliotheca"
+    },
+    {
+      "title": "Şiirsel Edda: Völuspá, Hávamál, Grímnismál"
+    },
+    {
+      "title": "Snorri Sturluson, Düzyazı Edda (Gylfaginning, Skáldskaparmál)"
+    }
+  ]
+}

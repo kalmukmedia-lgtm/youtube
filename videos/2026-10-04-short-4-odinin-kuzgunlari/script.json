@@ -1,0 +1,94 @@
+{
+  "id": "2026-10-04-short-4-odinin-kuzgunlari",
+  "topic": "Odin'in İki Casus Kuzgunu",
+  "format": "short",
+  "language": "tr",
+  "series": "did-you-know",
+  "theme": "norse-frost",
+  "createdAt": "2026-10-04T23:00:00.000Z",
+  "parentId": "2026-10-03-zeus-vs-odin",
+  "workingTitle": "Odin'in İki Casus Kuzgunu",
+  "titleOptions": [
+    "Odin'in İki Casus Kuzgunu #Shorts",
+    "Düşünce ve Hafıza: Huginn & Muninn #Shorts",
+    "Odin'in Neden Korktuğunu Biliyor musun? #Shorts"
+  ],
+  "hook": "Odin'in gözleri ve kulakları iki kuzgundur.",
+  "summary": "Huginn ve Muninn, yani Düşünce ve Hafıza. Her sabah dünyayı dolaşıp Odin’e gördüklerini anlatırlar. Ama Odin en çok birinin geri dönmemesinden korkar.",
+  "scenes": [
+    {
+      "id": "s01",
+      "type": "ColdOpen",
+      "headline": "ODİN'İN CASUSLARI",
+      "image": {
+        "id": "odin-ravens",
+        "prompt": "Two large black ravens, Huginn and Muninn, flying over snowy Nordic mountains and a Viking village at dawn, aerial view, mist and golden first light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Odin'in gözleri ve kulakları iki kuzgundur. Huginn ve Muninn, yani Düşünce ve Hafıza. Her sabah bütün dünyayı dolaşır, akşam dönüp ona gördükleri her şeyi anlatırlar. Ama ilginç bir ayrıntı var. Şiirde Odin, Düşünce'nin geri dönmemesinden korktuğunu, ama Hafıza için daha da çok endişelendiğini söyler."
+    },
+    {
+      "id": "s02",
+      "narration": "Elinde cüceler tarafından dövülen ve efsaneye göre hedefinden asla sapmayan mızrak Gungnir vardır. Altında ise sekiz bacaklı atı Sleipnir.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "sleipnir-gungnir",
+        "prompt": "Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) riding the eight-legged grey horse Sleipnir across the stormy sky, raising the glowing spear Gungnir, aurora behind, dynamic action shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "odin"
+        ]
+      },
+      "motion": "pull-out",
+      "transition": "flash"
+    }
+  ],
+  "description": "Huginn ve Muninn, yani Düşünce ve Hafıza. Her sabah dünyayı dolaşıp Odin’e gördüklerini anlatırlar. Ama Odin en çok birinin geri dönmemesinden korkar.\n\nTam video: Zeus vs Odin — Kim Kazanırdı? (Metaficta kanalında)",
+  "tags": [
+    "odin",
+    "huginn",
+    "muninn",
+    "kuzgun",
+    "iskandinav mitolojisi",
+    "mitoloji",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#Shorts",
+    "#odin",
+    "#mitoloji"
+  ],
+  "thumbnail": {
+    "text": "ODİN'İN CASUSLARI",
+    "concept": "İlk sahnenin görseli",
+    "image": {
+      "id": "odin-ravens",
+      "prompt": "Two large black ravens, Huginn and Muninn, flying over snowy Nordic mountains and a Viking village at dawn, aerial view, mist and golden first light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": []
+    }
+  },
+  "characters": [
+    {
+      "id": "odin",
+      "name": "Odin",
+      "look": "a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir"
+    }
+  ],
+  "factChecks": [],
+  "sources": [
+    {
+      "title": "Hesiodos, Theogonia"
+    },
+    {
+      "title": "Homeros, İlyada"
+    },
+    {
+      "title": "Apollodorus, Bibliotheca"
+    },
+    {
+      "title": "Şiirsel Edda: Völuspá, Hávamál, Grímnismál"
+    },
+    {
+      "title": "Snorri Sturluson, Düzyazı Edda (Gylfaginning, Skáldskaparmál)"
+    }
+  ]
+}

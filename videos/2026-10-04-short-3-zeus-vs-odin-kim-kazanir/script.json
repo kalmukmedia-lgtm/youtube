@@ -1,0 +1,118 @@
+{
+  "id": "2026-10-04-short-3-zeus-vs-odin-kim-kazanir",
+  "topic": "Zeus vs Odin: Kim Kazanır?",
+  "format": "short",
+  "language": "tr",
+  "series": "gods-battle",
+  "theme": "olympus-gold",
+  "createdAt": "2026-10-04T23:00:00.000Z",
+  "parentId": "2026-10-03-zeus-vs-odin",
+  "workingTitle": "Zeus vs Odin: Kim Kazanır?",
+  "titleOptions": [
+    "Zeus vs Odin: Kim Kazanır? #Shorts",
+    "Yıldırım mı Bilgelik mi? #Shorts",
+    "Zeus ile Odin Savaşsaydı #Shorts"
+  ],
+  "hook": "Kısa bir savaşta ilk darbeyi vuran kazanır.",
+  "summary": "Kısa bir savaşta yıldırım, uzun bir savaşta bilgelik. Zeus ile Odin karşılaşsaydı kim kazanırdı? Tam video kanalda.",
+  "scenes": [
+    {
+      "id": "s01",
+      "type": "ColdOpen",
+      "headline": "ZEUS MU ODİN Mİ?",
+      "image": {
+        "id": "zeus-storm",
+        "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) hurling a massive golden thunderbolt from the clouds, the sky splitting with blinding lightning, low angle heroic shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus"
+        ]
+      },
+      "narration": "Kısa bir savaşta ilk darbeyi vuran kazanır. Ve o darbe büyük ihtimalle Zeus'un yıldırımı olur."
+    },
+    {
+      "id": "s02",
+      "narration": "Ama Odin sahaya asla hazırlıksız çıkmaz. Kuzgunları rakibini önceden izler, rünleri onu korur, kehanetler ise savaşın nasıl biteceğini ona önceden fısıldar.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "odin-runes",
+        "prompt": "Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) standing calmly inside a circle of glowing runes that shield him from a storm, his ravens circling above, mystical blue light. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "odin"
+        ]
+      },
+      "motion": "pan-left",
+      "transition": "flash"
+    },
+    {
+      "id": "s03",
+      "narration": "Uzun bir savaşta ise plan yapan, bekleyen ve rakibinin zaafını bilen kazanır. O da büyük ihtimalle Odin'dir. Kısacası: yıldırım ilk raundu alır, bilgelik ise savaşı.",
+      "transition": "zoom",
+      "type": "CinematicImage",
+      "image": {
+        "id": "final-duel",
+        "prompt": "Final duel between Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) and Odin (a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir) on a cliff above a sea of clouds, golden lightning clashing with a glowing spear, explosive light at the point of impact, epic wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus",
+          "odin"
+        ]
+      },
+      "motion": "push-in"
+    }
+  ],
+  "description": "Kısa bir savaşta yıldırım, uzun bir savaşta bilgelik. Zeus ile Odin karşılaşsaydı kim kazanırdı? Tam video kanalda.\n\nTam video: Zeus vs Odin — Kim Kazanırdı? (Metaficta kanalında)",
+  "tags": [
+    "zeus",
+    "odin",
+    "zeus vs odin",
+    "mitoloji",
+    "yunan mitolojisi",
+    "iskandinav mitolojisi",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#Shorts",
+    "#zeus",
+    "#odin"
+  ],
+  "thumbnail": {
+    "text": "ZEUS MU ODİN Mİ?",
+    "concept": "İlk sahnenin görseli",
+    "image": {
+      "id": "zeus-storm",
+      "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) hurling a massive golden thunderbolt from the clouds, the sky splitting with blinding lightning, low angle heroic shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": [
+        "zeus"
+      ]
+    }
+  },
+  "characters": [
+    {
+      "id": "zeus",
+      "name": "Zeus",
+      "look": "a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown"
+    },
+    {
+      "id": "odin",
+      "name": "Odin",
+      "look": "a tall old man with a long grey braided beard, missing his right eye, dark blue wide-brimmed hood and long cloak, silver runic armor, holding the spear Gungnir"
+    }
+  ],
+  "factChecks": [],
+  "sources": [
+    {
+      "title": "Hesiodos, Theogonia"
+    },
+    {
+      "title": "Homeros, İlyada"
+    },
+    {
+      "title": "Apollodorus, Bibliotheca"
+    },
+    {
+      "title": "Şiirsel Edda: Völuspá, Hávamál, Grímnismál"
+    },
+    {
+      "title": "Snorri Sturluson, Düzyazı Edda (Gylfaginning, Skáldskaparmál)"
+    }
+  ]
+}

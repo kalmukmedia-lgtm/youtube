@@ -1,0 +1,10 @@
+{
+  "s01": {
+    "src": "audio/s01.mp3",
+    "durationSec": 14.36734693877551
+  },
+  "s02": {
+    "src": "audio/s02.mp3",
+    "durationSec": 15.725714285714286
+  }
+}

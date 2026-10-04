@@ -1,0 +1,93 @@
+{
+  "id": "2026-10-04-short-5-zeusun-korktugu-tanrica",
+  "topic": "Zeus'un Bile Korktuğu Tanrıça",
+  "format": "short",
+  "language": "tr",
+  "series": "did-you-know",
+  "theme": "olympus-gold",
+  "createdAt": "2026-10-04T23:00:00.000Z",
+  "parentId": "2026-10-03-zeus-vs-odin",
+  "workingTitle": "Zeus'un Bile Korktuğu Tanrıça",
+  "titleOptions": [
+    "Zeus'un Bile Korktuğu Tanrıça #Shorts",
+    "Zeus'u Ne Korkuturdu? #Shorts",
+    "Gece Tanrıçası Nyx #Shorts"
+  ],
+  "hook": "Ama Zeus'un bile çekindiği biri vardı.",
+  "summary": "İlyada'ya göre Zeus bile Gece'yi, yani Nyx'i kızdırmaktan çekindi. Asıl korkusu ise kendi çocuğu tarafından devrilmekti.",
+  "scenes": [
+    {
+      "id": "s01",
+      "type": "ColdOpen",
+      "headline": "ZEUS'UN KORKTUĞU TANRIÇA",
+      "image": {
+        "id": "nyx-night",
+        "prompt": "Nyx, the primordial goddess of night, an enormous ethereal woman made of starry darkness and black mist, towering over a tiny Mount Olympus, silver moonlight, awe-inspiring and mysterious. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "narration": "Ama Zeus'un bile çekindiği biri vardı. İlyada'ya göre uyku tanrısı Hypnos, Zeus'un öfkesinden kaçarken Gece'ye, yani Nyx'e sığınır. Ve Zeus, Gece'yi kızdırmamak için öfkesini yutar."
+    },
+    {
+      "id": "s02",
+      "narration": "Zeus'u asıl korkutan ise babasını korkutanla aynı şeydi. Bir gün kendi çocuğu tarafından devrilmek. Bu yüzden, kehanete konu olan ilk eşi Metis'i yuttu. Tarih, neredeyse kendini tekrar ediyordu.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "zeus-prophecy",
+        "prompt": "Zeus (a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown) sitting alone on his golden throne in a dark marble hall, worried expression, ghostly glowing visions of a prophecy swirling around him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "zeus"
+        ]
+      },
+      "motion": "push-in",
+      "transition": "flash"
+    }
+  ],
+  "description": "İlyada'ya göre Zeus bile Gece'yi, yani Nyx'i kızdırmaktan çekindi. Asıl korkusu ise kendi çocuğu tarafından devrilmekti.\n\nTam video: Zeus vs Odin — Kim Kazanırdı? (Metaficta kanalında)",
+  "tags": [
+    "zeus",
+    "nyx",
+    "metis",
+    "yunan mitolojisi",
+    "mitoloji",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#Shorts",
+    "#zeus",
+    "#mitoloji"
+  ],
+  "thumbnail": {
+    "text": "ZEUS'UN KORKTUĞU TANRIÇA",
+    "concept": "İlk sahnenin görseli",
+    "image": {
+      "id": "nyx-night",
+      "prompt": "Nyx, the primordial goddess of night, an enormous ethereal woman made of starry darkness and black mist, towering over a tiny Mount Olympus, silver moonlight, awe-inspiring and mysterious. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": []
+    }
+  },
+  "characters": [
+    {
+      "id": "zeus",
+      "name": "Zeus",
+      "look": "a powerful elder man in his fifties with long storm-grey hair and a full grey beard, piercing blue eyes, muscular build, white and gold ancient Greek chiton, golden laurel crown"
+    }
+  ],
+  "factChecks": [],
+  "sources": [
+    {
+      "title": "Hesiodos, Theogonia"
+    },
+    {
+      "title": "Homeros, İlyada"
+    },
+    {
+      "title": "Apollodorus, Bibliotheca"
+    },
+    {
+      "title": "Şiirsel Edda: Völuspá, Hávamál, Grímnismál"
+    },
+    {
+      "title": "Snorri Sturluson, Düzyazı Edda (Gylfaginning, Skáldskaparmál)"
+    }
+  ]
+}

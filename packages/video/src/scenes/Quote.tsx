@@ -7,7 +7,7 @@ import { useLayout, useSceneDuration, useTheme } from "../theme";
 export const Quote = ({ scene }: { scene: SceneOf<"Quote"> }) => {
   const frame = useCurrentFrame();
   const duration = useSceneDuration();
-  const { vertical, u } = useLayout();
+  const { vertical, u, centerPaddingBottom } = useLayout();
   const theme = useTheme();
   const words = scene.quote.split(/\s+/);
   // Alıntı sahnenin ilk %60'ında kelime kelime belirir.
@@ -17,9 +17,10 @@ export const Quote = ({ scene }: { scene: SceneOf<"Quote"> }) => {
   return (
     <AbsoluteFill>
       <Backdrop seed="quote" intensity={0.8} />
-      <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", padding: (vertical ? 70 : 220) * u }}>
+      {/* Dikey videoda alıntı, alttaki altyazı alanının üstünde kalır. */}
+      <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", padding: (vertical ? 70 : 220) * u, paddingBottom: Math.max((vertical ? 70 : 220) * u, centerPaddingBottom) }}>
         <div style={{ fontFamily: theme.displayFont, fontSize: 220 * u, lineHeight: 0.6, color: theme.colors.accent, opacity: 0.5, alignSelf: vertical ? "center" : "flex-start" }}>“</div>
-        <div style={{ fontFamily: fontFamily("Cormorant Garamond"), fontWeight: 500, fontStyle: "italic", fontSize: (vertical ? 70 : 68) * u, lineHeight: 1.3, color: theme.colors.text, textAlign: "center" }}>
+        <div style={{ fontFamily: fontFamily("Cormorant Garamond"), fontWeight: 500, fontStyle: "italic", fontSize: (vertical ? 62 : 68) * u, lineHeight: 1.3, color: theme.colors.text, textAlign: "center" }}>
           {words.map((word, i) => {
             const start = (i / words.length) * revealFrames;
             const o = interpolate(frame, [start, start + 10], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
