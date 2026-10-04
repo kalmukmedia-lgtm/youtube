@@ -1,6 +1,6 @@
 {
-  "stage": "voiced",
-  "updatedAt": "2026-10-04T23:00:00.000Z",
+  "stage": "rendered",
+  "updatedAt": "2026-10-04T23:17:19.332Z",
   "history": [
     {
       "stage": "approved",
@@ -9,6 +9,10 @@
     {
       "stage": "voiced",
       "at": "2026-10-04T23:00:00.000Z"
+    },
+    {
+      "stage": "rendered",
+      "at": "2026-10-04T23:17:19.332Z"
     }
   ]
 }
