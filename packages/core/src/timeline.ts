@@ -33,8 +33,8 @@ export const RenderInputSchema = z.object({
   assets: z.record(z.string(), z.string()),
   /** Sahne id → anlatım sesi. Yoksa süre metinden tahmin edilir. */
   audio: z.record(z.string(), SceneAudioSchema),
-  /** Fon müziği; konuşma sırasında otomatik kısılır (ducking). */
-  music: z.object({ src: z.string(), volume: z.number() }).optional(),
+  /** Fon müziği; konuşma sırasında otomatik kısılır (ducking). Video müzikten uzunsa parça yumuşak geçişle tekrarlanır. */
+  music: z.object({ src: z.string(), volume: z.number(), durationSec: z.number().positive().optional() }).optional(),
 });
 export type RenderInput = z.infer<typeof RenderInputSchema>;
 

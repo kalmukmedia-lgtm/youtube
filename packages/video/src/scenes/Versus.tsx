@@ -77,12 +77,12 @@ export const Versus = ({ scene }: { scene: SceneOf<"Versus"> }) => {
           VS
         </div>
         {scene.verdict === "hidden" ? (
-          <div style={{ position: "absolute", bottom: (vertical ? 260 : 60) * u, fontFamily: theme.displayFont, fontWeight: 700, fontSize: 56 * u, color: theme.colors.text, opacity: verdict, letterSpacing: 6 * u }}>
+          <div style={{ position: "absolute", ...(vertical ? { bottom: 260 * u } : { top: 34 * u }), fontFamily: theme.displayFont, fontWeight: 700, fontSize: 56 * u, color: theme.colors.text, opacity: verdict, letterSpacing: 6 * u, textShadow: `0 ${4 * u}px ${16 * u}px rgba(0,0,0,0.9)` }}>
             KİM KAZANIRDI?
           </div>
         ) : null}
         {scene.verdict === "draw" ? (
-          <div style={{ position: "absolute", bottom: (vertical ? 260 : 60) * u, fontFamily: theme.displayFont, fontWeight: 700, fontSize: 56 * u, color: theme.colors.accent, opacity: verdict, letterSpacing: 6 * u }}>
+          <div style={{ position: "absolute", ...(vertical ? { bottom: 260 * u } : { top: 34 * u }), fontFamily: theme.displayFont, fontWeight: 700, fontSize: 56 * u, color: theme.colors.accent, opacity: verdict, letterSpacing: 6 * u }}>
             BERABERE
           </div>
         ) : null}

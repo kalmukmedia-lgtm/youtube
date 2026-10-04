@@ -10,7 +10,7 @@ export const Captions = ({ narration, audio }: { narration: string; audio?: Scen
   const theme = useTheme();
 
   const time = frame / fps;
-  const chunks = chunkWords(captionWords(narration, audio), vertical ? 3 : 8);
+  const chunks = chunkWords(captionWords(narration, audio), vertical ? 3 : 7);
   // Kelimeler arasındaki kısa sessizliklerde altyazı kaybolmasın: bir sonraki grup başlayana kadar ekranda kalır.
   const chunkIndex = chunks.findLastIndex((chunk) => time >= chunk[0].start);
   const chunk = chunks[chunkIndex];
@@ -43,20 +43,25 @@ export const Captions = ({ narration, audio }: { narration: string; audio?: Scen
     );
   }
 
+  // Uzun video: parlak görsellerin üzerinde de okunaklı olsun diye koyu kutu + ince kontur + gölge.
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, bottom: 70 * u, display: "flex", justifyContent: "center" }}>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 64 * u, display: "flex", justifyContent: "center" }}>
       <div
         style={{
-          maxWidth: "70%",
+          maxWidth: "78%",
           textAlign: "center",
           fontFamily: theme.bodyFont,
-          fontWeight: 600,
-          fontSize: 40 * u,
+          fontWeight: 700,
+          fontSize: 48 * u,
           lineHeight: 1.3,
-          color: theme.colors.text,
-          padding: `${8 * u}px ${22 * u}px`,
-          background: "rgba(0,0,0,0.45)",
-          borderRadius: 10 * u,
+          letterSpacing: 0.3 * u,
+          color: "#ffffff",
+          padding: `${10 * u}px ${28 * u}px`,
+          background: "rgba(0,0,0,0.66)",
+          borderRadius: 12 * u,
+          WebkitTextStroke: `${1.2 * u}px rgba(0,0,0,0.9)`,
+          paintOrder: "stroke fill",
+          textShadow: `0 ${2 * u}px ${6 * u}px rgba(0,0,0,0.9)`,
         }}
       >
         {chunk.map((w) => w.text).join(" ")}

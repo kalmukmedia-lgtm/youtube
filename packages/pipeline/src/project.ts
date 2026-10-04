@@ -1,3 +1,4 @@
+import { parseFile } from "music-metadata";
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { getTheme, renderScriptMarkdown, type RenderInput, type Script, ScriptSchema, SceneAudioSchema } from "@metaficta/core";
@@ -108,12 +109,13 @@ export const resolveMusic = (project: Project): string | undefined => {
   return target;
 };
 
-export const renderInputFor = (project: Project): RenderInput => {
+export const renderInputFor = async (project: Project): Promise<RenderInput> => {
   const music = resolveMusic(project);
+  const musicDuration = music ? (await parseFile(path.join(project.dir, music), { duration: true })).format.duration : undefined;
   return {
     script: project.script,
     assets: loadAssets(project.dir),
     audio: loadAudio(project.dir),
-    music: music ? { src: music, volume: loadVoiceConfig().musicVolume } : undefined,
+    music: music ? { src: music, volume: loadVoiceConfig().musicVolume, durationSec: musicDuration } : undefined,
   };
 };

@@ -25,7 +25,7 @@ export interface RenderOptions {
 
 export const renderProject = async (project: Project, options: RenderOptions = {}): Promise<string[]> => {
   const log = options.log ?? (() => {});
-  const inputProps = renderInputFor(project);
+  const inputProps = await renderInputFor(project);
   const serveUrl = await bundleFor(project, log);
   const outputs: string[] = [];
 
@@ -70,7 +70,7 @@ export const renderProject = async (project: Project, options: RenderOptions = {
 
 /** Her sahnenin ortasından bir kare: senaryoyu ve tasarımı hızlıca gözden geçirmek için. */
 export const renderSceneStills = async (project: Project, log: Log = () => {}): Promise<string[]> => {
-  const inputProps = renderInputFor(project);
+  const inputProps = await renderInputFor(project);
   const serveUrl = await bundleFor(project, log);
   const composition = await selectComposition({ serveUrl, id: compositionId(inputProps), inputProps, browserExecutable: BROWSER_EXECUTABLE, logLevel: "error" });
   const timeline = buildTimeline(inputProps, composition.fps);
