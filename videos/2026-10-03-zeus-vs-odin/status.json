@@ -1,6 +1,6 @@
 {
-  "stage": "voiced",
-  "updatedAt": "2026-10-04T21:46:11.502Z",
+  "stage": "rendered",
+  "updatedAt": "2026-10-04T22:48:18.359Z",
   "history": [
     {
       "stage": "script",
@@ -13,6 +13,10 @@
     {
       "stage": "voiced",
       "at": "2026-10-04T21:46:11.502Z"
+    },
+    {
+      "stage": "rendered",
+      "at": "2026-10-04T22:48:18.359Z"
     }
   ]
 }
