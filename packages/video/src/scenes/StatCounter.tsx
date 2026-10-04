@@ -29,7 +29,8 @@ export const StatCounter = ({ scene }: { scene: SceneOf<"StatCounter"> }) => {
             color: theme.colors.accent,
             transform: `scale(${1 + 0.06 * done * (1 - done)})`,
             textShadow: `0 0 ${60 * u}px ${theme.colors.accent}`,
-            fontVariantNumeric: "tabular-nums",
+            // Orantılı rakamlar: sabit genişlikte "12" ekranda "1 2" gibi aralıklı görünüyordu.
+            fontVariantNumeric: "proportional-nums",
           }}
         >
           {scene.prefix ?? ""}

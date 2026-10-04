@@ -1,0 +1,8 @@
+{
+  "stage": "approved",
+  "updatedAt": "2026-10-05T00:00:00.000Z",
+  "history": [
+    { "stage": "script", "at": "2026-10-05T00:00:00.000Z" },
+    { "stage": "approved", "at": "2026-10-05T00:00:00.000Z" }
+  ]
+}

@@ -1,0 +1,630 @@
+{
+  "workingTitle": "Ra vs Thor: Kim Kazanırdı?",
+  "titleOptions": [
+    "Ra vs Thor: Kim Kazanırdı?",
+    "Güneş mi Gök Gürültüsü mü? Ra vs Thor",
+    "Mısır ile Asgard Savaşsaydı Kim Kazanırdı?"
+  ],
+  "hook": "Biri her sabah gökyüzünü ateşe verir ve her gece karanlığın içinden geçerek dünyayı ayakta tutar.",
+  "summary": "Mısır'ın güneş tanrısı Ra ile İskandinav gök gürültüsü tanrısı Thor'un kökenlerini, silahlarını ve zaaflarını karşılaştırıp bir karşılaşmada kimin kazanacağını tartışıyoruz.",
+  "scenes": [
+    {
+      "id": "s01",
+      "narration": "Biri her sabah gökyüzünü ateşe verir ve her gece karanlığın içinden geçerek dünyayı ayakta tutar. Diğeri, tek bir çekiç darbesiyle dağları yerle bir eden dev avcısı. Biri Mısır'ın güneşi, diğeri Asgard'ın kalkanı. Peki Ra ile Thor karşı karşıya gelseydi, ayakta kalan kim olurdu?",
+      "type": "ColdOpen",
+      "headline": "GÜNEŞ VS GÖK GÜRÜLTÜSÜ",
+      "image": {
+        "id": "ra-thor-clash",
+        "prompt": "Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) and Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) facing each other from opposite sides of the sky, a blazing desert sun and golden light on the left half, dark storm clouds and blue lightning on the right half, wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "ra",
+          "thor"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "narration": "Bu iki tanrı arasında binlerce kilometre ve binlerce yıl var. Biri çölün kavurucu sıcağında, Nil kıyısındaki tapınaklarda doğdu. Diğeri buzlu fiyortlarda, uzun kışların insanlarının kalbinde. Ama birazdan göreceğin gibi, aralarında şaşırtıcı bir ortak nokta var.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "two-worlds",
+        "prompt": "Split landscape: on the left the golden pyramids and temples of ancient Egypt beside the Nile under a blazing sun, on the right snowy Norse fjords with a mighty golden hall on a mountain under a stormy sky, the two worlds meeting in the middle, wide panoramic shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "motion": "pan-right"
+    },
+    {
+      "id": "s03",
+      "narration": "İlk durağımız, Antik Mısır.",
+      "transition": "wipe",
+      "type": "ChapterTitle",
+      "chapterNumber": 1,
+      "title": "Güneşin Efendisi",
+      "subtitle": "Ra"
+    },
+    {
+      "id": "s04",
+      "narration": "Mısırlılara göre başlangıçta hiçbir şey yoktu. Sadece Nun denen karanlık ve sonsuz bir su. Bir gün bu suların içinden ilk toprak tepesi yükseldi. Ve üzerinde ilk kez güneş doğdu. O güneş, Ra'ydı.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "nun-benben",
+        "prompt": "The primordial dark ocean Nun at the beginning of time, endless black water, a single mound of earth rising from the waters, the very first sunrise bursting from its top and lighting the darkness, cosmic and mythic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "NUN: İLK SULAR",
+      "motion": "push-in"
+    },
+    {
+      "id": "s05",
+      "narration": "Ra, Mısır tanrılarının kralı ve yaratıcısı. Şahin başlıdır. Başının üzerinde parlayan bir güneş kursu ve onu koruyan bir kobra taşır. Efsaneye göre insanlar bile Ra'nın gözyaşlarından doğmuştu. Firavunlar ise kendilerine Ra'nın oğlu derdi.",
+      "type": "CharacterCard",
+      "name": "RA",
+      "epithet": "Tanrıların Kralı",
+      "mythology": "Mısır Mitolojisi",
+      "image": {
+        "id": "ra-portrait",
+        "prompt": "Portrait of Ra, the Egyptian sun god: a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh, standing on the prow of a golden solar barque above a sea of light, the sun blazing behind him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "ra"
+        ]
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 88
+        },
+        {
+          "label": "Zekâ",
+          "value": 90
+        },
+        {
+          "label": "Büyü",
+          "value": 98
+        },
+        {
+          "label": "Etki",
+          "value": 99
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "narration": "Ra her gün gökyüzünü bir kayıkla geçer. Sabah Khepri adında bir bok böceği olarak doğar. Öğlen tüm gücüyle parlar. Akşam ise yaşlı Atum olarak batar. Yani Mısırlılar için gün batımı, bir tanrının her akşam yaşlanmasıydı.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "solar-barque",
+        "prompt": "Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) sailing across the bright sky in a long golden Egyptian solar barque, lesser gods rowing, a giant scarab beetle pushing the rising sun at the bow, clouds and light below. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "ra"
+        ]
+      },
+      "overlayText": "GÜNEŞ KAYIĞI",
+      "motion": "pan-left"
+    },
+    {
+      "id": "s07",
+      "narration": "Ama asıl tehlike gece başlar. Güneş battığında Ra, Duat denen yeraltı dünyasına iner. Orada ölülerin diyarından, ateş göllerinden ve korkunç kapılardan geçmek zorundadır.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "duat-night",
+        "prompt": "Ra's night barque gliding through the Duat, the Egyptian underworld: a dark river in vast caverns, lakes of fire, towering gates guarded by serpents and spirits, a faint golden glow from the boat, eerie and mysterious. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "motion": "push-in"
+    },
+    {
+      "id": "s08",
+      "narration": "Tam on iki saat. Gecenin her saati, yeraltında ayrı bir bölge ve ayrı bir sınav demek.",
+      "type": "StatCounter",
+      "value": 12,
+      "suffix": " SAAT",
+      "label": "Ra'nın her gece yeraltında geçtiği yolculuk",
+      "image": {
+        "id": "duat-night",
+        "prompt": "Ra's night barque gliding through the Duat, the Egyptian underworld: a dark river in vast caverns, lakes of fire, towering gates guarded by serpents and spirits, a faint golden glow from the boat, eerie and mysterious. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      }
+    },
+    {
+      "id": "s09",
+      "narration": "Ve her gece aynı düşman onu bekler. Apep, kaosun dev yılanı. Tek amacı güneşi yutup dünyayı sonsuz karanlığa gömmek. Her gece Ra'nın kayığına saldırır ve her gece yenilir. Ama asla tamamen ölmez. Yani güneşin her sabah doğması, aslında kazanılmış bir savaştır.",
+      "transition": "flash",
+      "type": "CinematicImage",
+      "image": {
+        "id": "apep-battle",
+        "prompt": "The colossal chaos serpent Apep rising from a dark underworld river to attack a glowing golden solar barque, a red-haired warrior god with an animal head standing at the prow thrusting a spear into the serpent, sparks and darkness, epic battle. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "APEP",
+      "motion": "push-in"
+    },
+    {
+      "id": "s10",
+      "narration": "Ra'nın en korkunç silahı ise kendi gözüdür. İnsanlar yaşlanan Ra'ya karşı isyan edince, Ra Gözü'nü yeryüzüne gönderir. Göz, aslan başlı tanrıça Sekhmet'e dönüşür ve insanları kırmaya başlar.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "sekhmet-rampage",
+        "prompt": "Sekhmet, the Egyptian lioness-headed goddess of war, with a glowing sun disk on her head and a red linen dress, striding through a burning desert at dusk, fierce and terrifying, blood-red sky, fleeing silhouettes in the distance. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "RA'NIN GÖZÜ",
+      "motion": "push-in"
+    },
+    {
+      "id": "s11",
+      "narration": "Sekhmet öyle durdurulamaz hale gelir ki, Ra bile insanlığı kurtarmak ister. Bunun için bir hile yapılır. Binlerce testi bira kırmızıya boyanıp tarlalara dökülür. Sekhmet onu kan sanıp içer, sarhoş olur ve uyuyakalır. İnsanlık, kırmızı bira sayesinde kurtulur.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "sekhmet-rampage",
+        "prompt": "Sekhmet, the Egyptian lioness-headed goddess of war, with a glowing sun disk on her head and a red linen dress, striding through a burning desert at dusk, fierce and terrifying, blood-red sky, fleeing silhouettes in the distance. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "motion": "pan-left"
+    },
+    {
+      "id": "s12",
+      "narration": "Ama Ra'nın da bir zaafı vardı: yaşlılık. Yaşlanan Ra'nın ağzından salyalar akıyordu. Tanrıça İsis bu salyayı toprakla karıştırıp bir yılan yarattı. Yılan Ra'yı soktu ve hiçbir tanrı zehri iyileştiremedi. İsis onu ancak bir şartla kurtardı: Ra'nın kimsenin bilmediği gizli adını öğrenmek.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "isis-serpent",
+        "prompt": "The goddess Isis, a beautiful Egyptian woman with long black hair, a throne-shaped crown and outstretched wings, secretly shaping a glowing golden serpent out of clay in a dark temple, an aged falcon-headed god on a throne in the background, mysterious candlelight. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "GİZLİ İSİM",
+      "motion": "push-in"
+    },
+    {
+      "id": "s13",
+      "narration": "Şimdi kuzeye, gök gürültüsünün diyarına gidiyoruz.",
+      "transition": "zoom",
+      "type": "ChapterTitle",
+      "chapterNumber": 2,
+      "title": "Asgard'ın Kalkanı",
+      "subtitle": "Thor"
+    },
+    {
+      "id": "s14",
+      "narration": "Thor, Odin'in oğlu. Annesi ise yeryüzünün kendisi, Jörð. Kızıl sakallı, öfkesi çabuk parlayan ama Asgard'ı ve insanları devlere karşı koruyan tanrı. Vikinglerin en sevdiği tanrı oydu. Boyunlarında küçük çekiç kolyeleri taşırlardı.",
+      "type": "CharacterCard",
+      "name": "THOR",
+      "epithet": "Gök Gürültüsü Tanrısı",
+      "mythology": "İskandinav Mitolojisi",
+      "image": {
+        "id": "thor-portrait",
+        "prompt": "Portrait of Thor, the Norse god of thunder: a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning, standing on a cliff above a stormy fjord, lightning splitting the sky behind him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "thor"
+        ]
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 99
+        },
+        {
+          "label": "Zekâ",
+          "value": 65
+        },
+        {
+          "label": "Büyü",
+          "value": 55
+        },
+        {
+          "label": "Etki",
+          "value": 85
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "narration": "Gücünün sırrı, cücelerin dövdüğü çekici Mjölnir'dir. Fırlatıldığında hedefini asla ıskalamaz ve her seferinde sahibinin eline geri döner. Ama küçük bir kusuru var: sapı kısa. Çünkü dövülürken sinek kılığına giren Loki, ustayı göz kapağından ısırıp dikkatini dağıtmıştı.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "mjolnir-forge",
+        "prompt": "Two dwarf smiths forging the war hammer Mjolnir in a fiery underground forge, sparks flying from the anvil, one dwarf pumping the bellows while a small black fly bites his eyelid, the glowing hammer with a short handle, dramatic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "MJÖLNİR",
+      "motion": "push-in"
+    },
+    {
+      "id": "s16",
+      "narration": "Thor savaşa iki keçinin çektiği bir arabayla gider. Arabası gökte ilerledikçe gök gürler. İşin ilginç yanı, acıktığında bu keçileri yiyebilir. Ertesi sabah kemiklerini çekiciyle kutsar ve keçiler yeniden dirilir.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "thor-goats",
+        "prompt": "Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) riding a chariot pulled by two large wild goats across a stormy night sky, thunder and lightning trailing behind the wheels. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "thor"
+        ]
+      },
+      "motion": "pan-right"
+    },
+    {
+      "id": "s17",
+      "narration": "Ama Thor'un en ünlü hikâyesi bir yenilgiyle başlar. Devlerin kralı Útgarða-Loki onu üç sınava sokar. Bir boynuzu bitiremez. Bir kediyi yerden kaldıramaz. Yaşlı bir kadını güreşte yenemez. Thor utanç içinde ayrılır.",
+      "transition": "flash",
+      "type": "CinematicImage",
+      "image": {
+        "id": "utgard-trials",
+        "prompt": "Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) in the enormous torch-lit hall of the giant king, drinking from a huge drinking horn while towering giants laugh around long tables, a giant grey cat and an old woman in the shadows. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "thor"
+        ]
+      },
+      "overlayText": "ÜÇ SINAV",
+      "motion": "push-in"
+    },
+    {
+      "id": "s18",
+      "narration": "Sonra gerçek ortaya çıkar. Boynuzun ucu okyanusa bağlıymış ve Thor o kadar içmiş ki denizler alçalmış. Kedi aslında dünyayı saran yılan Jörmungandr'mış. Yaşlı kadın ise Yaşlılık'ın kendisiymiş. Kimse yaşlılığı yenemez. Ama Thor onu dize getirmeyi başarmış.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "utgard-trials",
+        "prompt": "Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) in the enormous torch-lit hall of the giant king, drinking from a huge drinking horn while towering giants laugh around long tables, a giant grey cat and an old woman in the shadows. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "thor"
+        ]
+      },
+      "motion": "pull-out"
+    },
+    {
+      "id": "s19",
+      "narration": "Thor bu yılanla bir kez daha karşılaşır. Dev Hymir ile balığa çıktığında oltasına bir öküz başı takar ve Jörmungandr'ı denizin dibinden çeker. Tam çekicini kaldırdığı an, korkuya kapılan dev ipi keser ve yılan derinlere kaçar.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "jormungandr-fishing",
+        "prompt": "Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) standing in a small wooden boat on a raging ocean, pulling up the colossal world serpent Jormungandr with a fishing line, the serpent's huge head bursting from the waves, a frightened giant in the boat. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "thor"
+        ]
+      },
+      "overlayText": "JÖRMUNGANDR",
+      "motion": "push-in"
+    },
+    {
+      "id": "s20",
+      "narration": "Ve bir gün, Thor için en büyük kâbus gerçekleşir. Uyandığında çekicinin çalındığını görür.",
+      "type": "Quote",
+      "quote": "Öfkeliydi Vingthor uyandığında, çekicini yerinde bulamadığında.",
+      "attribution": "Thrymskviða, Şiirsel Edda"
+    },
+    {
+      "id": "s21",
+      "narration": "Dev Thrym, çekici ancak tanrıça Freyja ile evlenirse geri vereceğini söyler. Çözüm mü? Thor'a gelinlik giydirip yüzünü duvakla örterler. Düğün sofrasında koca bir öküzü tek başına yiyen gelin, çekiç kucağına konduğu an gerçek kimliğini gösterir.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "thrym-bride",
+        "prompt": "A giant's wedding feast in a torch-lit hall, a huge muscular bride in a white veil and wedding dress with a fiery red beard peeking out, eating an entire roasted ox, the giant groom staring in shock, humorous yet epic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "GELİNLİKLİ THOR",
+      "motion": "push-in"
+    },
+    {
+      "id": "s22",
+      "narration": "Ama Thor'un kaderi de çoktan yazılmıştır. Ragnarök günü Jörmungandr ile son kez karşılaşır. Thor yılanı öldürür. Sonra dokuz adım atar ve yılanın zehriyle yere yığılır.",
+      "transition": "flash",
+      "type": "CinematicImage",
+      "image": {
+        "id": "ragnarok-thor",
+        "prompt": "Ragnarok: Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) delivering the final hammer blow to the colossal world serpent Jormungandr on a burning battlefield, venom spraying, the sky on fire, the end of the world. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "thor"
+        ]
+      },
+      "overlayText": "DOKUZ ADIM",
+      "motion": "push-in"
+    },
+    {
+      "id": "s23",
+      "narration": "Bir ayrıntı daha. Ra'nın adı, dünyanın bilinen en eski dini metinlerinden Piramit Metinleri'nde geçer. Bu metinler, Thor'un hikâyelerinin yazıya geçirilmesinden yaklaşık üç bin beş yüz yıl daha eski.",
+      "type": "Timeline",
+      "title": "Bu Mitleri Nereden Biliyoruz?",
+      "events": [
+        {
+          "date": "MÖ 2350 civarı",
+          "label": "Piramit Metinleri"
+        },
+        {
+          "date": "MÖ 14. yüzyıl",
+          "label": "Gökteki İnek Kitabı"
+        },
+        {
+          "date": "MS 1075 civarı",
+          "label": "Bremenli Adam"
+        },
+        {
+          "date": "MS 1220 civarı",
+          "label": "Snorri, Düzyazı Edda"
+        }
+      ],
+      "focusIndex": 0
+    },
+    {
+      "id": "s24",
+      "narration": "Ve şimdi asıl soru.",
+      "transition": "wipe",
+      "type": "ChapterTitle",
+      "chapterNumber": 3,
+      "title": "Karşılaşma"
+    },
+    {
+      "id": "s25",
+      "narration": "Bu iki tanrının hikâyesinde inanılmaz bir benzerlik var. İkisi de dünyayı yutmak isteyen dev bir yılanla savaşır. Ra, Apep'i her gece yener ama hiçbir zaman öldüremez. Thor ise Jörmungandr'ı öldürür, ama bu zafer onun da sonu olur.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "two-serpents",
+        "prompt": "Two colossal cosmic serpents: on the left the dark Egyptian chaos serpent Apep coiled around a fading sun, on the right the Norse world serpent Jormungandr encircling the earth beneath the ocean, mirrored composition, mythic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "İKİ TANRI, İKİ YILAN",
+      "motion": "pull-out"
+    },
+    {
+      "id": "s26",
+      "narration": "Yan yana koyduğumuzda tablo netleşiyor. Saf güçte ve yakın dövüşte Thor'un rakibi yok. Ama büyüde, bilgelikte ve evrendeki etkide Ra açık ara önde. Thor'un çekici dağları yıkar. Ra ise güneşin ta kendisidir.",
+      "transition": "flash",
+      "type": "Versus",
+      "left": {
+        "name": "RA",
+        "epithet": "Güneş",
+        "image": {
+          "id": "ra-portrait",
+          "prompt": "Portrait of Ra, the Egyptian sun god: a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh, standing on the prow of a golden solar barque above a sea of light, the sun blazing behind him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+          "characters": [
+            "ra"
+          ]
+        },
+        "stats": [
+          {
+            "label": "Güç",
+            "value": 88
+          },
+          {
+            "label": "Zekâ",
+            "value": 90
+          },
+          {
+            "label": "Büyü",
+            "value": 98
+          }
+        ]
+      },
+      "right": {
+        "name": "THOR",
+        "epithet": "Gök Gürültüsü",
+        "image": {
+          "id": "thor-portrait",
+          "prompt": "Portrait of Thor, the Norse god of thunder: a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning, standing on a cliff above a stormy fjord, lightning splitting the sky behind him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+          "characters": [
+            "thor"
+          ]
+        },
+        "stats": [
+          {
+            "label": "Güç",
+            "value": 99
+          },
+          {
+            "label": "Zekâ",
+            "value": 65
+          },
+          {
+            "label": "Büyü",
+            "value": 55
+          }
+        ]
+      },
+      "verdict": "hidden"
+    },
+    {
+      "id": "s27",
+      "narration": "Bir düelloda Thor'u durdurmak çok zor. Mjölnir ıskalamaz, güç kemeri kuvvetini artırır ve devlerle savaşmak onun mesleğidir. Yakın dövüşte ilk darbeyi o vurur.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "thor-strike",
+        "prompt": "Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) hurling Mjolnir with all his might, the hammer leaving a trail of blinding lightning across a dark storm, dynamic action shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "thor"
+        ]
+      },
+      "motion": "push-in"
+    },
+    {
+      "id": "s28",
+      "narration": "Ama Ra kendi eliyle savaşmaz. Gözünü gönderir. Ve Sekhmet'in öfkesini Ra bile zor durdurmuştu. Üstelik Ra her gece karanlığa girer ve her sabah yeniden doğar. Güneşi bir gece yenebilirsin. Ama sabah yine doğacaktır.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "ra-dawn",
+        "prompt": "Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) rising with the dawn above the desert, his blazing sun disk breaking the horizon, darkness retreating, a lioness goddess silhouette at his side, majestic and unstoppable. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "ra"
+        ]
+      },
+      "motion": "pull-out"
+    },
+    {
+      "id": "s29",
+      "narration": "Kısacası, kısa bir düelloda bahsimiz Thor'dan yana. Ama savaş günlerce sürerse, her sabah yeniden doğan bir rakibe karşı Thor'un gücü bile bir gün tükenir. Belki de en ilginci şu: İkisini de yere seren şey aynıydı. Bir yılanın zehri.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "sun-vs-storm",
+        "prompt": "Final duel in the sky: Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) unleashing a beam of blazing sunlight from his sun disk against Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) swinging Mjolnir wrapped in lightning, the two powers colliding in the middle, epic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "ra",
+          "thor"
+        ]
+      },
+      "motion": "push-in"
+    },
+    {
+      "id": "s30",
+      "narration": "Peki sen ne düşünüyorsun? Güneş mi, gök gürültüsü mü? Cevabını yorumlara yaz. Bir sonraki karşılaşmada iki ölüler diyarının efendisi karşı karşıya: Anubis ve Hades. Kaçırmamak için abone olmayı unutma.",
+      "type": "Outro",
+      "cta": "Sence kim kazanırdı? Yorumlara yaz!",
+      "nextVideoTeaser": "Sıradaki karşılaşma: Anubis vs Hades"
+    }
+  ],
+  "description": "Ra ve Thor karşı karşıya gelseydi kim kazanırdı? Mısır'ın güneş tanrısı ile Asgard'ın gök gürültüsü tanrısını; yaratılış mitleri, silahları, düşmanları ve zaaflarıyla karşılaştırıyoruz. Apep'ten Jörmungandr'a, Sekhmet'in öfkesinden Mjölnir'e kadar.\n\nKaynaklar: Piramit Metinleri, Gökteki İnek Kitabı, Ra ve İsis efsanesi (Torino Papirüsü), Amduat ve Kapılar Kitabı, Şiirsel Edda (Völuspá, Hymiskviða, Thrymskviða), Snorri Sturluson (Düzyazı Edda), Bremenli Adam.",
+  "tags": [
+    "ra",
+    "thor",
+    "ra vs thor",
+    "mısır mitolojisi",
+    "iskandinav mitolojisi",
+    "mitoloji",
+    "tanrılar",
+    "mjölnir",
+    "apep",
+    "jörmungandr",
+    "sekhmet",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#mitoloji",
+    "#ra",
+    "#thor"
+  ],
+  "thumbnail": {
+    "text": "RA vs THOR",
+    "concept": "İki tanrı karşı karşıya: solda altın güneşli Ra, sağda şimşekli Thor, ortada parlayan VS",
+    "image": {
+      "id": "ra-thor-clash",
+      "prompt": "Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) and Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) facing each other from opposite sides of the sky, a blazing desert sun and golden light on the left half, dark storm clouds and blue lightning on the right half, wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": [
+        "ra",
+        "thor"
+      ]
+    }
+  },
+  "characters": [
+    {
+      "id": "ra",
+      "name": "Ra",
+      "look": "a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh"
+    },
+    {
+      "id": "thor",
+      "name": "Thor",
+      "look": "a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning"
+    }
+  ],
+  "factChecks": [
+    {
+      "claim": "Başlangıçta yalnızca Nun suları vardı; ilk tepeden güneş/yaratıcı tanrı doğdu",
+      "confidence": "high",
+      "note": "Heliopolis kozmogonisi; Piramit Metinleri. Yaratıcı burada Atum/Ra-Atum olarak geçer, Ra ile özdeşleştirilir"
+    },
+    {
+      "claim": "İnsanlar Ra'nın gözyaşlarından doğdu",
+      "confidence": "high",
+      "note": "Tabut Metinleri, 1130. büyü ('insanları gözümün gözyaşlarından yarattım'); Mısırca 'gözyaşı' ve 'insan' kelime oyunu"
+    },
+    {
+      "claim": "Firavunlar 'Ra'nın oğlu' unvanını taşırdı",
+      "confidence": "high",
+      "note": "4. hanedandan itibaren sa-Ra unvanı"
+    },
+    {
+      "claim": "Ra sabah Khepri, öğlen Ra, akşam Atum olarak görülür",
+      "confidence": "high",
+      "note": "Yaygın Yeni Krallık güneş teolojisi"
+    },
+    {
+      "claim": "Ra gece yeraltında on iki saatlik bir yolculuk yapar ve Apep ile savaşır",
+      "confidence": "high",
+      "note": "Amduat ve Kapılar Kitabı; Apep'e karşı Set kayığın pruvasında savaşır"
+    },
+    {
+      "claim": "Ra'nın Gözü Sekhmet olarak insanları kırdı, kırmızıya boyanmış birayla sarhoş edilerek durduruldu",
+      "confidence": "high",
+      "note": "Gökteki İnek Kitabı (Tutankamon'un mezar odası, MÖ 14. yy). Metinde Gözü önce Hathor olarak gönderir"
+    },
+    {
+      "claim": "İsis, Ra'nın salyasından yılan yaratıp gizli adını öğrendi",
+      "confidence": "high",
+      "note": "Ra ve İsis efsanesi, Torino Papirüsü 1993 (19. hanedan)"
+    },
+    {
+      "claim": "Thor, Odin ile Jörð'ün oğludur",
+      "confidence": "high",
+      "note": "Gylfaginning, Skáldskaparmál"
+    },
+    {
+      "claim": "Mjölnir'in sapı Loki'nin sinek kılığında ustayı ısırması yüzünden kısa kaldı",
+      "confidence": "high",
+      "note": "Skáldskaparmál 35 (cüceler Brokkr ve Eitri)"
+    },
+    {
+      "claim": "Thor'un keçileri yenip ertesi gün çekiçle diriltilir",
+      "confidence": "high",
+      "note": "Gylfaginning 44 (Tanngrisnir ve Tanngnjóstr)"
+    },
+    {
+      "claim": "Útgarða-Loki'nin sınavları: okyanusa bağlı boynuz, Jörmungandr olan kedi, Yaşlılık (Elli)",
+      "confidence": "high",
+      "note": "Gylfaginning 45-47"
+    },
+    {
+      "claim": "Thor, Hymir ile balığa çıkıp öküz başıyla Jörmungandr'ı yakaladı, Hymir ipi kesti",
+      "confidence": "high",
+      "note": "Hymiskviða; Gylfaginning 48"
+    },
+    {
+      "claim": "Thor gelin kılığında Thrym'den çekicini geri aldı",
+      "confidence": "high",
+      "note": "Thrymskviða; alıntı 1. kıtanın serbest çevirisi"
+    },
+    {
+      "claim": "Ragnarök'te Thor Jörmungandr'ı öldürüp dokuz adım sonra zehirden öldü",
+      "confidence": "high",
+      "note": "Völuspá 56; Gylfaginning 51"
+    },
+    {
+      "claim": "Güç kemeri Megingjörð Thor'un gücünü artırır",
+      "confidence": "high",
+      "note": "Gylfaginning 21: tanrısal gücü yarı yarıya artar (iki katına değil)"
+    },
+    {
+      "claim": "Vikinglerin en sevdiği tanrı Thor'du, çekiç kolyeleri takılırdı",
+      "confidence": "medium",
+      "note": "Arkeolojik çekiç muskaları yaygın; Bremenli Adam Uppsala'da Thor'u en güçlü tanrı olarak ortada tasvir eder. 'En sevilen' halk dindarlığı için genel bir yorum"
+    },
+    {
+      "claim": "Piramit Metinleri Thor hikâyelerinin yazıya geçirilmesinden yaklaşık üç bin beş yüz yıl eskidir",
+      "confidence": "high",
+      "note": "Unas piramidi ~MÖ 2350; Düzyazı Edda ~MS 1220"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Piramit Metinleri ve Tabut Metinleri"
+    },
+    {
+      "title": "Gökteki İnek Kitabı"
+    },
+    {
+      "title": "Ra ve İsis efsanesi, Torino Papirüsü"
+    },
+    {
+      "title": "Amduat ve Kapılar Kitabı"
+    },
+    {
+      "title": "Şiirsel Edda: Völuspá, Hymiskviða, Thrymskviða"
+    },
+    {
+      "title": "Snorri Sturluson, Düzyazı Edda (Gylfaginning, Skáldskaparmál)"
+    },
+    {
+      "title": "Bremenli Adam, Gesta Hammaburgensis"
+    }
+  ],
+  "id": "2026-10-05-ra-vs-thor",
+  "topic": "Ra vs Thor — kim kazanırdı?",
+  "format": "long",
+  "language": "tr",
+  "series": "gods-battle",
+  "theme": "egypt-sand",
+  "createdAt": "2026-10-05T00:00:00.000Z"
+}
