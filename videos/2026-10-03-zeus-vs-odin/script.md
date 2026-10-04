@@ -5,7 +5,7 @@
 | Format | Uzun video (16:9) |
 | Seri | gods-battle |
 | Tema | Olimpos Altını |
-| Tahmini süre | 6:39 |
+| Tahmini süre | 6:42 |
 | Sahne sayısı | 29 |
 | Durum | ⏳ Onay bekliyor |
 
@@ -54,153 +54,153 @@ Yunan mitolojisinin kralı Zeus ile İskandinav mitolojisinin Her Şeyin Babası
 
 > Ama annesi Rhea, son bebeğini kurtarmaya karar verir. Kronos'a kundağa sarılmış bir taş uzatır. Kronos taşı yutar. Gerçek bebek ise Girit'te, bir mağarada gizlice büyütülür. O bebeğin adı Zeus'tur.
 
-### [1:09] s06 · CinematicImage
+### [1:11] s06 · CinematicImage
 
 - **Görsel:** `titanomachy` (push-in)
 - **Yazı:** TİTANLARIN SAVAŞI
 
 > Zeus büyüdüğünde bir hileyle babasına kardeşlerini kusturur. Sonra onlarla birlikte Titanlara savaş açar. Titanomakhia denen bu savaş tam on yıl sürer. Dağlar yerinden oynar, gökyüzü alev alır, toprak inler.
 
-### [1:25] s07 · CinematicImage
+### [1:27] s07 · CinematicImage
 
 - **Görsel:** `cyclops-forge` (pan-left)
 
 > Savaşın kaderini ise yeraltından gelen bir hediye değiştirir. Zeus'un serbest bıraktığı Kykloplar, ona minnetlerini bir silahla gösterirler. O silah, yıldırımdır. Bundan sonra Zeus'un adı, gök gürültüsüyle birlikte anılacaktır.
 
-### [1:41] s08 · CharacterCard
+### [1:44] s08 · CharacterCard
 
 - **Kart:** ZEUS, Olimpos'un Kralı (Yunan Mitolojisi)
 - **Puanlar:** Güç 95 · Zekâ 75 · Büyü 70 · Etki 98
 
 > Zeus böylece tanrıların kralı olur. Gökyüzü, fırtınalar, yeminler ve adalet onun alanıdır. Kardeşleri arasında kura çekilir. Poseidon denizleri, Hades ise yeraltını alır. Ama Zeus'un gücü sadece yıldırımdan gelmez. O, düzenin ve verilen sözün bekçisidir. Yemin bozanı cezalandıran odur.
 
-### [2:05] s09 · Quote
+### [2:07] s09 · Quote
 
 - **Alıntı:** “Gökten altın bir zincir sarkıtın ve hepiniz ona asılın. Beni yerimden oynatamazsınız. Ama ben isteseydim, sizi yerle ve denizle birlikte yukarı çekerdim.” — Homeros, İlyada, 8. Kitap
 
 > Homeros'un İlyada'sında Zeus, gücünü öbür tanrılara böyle anlatır. Hepsi bir altın zincire asılsa bile, onu yerinden kıpırdatamazlar.
 
-### [2:15] s10 · CinematicImage
+### [2:17] s10 · CinematicImage
 
 - **Görsel:** `nyx-night` (pull-out)
 - **Yazı:** NYX: GECE
 
 > Ama Zeus'un bile çekindiği biri vardı. İlyada'ya göre uyku tanrısı Hypnos, Zeus'un öfkesinden kaçarken Gece'ye, yani Nyx'e sığınır. Ve Zeus, Gece'yi kızdırmamak için öfkesini yutar.
 
-### [2:30] s11 · CinematicImage
+### [2:32] s11 · CinematicImage
 
 - **Görsel:** `zeus-prophecy` (push-in)
 
 > Zeus'u asıl korkutan ise babasını korkutanla aynı şeydi. Bir gün kendi çocuğu tarafından devrilmek. Bu yüzden, kehanete konu olan ilk eşi Metis'i yuttu. Tarih, neredeyse kendini tekrar ediyordu.
 
-### [2:46] s12 · ChapterTitle
+### [2:49] s12 · ChapterTitle
 
 - **Bölüm 2:** Her Şeyin Babası — Odin
 
 > Şimdi kuzeye, buzların ve fırtınaların diyarına gidiyoruz.
 
-### [2:51] s13 · CinematicImage
+### [2:53] s13 · CinematicImage
 
 - **Görsel:** `ymir-creation` (push-in)
 
 > İskandinav mitlerinde dünya, Ymir adlı dev bir varlığın bedeninden yaratılır. Onu alt edip dünyayı kuranlar üç kardeştir. Ve bu kardeşlerin en önde geleni, Odin'dir.
 
-### [3:04] s14 · CharacterCard
+### [3:06] s14 · CharacterCard
 
 - **Kart:** ODİN, Her Şeyin Babası (İskandinav Mitolojisi)
 - **Puanlar:** Güç 82 · Zekâ 99 · Büyü 96 · Etki 88
 
 > Odin, Asgard'ın hükümdarıdır. Savaşın, şiirin, ölümün ve bilgeliğin tanrısı. Ama Zeus'tan farklı olarak gücünü kaslarından değil, bildiklerinden alır. Savaşta ölen kahramanların yarısını Valhalla'ya kendisi seçer.
 
-### [3:21] s15 · CinematicImage
+### [3:23] s15 · CinematicImage
 
 - **Görsel:** `mimir-well` (push-in)
 - **Yazı:** MİMİR'İN KUYUSU
 
 > Efsaneye göre Odin, dünya ağacının köklerindeki Mímir'in kuyusundan tek bir yudum içebilmek için gözlerinden birini verdi. Çünkü o kuyunun suyu, evrenin bilgeliğini taşıyordu.
 
-### [3:34] s16 · Quote
+### [3:37] s16 · Quote
 
 - **Alıntı:** “Rüzgârlı ağaçta asılı kaldığımı bilirim, tam dokuz gece, mızrakla yaralanmış, Odin'e adanmış, kendim kendime.” — Hávamál, 138. kıta
 
 > Ama bu da yetmedi. Rünlerin sırrını öğrenmek için kendini dünya ağacı Yggdrasil'e astı. Bir mızrakla yaralanmış halde, kendini kendine kurban etti.
 
-### [3:46] s17 · StatCounter
+### [3:49] s17 · StatCounter
 
 - **Sayaç:** 9 GECE — Odin'in Yggdrasil'de asılı kaldığı süre
 
 > Tam dokuz gece. Ne ekmek, ne su. Sonunda rünleri kavradı ve büyünün efendisi oldu.
 
-### [3:54] s18 · CinematicImage
+### [3:57] s18 · CinematicImage
 
 - **Görsel:** `odin-ravens` (pan-left)
 - **Yazı:** HUGİNN & MUNİNN
 
 > Odin'in gözleri ve kulakları iki kuzgundur. Huginn ve Muninn, yani Düşünce ve Hafıza. Her sabah bütün dünyayı dolaşır, akşam dönüp ona gördükleri her şeyi anlatırlar. Ama ilginç bir ayrıntı var. Şiirde Odin, Düşünce'nin geri dönmemesinden korktuğunu, ama Hafıza için daha da çok endişelendiğini söyler.
 
-### [4:18] s19 · CinematicImage
+### [4:20] s19 · CinematicImage
 
 - **Görsel:** `sleipnir-gungnir` (pull-out)
 
 > Elinde cüceler tarafından dövülen ve efsaneye göre hedefinden asla sapmayan mızrak Gungnir vardır. Altında ise sekiz bacaklı atı Sleipnir.
 
-### [4:29] s20 · CinematicImage
+### [4:31] s20 · CinematicImage
 
 - **Görsel:** `ragnarok-fenrir` (push-in)
 - **Yazı:** RAGNARÖK
 
 > Ama Odin'in de bir korkusu vardı. O, geleceği bilen bir tanrıydı ve kendi sonunu da biliyordu. Ragnarök günü, dev kurt Fenrir onu yutacaktı. Bütün bilgeliğine rağmen, bu kaderi değiştiremeyecekti.
 
-### [4:44] s21 · Timeline
+### [4:47] s21 · Timeline
 
 - **Zaman çizelgesi:** MÖ 8. yüzyıl Homeros, İlyada → MÖ 700 civarı Hesiodos, Theogonia → MS 1220 civarı Snorri, Düzyazı Edda → MS 1270 civarı Codex Regius
 
 > Bir ayrıntı daha. Zeus'u anlatan metinler yaklaşık iki bin yedi yüz yıllık. Odin'in hikâyeleri ise çok daha sonra, Orta Çağ İzlanda'sında yazıya geçirildi.
 
-### [4:56] s22 · ChapterTitle
+### [4:58] s22 · ChapterTitle
 
 - **Bölüm 3:** Karşılaşma
 
 > Ve şimdi asıl soru.
 
-### [4:59] s23 · CinematicImage
+### [5:01] s23 · CinematicImage
 
 - **Görsel:** `olympus-asgard` (pan-right)
 - **Yazı:** İKİ DÜNYA, TEK KADER
 
 > Şunu da söylemek gerek: Bu iki tanrı mitlerde hiç karşılaşmaz. Ama aralarında şaşırtıcı bir benzerlik var. İkisi de eski bir düzeni yıkarak tahta çıkar. Zeus Titanları, Odin ise ilk devleri devirir. İkisi de bir dünyanın yıkıntıları üzerine yeni bir dünya kurar.
 
-### [5:18] s24 · Versus
+### [5:21] s24 · Versus
 
 - **Karşılaşma:** ZEUS vs ODİN (sonuç: hidden)
 
 > Yan yana koyduğumuzda tablo netleşiyor. Kaba güçte ve doğrudan yıkımda Zeus açık ara önde. Ama zekâ ve büyüde Odin'in rakibi yok. Zeus'un yıldırımı, Titanları bile alt eden bir silah. Odin'in mızrağı ise hedefinden asla sapmıyor.
 
-### [5:36] s25 · CinematicImage
+### [5:39] s25 · CinematicImage
 
 - **Görsel:** `zeus-storm` (pan-right)
 
 > Kısa bir savaşta ilk darbeyi vuran kazanır. Ve o darbe büyük ihtimalle Zeus'un yıldırımı olur.
 
-### [5:44] s26 · CinematicImage
+### [5:46] s26 · CinematicImage
 
 - **Görsel:** `odin-runes` (pan-left)
 
 > Ama Odin sahaya asla hazırlıksız çıkmaz. Kuzgunları rakibini önceden izler, rünleri onu korur, kehanetler ise savaşın nasıl biteceğini ona önceden fısıldar.
 
-### [5:56] s27 · CinematicImage
+### [5:59] s27 · CinematicImage
 
 - **Görsel:** `final-duel` (push-in)
 
 > Uzun bir savaşta ise plan yapan, bekleyen ve rakibinin zaafını bilen kazanır. O da büyük ihtimalle Odin'dir. Kısacası: yıldırım ilk raundu alır, bilgelik ise savaşı.
 
-### [6:10] s28 · CinematicImage
+### [6:13] s28 · CinematicImage
 
 - **Görsel:** `gods-fate` (pull-out)
 
 > Belki de en ilginç olan şu. İki tanrı da en büyük düşmanını kaderde gördü. Zeus, kehanet gerçekleşmesin diye her şeyi yaptı. Odin ise kaderinin gerçekleşeceğini bildiği halde ona hazırlandı.
 
-### [6:25] s29 · Outro
+### [6:27] s29 · Outro
 
 - **CTA:** Sence kim kazanırdı? Yorumlara yaz!
 - **Sonraki video:** Sıradaki karşılaşma: Ra vs Thor
@@ -211,8 +211,8 @@ Yunan mitolojisinin kralı Zeus ile İskandinav mitolojisinin Her Şeyin Babası
 
 - 0:00 Giriş
 - 0:39 Gök Gürültüsünün Efendisi
-- 2:46 Her Şeyin Babası
-- 4:56 Karşılaşma
+- 2:49 Her Şeyin Babası
+- 4:58 Karşılaşma
 
 ## Thumbnail
 
