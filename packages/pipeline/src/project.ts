@@ -1,3 +1,4 @@
+import { getVideoMetadata } from "@remotion/renderer";
 import { parseFile } from "music-metadata";
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -20,6 +21,7 @@ export interface Project {
 }
 
 const IMAGE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".webp"];
+const CLIP_EXTENSIONS = [".mp4", ".webm", ".mov"];
 
 /** Proje kimliği (projects/<id>) veya klasör yolu. Göreli yollar komutun çalıştırıldığı klasöre göre çözülür. */
 export const projectDir = (idOrPath: string): string =>
@@ -109,6 +111,33 @@ export const resolveMusic = (project: Project): string | undefined => {
   return target;
 };
 
+/**
+ * visuals/<görsel-id>.mp4|webm|mov: görselin hareketli hali (image-to-video). Süresi render planı için ölçülür;
+ * sahnede görselin yerine klip oynar, thumbnail yine görseli kullanır.
+ */
+export const loadClips = async (dir: string): Promise<NonNullable<RenderInput["clips"]>> => {
+  const visuals = path.join(dir, "visuals");
+  if (!existsSync(visuals)) return {};
+  const clips: NonNullable<RenderInput["clips"]> = {};
+  for (const file of readdirSync(visuals)) {
+    const ext = path.extname(file).toLowerCase();
+    if (!CLIP_EXTENSIONS.includes(ext)) continue;
+    const { durationInSeconds } = await getVideoMetadata(path.join(visuals, file), { logLevel: "error" });
+    if (durationInSeconds && durationInSeconds > 0) clips[path.basename(file, ext)] = { src: `visuals/${file}`, durationSec: durationInSeconds };
+  }
+  return clips;
+};
+
+const SFX = ["whoosh", "impact", "riser"] as const;
+
+/** Ses efektlerini proje klasörüne kopyalar (Remotion yalnızca proje klasöründeki dosyaları okuyabilir). */
+const prepareSfx = (dir: string): RenderInput["sfx"] => {
+  if (!SFX.every((name) => existsSync(path.join(PATHS.sfx, `${name}.mp3`)))) return undefined;
+  mkdirSync(path.join(dir, "sfx"), { recursive: true });
+  for (const name of SFX) copyFileSync(path.join(PATHS.sfx, `${name}.mp3`), path.join(dir, "sfx", `${name}.mp3`));
+  return { whoosh: "sfx/whoosh.mp3", impact: "sfx/impact.mp3", riser: "sfx/riser.mp3" };
+};
+
 export const renderInputFor = async (project: Project): Promise<RenderInput> => {
   const music = resolveMusic(project);
   const musicDuration = music ? (await parseFile(path.join(project.dir, music), { duration: true })).format.duration : undefined;
@@ -116,6 +145,8 @@ export const renderInputFor = async (project: Project): Promise<RenderInput> => 
     script: project.script,
     assets: loadAssets(project.dir),
     audio: loadAudio(project.dir),
+    clips: await loadClips(project.dir),
+    sfx: prepareSfx(project.dir),
     music: music ? { src: music, volume: loadVoiceConfig().musicVolume, durationSec: musicDuration } : undefined,
   };
 };

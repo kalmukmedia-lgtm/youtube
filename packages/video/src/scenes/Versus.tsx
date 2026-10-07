@@ -1,6 +1,7 @@
 import type { SceneOf } from "@metaficta/core";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import { Backdrop } from "../components/Backdrop";
+import { GodRays, LightLeak, useShake } from "../components/Motion";
 import { Portrait } from "../components/Portrait";
 import { StatBar } from "../components/StatBar";
 import { upper } from "../text";
@@ -17,6 +18,7 @@ export const Versus = ({ scene }: { scene: SceneOf<"Versus"> }) => {
 
   const enter = spring({ frame, fps, config: { damping: 18 } });
   const vs = spring({ frame: frame - 14, fps, config: { damping: 8, mass: 0.6 } });
+  const shake = useShake(16, 18, 20);
   const flash = interpolate(frame, [14, 18, 30], [0, 0.7, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   // Sonuç sahnenin son üçte birinde açıklanır.
   const verdictAt = Math.floor(duration * 0.66);
@@ -56,8 +58,9 @@ export const Versus = ({ scene }: { scene: SceneOf<"Versus"> }) => {
   };
 
   return (
-    <AbsoluteFill>
+    <AbsoluteFill style={{ transform: shake || undefined }}>
       <Backdrop seed="versus" intensity={1.1} />
+      <GodRays opacity={0.25} origin="50% 50%" />
       <AbsoluteFill style={{ flexDirection: vertical ? "column" : "row", alignItems: "center", padding: vertical ? `${110 * u}px ${60 * u}px` : `${60 * u}px ${110 * u}px ${180 * u}px`, gap: (vertical ? 150 : 200) * u }}>
         {side(scene.left, "left")}
         {side(scene.right, "right")}
@@ -87,6 +90,7 @@ export const Versus = ({ scene }: { scene: SceneOf<"Versus"> }) => {
           </div>
         ) : null}
       </AbsoluteFill>
+      <LightLeak strength={interpolate(frame, [14, 20, 60], [0, 0.9, 0.2], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })} seed="versus" />
       <AbsoluteFill style={{ background: "#fff8e6", opacity: flash, pointerEvents: "none" }} />
     </AbsoluteFill>
   );

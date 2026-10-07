@@ -31,7 +31,38 @@ const ZoomPresentation = ({ children, presentationDirection, presentationProgres
   return <AbsoluteFill style={style}>{children}</AbsoluteFill>;
 };
 
+/** Hızlı kamera savurması: eski sahne sola fırlar, yeni sahne sağdan hareket bulanıklığıyla gelir. */
+const WhipPresentation = ({ children, presentationDirection, presentationProgress }: TransitionPresentationComponentProps<NoProps>) => {
+  const p = Easing.inOut(Easing.exp)(presentationProgress);
+  const blur = Math.sin(presentationProgress * Math.PI) * 28;
+  const x = presentationDirection === "exiting" ? -p * 100 : (1 - p) * 100;
+  return <AbsoluteFill style={{ transform: `translateX(${x}%) scaleX(${1 + blur / 140})`, filter: `blur(${blur}px)` }}>{children}</AbsoluteFill>;
+};
+
+/** Film yanığı: sahneler sıcak bir ışık sızıntısının içinde birbirine erir. */
+const BurnPresentation = ({ children, presentationDirection, presentationProgress }: TransitionPresentationComponentProps<NoProps>) => {
+  const p = presentationProgress;
+  if (presentationDirection === "exiting") {
+    return <AbsoluteFill style={{ opacity: 1 - Easing.in(Easing.quad)(p), filter: `brightness(${1 + p * 1.5}) saturate(${1 + p})` }}>{children}</AbsoluteFill>;
+  }
+  const glow = Math.sin(p * Math.PI);
+  return (
+    <AbsoluteFill>
+      <AbsoluteFill style={{ opacity: Easing.out(Easing.quad)(p), filter: `brightness(${1 + (1 - p) * 1.5})` }}>{children}</AbsoluteFill>
+      <AbsoluteFill
+        style={{
+          mixBlendMode: "screen",
+          opacity: glow,
+          background: "radial-gradient(ellipse at 30% 50%, #ffb347 0%, #ff6a3dcc 30%, transparent 70%), radial-gradient(ellipse at 80% 40%, #ffe7a8 0%, transparent 55%)",
+        }}
+      />
+    </AbsoluteFill>
+  );
+};
+
 const flash = (): TransitionPresentation<NoProps> => ({ component: FlashPresentation, props: {} });
+const whip = (): TransitionPresentation<NoProps> => ({ component: WhipPresentation, props: {} });
+const burn = (): TransitionPresentation<NoProps> => ({ component: BurnPresentation, props: {} });
 const zoom = (): TransitionPresentation<NoProps> => ({ component: ZoomPresentation, props: {} });
 
 export const transitionFor = (kind: Exclude<TransitionKind, "none">) => {
@@ -47,5 +78,9 @@ export const transitionFor = (kind: Exclude<TransitionKind, "none">) => {
       return { presentation: flash(), timing };
     case "zoom":
       return { presentation: zoom(), timing };
+    case "whip":
+      return { presentation: whip(), timing };
+    case "burn":
+      return { presentation: burn(), timing };
   }
 };

@@ -8,6 +8,7 @@ Bu paket, senden gereken **görselleri** ve **seslendirmeyi** içerir. Sen bunla
 | Tahmini süre | ~7,5 dakika (868 kelime, 30 sahne) |
 | Bölümler | Giriş · Güneşin Efendisi · Asgard'ın Kalkanı · Karşılaşma |
 | Görsel | 20 adet |
+| Video klip | 10 adet (görsellerden üretilir) |
 | Ses | 30 dosya (her sahneye bir tane) |
 
 ## 1. Görseller
@@ -23,140 +24,218 @@ Bu paket, senden gereken **görselleri** ve **seslendirmeyi** içerir. Sen bunla
 Karakter: **Ra** · Kullanıldığı yer: s05, s26
 
 ```text
-Portrait of Ra, the Egyptian sun god: a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh, standing on the prow of a golden solar barque above a sea of light, the sun blazing behind him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Low-angle heroic medium shot. Portrait of Ra, the Egyptian sun god: a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh, standing on the prow of a golden solar barque above a sea of light, the sun blazing behind him. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 2. `thor-portrait.png`
 Karakter: **Thor** · Kullanıldığı yer: s14, s26
 
 ```text
-Portrait of Thor, the Norse god of thunder: a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning, standing on a cliff above a stormy fjord, lightning splitting the sky behind him. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Low-angle heroic medium shot. Portrait of Thor, the Norse god of thunder: a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning, standing on a cliff above a stormy fjord, lightning splitting the sky behind him. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 3. `ra-thor-clash.png`
 Karakter: **Ra, Thor** · Kullanıldığı yer: s01, thumbnail
 
 ```text
-Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) and Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) facing each other from opposite sides of the sky, a blazing desert sun and golden light on the left half, dark storm clouds and blue lightning on the right half, wide shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Epic wide symmetrical shot. Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) and Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) facing each other from opposite sides of the sky, a blazing desert sun and golden light on the left half, dark storm clouds and blue lightning on the right half, wide shot. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 4. `two-worlds.png`
 Karakter: **—** · Kullanıldığı yer: s02
 
 ```text
-Split landscape: on the left the golden pyramids and temples of ancient Egypt beside the Nile under a blazing sun, on the right snowy Norse fjords with a mighty golden hall on a mountain under a stormy sky, the two worlds meeting in the middle, wide panoramic shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Aerial establishing shot. Split landscape: on the left the golden pyramids and temples of ancient Egypt beside the Nile under a blazing sun, on the right snowy Norse fjords with a mighty golden hall on a mountain under a stormy sky, the two worlds meeting in the middle, wide panoramic shot. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 5. `nun-benben.png`
 Karakter: **—** · Kullanıldığı yer: s04
 
 ```text
-The primordial dark ocean Nun at the beginning of time, endless black water, a single mound of earth rising from the waters, the very first sunrise bursting from its top and lighting the darkness, cosmic and mythic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Wide establishing shot at water level. The primordial dark ocean Nun at the beginning of time, endless black water, a single mound of earth rising from the waters, the very first sunrise bursting from its top and lighting the darkness, cosmic and mythic. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 6. `solar-barque.png`
 Karakter: **Ra** · Kullanıldığı yer: s06
 
 ```text
-Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) sailing across the bright sky in a long golden Egyptian solar barque, lesser gods rowing, a giant scarab beetle pushing the rising sun at the bow, clouds and light below. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Sweeping aerial tracking shot. Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) sailing across the bright sky in a long golden Egyptian solar barque, lesser gods rowing, a giant scarab beetle pushing the rising sun at the bow, clouds and light below. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 7. `duat-night.png`
 Karakter: **—** · Kullanıldığı yer: s07, s08
 
 ```text
-Ra's night barque gliding through the Duat, the Egyptian underworld: a dark river in vast caverns, lakes of fire, towering gates guarded by serpents and spirits, a faint golden glow from the boat, eerie and mysterious. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Wide low-angle shot. Ra's night barque gliding through the Duat, the Egyptian underworld: a dark river in vast caverns, lakes of fire, towering gates guarded by serpents and spirits, a faint golden glow from the boat, eerie and mysterious. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 8. `apep-battle.png`
 Karakter: **—** · Kullanıldığı yer: s09
 
 ```text
-The colossal chaos serpent Apep rising from a dark underworld river to attack a glowing golden solar barque, a red-haired warrior god with an animal head standing at the prow thrusting a spear into the serpent, sparks and darkness, epic battle. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Dynamic low-angle action shot. The colossal chaos serpent Apep rising from a dark underworld river to attack a glowing golden solar barque, a red-haired warrior god with an animal head standing at the prow thrusting a spear into the serpent, sparks and darkness, epic battle. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 9. `sekhmet-rampage.png`
 Karakter: **—** · Kullanıldığı yer: s10, s11
 
 ```text
-Sekhmet, the Egyptian lioness-headed goddess of war, with a glowing sun disk on her head and a red linen dress, striding through a burning desert at dusk, fierce and terrifying, blood-red sky, fleeing silhouettes in the distance. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Low-angle hero shot. Sekhmet, the Egyptian lioness-headed goddess of war, with a glowing sun disk on her head and a red linen dress, striding through a burning desert at dusk, fierce and terrifying, blood-red sky, fleeing silhouettes in the distance. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 10. `isis-serpent.png`
 Karakter: **—** · Kullanıldığı yer: s12
 
 ```text
-The goddess Isis, a beautiful Egyptian woman with long black hair, a throne-shaped crown and outstretched wings, secretly shaping a glowing golden serpent out of clay in a dark temple, an aged falcon-headed god on a throne in the background, mysterious candlelight. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Intimate medium close-up. The goddess Isis, a beautiful Egyptian woman with long black hair, a throne-shaped crown and outstretched wings, secretly shaping a glowing golden serpent out of clay in a dark temple, an aged falcon-headed god on a throne in the background, mysterious candlelight. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 11. `mjolnir-forge.png`
 Karakter: **—** · Kullanıldığı yer: s15
 
 ```text
-Two dwarf smiths forging the war hammer Mjolnir in a fiery underground forge, sparks flying from the anvil, one dwarf pumping the bellows while a small black fly bites his eyelid, the glowing hammer with a short handle, dramatic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Close-up action shot. Two dwarf smiths forging the war hammer Mjolnir in a fiery underground forge, sparks flying from the anvil, one dwarf pumping the bellows while a small black fly bites his eyelid, the glowing hammer with a short handle, dramatic. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 12. `thor-goats.png`
 Karakter: **Thor** · Kullanıldığı yer: s16
 
 ```text
-Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) riding a chariot pulled by two large wild goats across a stormy night sky, thunder and lightning trailing behind the wheels. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Dynamic three-quarter tracking shot. Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) riding a chariot pulled by two large wild goats across a stormy night sky, thunder and lightning trailing behind the wheels. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 13. `utgard-trials.png`
 Karakter: **Thor** · Kullanıldığı yer: s17, s18
 
 ```text
-Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) in the enormous torch-lit hall of the giant king, drinking from a huge drinking horn while towering giants laugh around long tables, a giant grey cat and an old woman in the shadows. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Wide interior shot. Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) in the enormous torch-lit hall of the giant king, drinking from a huge drinking horn while towering giants laugh around long tables, a giant grey cat and an old woman in the shadows. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 14. `jormungandr-fishing.png`
 Karakter: **Thor** · Kullanıldığı yer: s19
 
 ```text
-Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) standing in a small wooden boat on a raging ocean, pulling up the colossal world serpent Jormungandr with a fishing line, the serpent's huge head bursting from the waves, a frightened giant in the boat. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Dramatic wide action shot. Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) standing in a small wooden boat on a raging ocean, pulling up the colossal world serpent Jormungandr with a fishing line, the serpent's huge head bursting from the waves, a frightened giant in the boat. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 15. `thrym-bride.png`
 Karakter: **—** · Kullanıldığı yer: s21
 
 ```text
-A giant's wedding feast in a torch-lit hall, a huge muscular bride in a white veil and wedding dress with a fiery red beard peeking out, eating an entire roasted ox, the giant groom staring in shock, humorous yet epic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Medium wide shot. A giant's wedding feast in a torch-lit hall, a huge muscular bride in a white veil and wedding dress with a fiery red beard peeking out, eating an entire roasted ox, the giant groom staring in shock, humorous yet epic. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 16. `ragnarok-thor.png`
 Karakter: **Thor** · Kullanıldığı yer: s22
 
 ```text
-Ragnarok: Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) delivering the final hammer blow to the colossal world serpent Jormungandr on a burning battlefield, venom spraying, the sky on fire, the end of the world. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Epic wide action shot. Ragnarok: Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) delivering the final hammer blow to the colossal world serpent Jormungandr on a burning battlefield, venom spraying, the sky on fire, the end of the world. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 17. `two-serpents.png`
 Karakter: **—** · Kullanıldığı yer: s25
 
 ```text
-Two colossal cosmic serpents: on the left the dark Egyptian chaos serpent Apep coiled around a fading sun, on the right the Norse world serpent Jormungandr encircling the earth beneath the ocean, mirrored composition, mythic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Symmetrical wide cosmic shot. Two colossal cosmic serpents: on the left the dark Egyptian chaos serpent Apep coiled around a fading sun, on the right the Norse world serpent Jormungandr encircling the earth beneath the ocean, mirrored composition, mythic. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 18. `thor-strike.png`
 Karakter: **Thor** · Kullanıldığı yer: s27
 
 ```text
-Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) hurling Mjolnir with all his might, the hammer leaving a trail of blinding lightning across a dark storm, dynamic action shot. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Dynamic low-angle action shot. Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) hurling Mjolnir with all his might, the hammer leaving a trail of blinding lightning across a dark storm, dynamic action shot. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 19. `ra-dawn.png`
 Karakter: **Ra** · Kullanıldığı yer: s28
 
 ```text
-Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) rising with the dawn above the desert, his blazing sun disk breaking the horizon, darkness retreating, a lioness goddess silhouette at his side, majestic and unstoppable. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Majestic wide low-angle shot. Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) rising with the dawn above the desert, his blazing sun disk breaking the horizon, darkness retreating, a lioness goddess silhouette at his side, majestic and unstoppable. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
 ```
 
 ### 20. `sun-vs-storm.png`
 Karakter: **Ra, Thor** · Kullanıldığı yer: s29
 
 ```text
-Final duel in the sky: Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) unleashing a beam of blazing sunlight from his sun disk against Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) swinging Mjolnir wrapped in lightning, the two powers colliding in the middle, epic. epic cinematic digital painting, dramatic lighting, highly detailed, 16:9, main subject centered, no text, no letters, no watermark
+Epic wide symmetrical shot. Final duel in the sky: Ra (a tall muscular man with the head of a falcon, golden-brown feathers, piercing golden eyes, a blazing golden sun disk encircled by a rearing cobra above his head, white linen kilt, broad gold and lapis lazuli collar, holding a was-scepter and an ankh) unleashing a beam of blazing sunlight from his sun disk against Thor (a powerful broad-shouldered man in his thirties with long fiery red hair and a thick braided red beard, fierce blue eyes, chainmail and leather armor with a red cloak, iron gauntlets, a thick belt, holding the short-handled war hammer Mjolnir crackling with lightning) swinging Mjolnir wrapped in lightning, the two powers colliding in the middle, epic. Cinematic film still, anamorphic lens, volumetric light rays and atmospheric haze, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, epic scale, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark
+```
+
+## 1b. Video klipler (image-to-video)
+
+**Kurallar**
+- Önce ilgili görseli üret, sonra o görseli video aracına (Kling, Runway, Hailuo, Luma…) **başlangıç karesi** olarak yükle ve hareket prompt'unu yapıştır.
+- **16:9, 1080p, 5–10 sn** (10 sn tercih). Ses gerekmez. Yazı/logo olmasın.
+- Dosya adı görselle **aynı ad, `.mp4` uzantılı** olmalı (ör. `ra-thor-clash.mp4`) ve **visuals** klasörüne yüklenmeli. Görseli de silme; thumbnail için kullanılıyor.
+- Klip sahneden kısaysa sistem onu yavaşlatır, bitince son karede bekletip kamera hareketini sürdürür.
+
+### V1. `ra-thor-clash.mp4`
+Başlangıç görseli: `ra-thor-clash.png` · Kullanıldığı yer: s01
+
+```text
+Slow push-in toward the center as golden sunlight and blue lightning surge toward each other and collide in a burst of energy, clouds swirling, both gods' cloaks billowing in the wind, epic slow motion. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V2. `nun-benben.mp4`
+Başlangıç görseli: `nun-benben.png` · Kullanıldığı yer: s04
+
+```text
+The dark water ripples, the mound slowly rises out of the sea, the first sunrise bursts over its peak and golden light spreads across the water, slow upward crane shot. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V3. `apep-battle.mp4`
+Başlangıç görseli: `apep-battle.png` · Kullanıldığı yer: s09
+
+```text
+The giant serpent lunges out of the dark water at the glowing boat, the warrior thrusts his spear, sparks and water splash, slight camera shake, dramatic slow motion. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V4. `sekhmet-rampage.mp4`
+Başlangıç görseli: `sekhmet-rampage.png` · Kullanıldığı yer: s10, s11
+
+```text
+The lioness goddess strides toward the camera with glowing eyes, embers and sand blowing in the hot wind, the red sky flickering, slow backward tracking shot. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V5. `mjolnir-forge.mp4`
+Başlangıç görseli: `mjolnir-forge.png` · Kullanıldığı yer: s15
+
+```text
+A hammer strikes the glowing Mjolnir on the anvil sending showers of sparks, the bellows pump, fire roars, a small fly buzzes around the smith, close-up slow motion. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V6. `thor-goats.mp4`
+Başlangıç görseli: `thor-goats.png` · Kullanıldığı yer: s16
+
+```text
+The goat-drawn chariot charges across the sky toward the camera, wheels trailing lightning, clouds rushing past, Thor raising his hammer, dynamic tracking shot. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V7. `jormungandr-fishing.mp4`
+Başlangıç görseli: `jormungandr-fishing.png` · Kullanıldığı yer: s19
+
+```text
+The world serpent bursts out of the waves with water cascading off its scales, Thor pulls the line with all his strength as the boat rocks violently, lightning flashes. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V8. `ragnarok-thor.mp4`
+Başlangıç görseli: `ragnarok-thor.png` · Kullanıldığı yer: s22
+
+```text
+Thor brings the hammer down onto the serpent's head in a blinding lightning blast, a shockwave of fire and debris, venom spraying, slow motion, camera shake. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V9. `ra-dawn.mp4`
+Başlangıç görseli: `ra-dawn.png` · Kullanıldığı yer: s28
+
+```text
+The sun disk rises over the desert horizon, light rays sweep across the dunes, darkness retreats, feathers ripple in the wind, slow majestic push-in. Keep the characters and composition identical to the start image, no text, 16:9.
+```
+
+### V10. `sun-vs-storm.mp4`
+Başlangıç görseli: `sun-vs-storm.png` · Kullanıldığı yer: s29
+
+```text
+A beam of sunlight and a torrent of lightning collide in the center, energy crackling and expanding outward, clouds spiraling, both gods straining, slow orbit around the clash. Keep the characters and composition identical to the start image, no text, 16:9.
 ```
 
 ## 2. Seslendirme

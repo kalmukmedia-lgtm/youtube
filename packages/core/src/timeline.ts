@@ -33,6 +33,10 @@ export const RenderInputSchema = z.object({
   assets: z.record(z.string(), z.string()),
   /** Sahne id → anlatım sesi. Yoksa süre metinden tahmin edilir. */
   audio: z.record(z.string(), SceneAudioSchema),
+  /** Görsel id → hareketli klip (visuals/<id>.mp4). Varsa sahnelerde görselin yerine oynatılır; thumbnail görseli kullanır. */
+  clips: z.record(z.string(), z.object({ src: z.string(), durationSec: z.number().positive() })).optional(),
+  /** Geçiş ve vurgu ses efektleri (proje klasörüne kopyalanan sfx/*.mp3). */
+  sfx: z.object({ whoosh: z.string(), impact: z.string(), riser: z.string() }).optional(),
   /** Fon müziği; konuşma sırasında otomatik kısılır (ducking). Video müzikten uzunsa parça yumuşak geçişle tekrarlanır. */
   music: z.object({ src: z.string(), volume: z.number(), durationSec: z.number().positive().optional() }).optional(),
 });

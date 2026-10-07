@@ -1,5 +1,6 @@
 import type { SceneOf } from "@metaficta/core";
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { LightLeak, RevealText, useShake } from "../components/Motion";
 import { SceneImage } from "../components/SceneImage";
 import { upper } from "../text";
 import { useLayout, useTheme } from "../theme";
@@ -10,16 +11,24 @@ export const CinematicImage = ({ scene }: { scene: SceneOf<"CinematicImage"> }) 
   const { vertical, u } = useLayout();
   const theme = useTheme();
   const reveal = spring({ frame: frame - 12, fps, config: { damping: 200 } });
+  const impact = scene.transition === "flash" || scene.transition === "whip";
+  // Darbeli girişte kamera sarsılır; flash/burn girişlerinde ışık sızıntısı sahnenin ilk saniyesinde söner.
+  const shake = useShake(6, 16, impact ? 16 : 0);
+  const leak = scene.transition === "flash" || scene.transition === "burn" ? interpolate(frame, [0, 30], [0.8, 0], { extrapolateRight: "clamp" }) : 0;
 
   return (
     <AbsoluteFill>
-      <SceneImage image={scene.image} motion={scene.motion} darken={0.2} />
+      <AbsoluteFill style={{ transform: shake || undefined }}>
+        <SceneImage image={scene.image} motion={scene.motion} darken={0.2} />
+      </AbsoluteFill>
+      <LightLeak strength={leak} seed={scene.id} />
       {/* Altyazı ve başlığın durduğu alt kısmı hafifçe karart: parlak görsellerde de yazı okunaklı kalsın. */}
       <AbsoluteFill
         style={{
-          background: scene.overlayText && !vertical
-            ? "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 32%, transparent 55%), linear-gradient(to right, rgba(0,0,0,0.35) 0%, transparent 45%)"
-            : "linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 30%)",
+          background:
+            scene.overlayText && !vertical
+              ? "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 32%, transparent 55%), linear-gradient(to right, rgba(0,0,0,0.35) 0%, transparent 45%)"
+              : "linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 30%)",
         }}
       />
       {scene.overlayText ? (
@@ -40,27 +49,18 @@ export const CinematicImage = ({ scene }: { scene: SceneOf<"CinematicImage"> }) 
               margin: vertical ? "0 auto" : undefined,
               minWidth: 0,
               maxWidth: 420 * u,
-              background: theme.colors.accent,
+              background: `linear-gradient(90deg, ${theme.colors.accent}, ${theme.colors.accent}00)`,
               boxShadow: `0 0 ${16 * u}px ${theme.colors.accent}`,
             }}
           />
-          <div
-            style={{
-              marginTop: 18 * u,
-              fontFamily: theme.displayFont,
-              fontWeight: 700,
-              fontSize: (vertical ? 76 : 70) * u,
-              letterSpacing: 4 * u,
-              color: theme.colors.text,
-              opacity: reveal,
-              transform: `translateY(${interpolate(reveal, [0, 1], [30, 0]) * u}px)`,
-              WebkitTextStroke: `${2 * u}px rgba(0,0,0,0.85)`,
-              paintOrder: "stroke fill",
-              textShadow: `0 0 ${6 * u}px rgba(0,0,0,0.95), 0 ${6 * u}px ${24 * u}px rgba(0,0,0,0.9)`,
-            }}
-          >
-            {upper(scene.overlayText)}
-          </div>
+          <RevealText
+            text={upper(scene.overlayText)}
+            delay={10}
+            fontSize={(vertical ? 76 : 74) * u}
+            fontFamily={theme.displayFont}
+            align={vertical ? "center" : "left"}
+            style={{ marginTop: 18 * u }}
+          />
         </div>
       ) : null}
     </AbsoluteFill>

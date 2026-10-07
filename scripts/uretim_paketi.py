@@ -62,6 +62,7 @@ def build(project: Path, branch: str):
     script = json.loads((project / "script.json").read_text(encoding="utf-8"))
     names = {c["id"]: c["name"] for c in script["characters"]}
     images = collect(script)
+    clips = [(img, used) for img, used in images if img.get("motion")]
     scenes = script["scenes"]
     words = sum(len(s["narration"].split()) for s in scenes)
     minutes = words / WPM
@@ -78,7 +79,7 @@ def build(project: Path, branch: str):
           "Bu paket, senden gereken **görselleri** ve **seslendirmeyi** içerir. Sen bunları hazırlayıp yükledikten sonra montaj, altyazı, efektler, müzik, render ve thumbnail'leri ben yapıyorum.", "",
           "| | |", "|---|---|", f"| Format | {fmt} |",
           f"| Tahmini süre | ~{minutes:.1f} dakika ({words} kelime, {len(scenes)} sahne) |".replace(".", ",", 1),
-          f"| Bölümler | {' · '.join(chapters(script))} |", f"| Görsel | {len(images)} adet |", f"| Ses | {len(scenes)} dosya (her sahneye bir tane) |", "",
+          f"| Bölümler | {' · '.join(chapters(script))} |", f"| Görsel | {len(images)} adet |"] + ([f"| Video klip | {len(clips)} adet (görsellerden üretilir) |"] if clips else []) + [f"| Ses | {len(scenes)} dosya (her sahneye bir tane) |", "",
           "## 1. Görseller", "", "**Kurallar**",
           "- Oran **16:9**, en az **1920×1080** (daha büyük olabilir). PNG veya JPG.",
           "- Dosya adı **tam olarak** aşağıdaki gibi olmalı (ör. `" + images[0][0]["id"] + ".png`). Sistem görseli adından tanıyor.",
@@ -88,6 +89,14 @@ def build(project: Path, branch: str):
     for n, (img, used) in enumerate(images, 1):
         chars = ", ".join(names.get(c, c) for c in img.get("characters", [])) or "—"
         md += [f"### {n}. `{img['id']}.png`", f"Karakter: **{chars}** · Kullanıldığı yer: {', '.join(used)}", "", "```text", img["prompt"], "```", ""]
+    if clips:
+        md += ["## 1b. Video klipler (image-to-video)", "", "**Kurallar**",
+               "- Önce ilgili görseli üret, sonra o görseli video aracına (Kling, Runway, Hailuo, Luma…) **başlangıç karesi** olarak yükle ve hareket prompt'unu yapıştır.",
+               "- **16:9, 1080p, 5–10 sn** (10 sn tercih). Ses gerekmez. Yazı/logo olmasın.",
+               "- Dosya adı görselle **aynı ad, `.mp4` uzantılı** olmalı (ör. `" + clips[0][0]["id"] + ".mp4`) ve **visuals** klasörüne yüklenmeli. Görseli de silme; thumbnail için kullanılıyor.",
+               "- Klip sahneden kısaysa sistem onu yavaşlatır, bitince son karede bekletip kamera hareketini sürdürür.", ""]
+        for n, (img, used) in enumerate(clips, 1):
+            md += [f"### V{n}. `{img['id']}.mp4`", f"Başlangıç görseli: `{img['id']}.png` · Kullanıldığı yer: {', '.join(u for u in used if u != 'thumbnail')}", "", "```text", img["motion"], "```", ""]
     md += ["## 2. Seslendirme", "", "**Ses yönergesi**",
            "- Türkçe, **tok ve sakin bir erkek sesi**; belgesel anlatıcısı gibi, merak uyandıran ama abartısız.",
            "- Hız normalden biraz yavaş; cümle aralarında kısa doğal duraklamalar.",
@@ -129,6 +138,14 @@ def build(project: Path, branch: str):
              E(f"Karakter: {', '.join(names.get(c, c) for c in img.get('characters', [])) or '—'} · Kullanıldığı yer: {', '.join(used)}"),
              img["prompt"], img["prompt"])
         for img, used in images)
+    clip_html = "".join(
+        item(f"vid:{img['id']}", f"{img['id']}.mp4", E(f"Başlangıç görseli: {img['id']}.png · Kullanıldığı yer: {', '.join(u for u in used if u != 'thumbnail')}"), img["motion"], img["motion"])
+        for img, used in clips)
+    clip_section = (f'''<h2 id="v">1b. Video klipler <small data-sec="vid"></small></h2>
+<div class="box"><ul><li>Önce görseli üret, sonra onu video aracına (Kling, Runway, Hailuo, Luma…) <b>başlangıç karesi</b> olarak yükleyip hareket prompt'unu yapıştır.</li>
+<li>16:9, 1080p, 5–10 sn (10 sn tercih). Ses gerekmez, yazı olmasın.</li>
+<li>Dosya adı görselle aynı, <b>.mp4</b> uzantılı; <b>visuals</b> klasörüne yükle. Görseli silme (thumbnail için lazım).</li>
+<li>Klip sahneden kısaysa sistem yavaşlatır ve son karede bekletir.</li></ul></div>{clip_html}''' if clips else "")
     aud_html = "".join(item(f"aud:{s['id']}", f"{s['id']}.mp3", E(s["type"]), s["narration"], s["narration"]) for s in scenes)
     all_narr = "\n\n".join(f"[{s['id']}.mp3]\n{s['narration']}" for s in scenes)
     pron_rows = "".join(f"<tr><td>{E(k)}</td><td>{E(v)}</td></tr>" for k, v in pron.items())
@@ -159,13 +176,14 @@ table{{border-collapse:collapse}}td{{padding:4px 12px;border-bottom:1px solid va
 </style></head><body><main>
 <div class="top"><h1>{E(script['workingTitle'])} — Üretim</h1>
 <div class="row"><b id="tot"></b><button id="reset">Sıfırla</button></div><div class="bar"><i id="totbar"></i></div>
-<nav><a href="#g">Görseller</a><a href="#s">Ses</a><a href="#m">Müzik</a><a href="#y">Yükleme</a><a href="#yt">YouTube</a></nav></div>
-<p class="meta">{E(fmt)} · ~{minutes:.1f} dk · {len(scenes)} sahne · {len(images)} görsel</p>
+<nav><a href="#g">Görseller</a>{'<a href="#v">Videolar</a>' if clips else ''}<a href="#s">Ses</a><a href="#m">Müzik</a><a href="#y">Yükleme</a><a href="#yt">YouTube</a></nav></div>
+<p class="meta">{E(fmt)} · ~{minutes:.1f} dk · {len(scenes)} sahne · {len(images)} görsel{f" · {len(clips)} video klip" if clips else ""}</p>
 
 <h2 id="g">1. Görseller <small data-sec="img"></small></h2>
 <div class="box"><ul><li>16:9, en az 1920×1080, PNG/JPG; dosya adı <b>tam olarak</b> aynı olmalı.</li><li>Görselde yazı olmasın.</li>
 <li>Önce {", ".join(f"<code>{E(p)}</code>" for p in portraits)} görsellerini üret; sonra o karakterin geçtiği görsellerde bunları karakter referansı olarak kullan.</li>
 <li>Ana öğe ortada olsun.</li></ul></div>{img_html}
+{clip_section}
 
 <h2 id="s">2. Seslendirme <small data-sec="aud"></small> {copybtn(all_narr, 'Tüm metni kopyala')}</h2>
 <div class="box"><ul><li>Tok, sakin erkek sesi; belgesel anlatıcısı; biraz yavaş.</li><li>Her sahne ayrı dosya (s01.mp3 … {scenes[-1]['id']}.mp3), baş/sonda en fazla ~0,3 sn sessizlik.</li>
@@ -179,6 +197,7 @@ table{{border-collapse:collapse}}td{{padding:4px 12px;border-bottom:1px solid va
 <div class="box"><ol><li><a href="{base}/visuals" target="_blank">visuals klasörü</a> → Add file → Upload files → en altta <b>Commit changes</b></li>
 <li><a href="{base}/audio" target="_blank">audio klasörü</a> → aynı şekilde</li><li>music.mp3 → <a href="{base}" target="_blank">video klasörü</a></li><li>Bana "yükledim" yaz.</li></ol></div>
 {item('up:img', 'Görseller yüklendi', '', f'visuals klasörüne {len(images)} görsel', '')}
+{item('up:vid', 'Video klipler yüklendi', '', f'visuals klasörüne {len(clips)} klip (.mp4)', '') if clips else ''}
 {item('up:aud', 'Sesler yüklendi', '', f'audio klasörüne {len(scenes)} ses', '')}
 
 <h2 id="yt">5. YouTube bilgileri</h2>
@@ -205,7 +224,7 @@ upd();
     for folder in ("visuals", "audio"):
         (project / folder).mkdir(exist_ok=True)
         (project / folder / "OKU.txt").write_text("Dosyaları bu klasöre yükle. Adlar için URETIM.html'e bak.\n", encoding="utf-8")
-    print(f"✅ {project}/URETIM.md + URETIM.html — {len(images)} görsel, {len(scenes)} ses, ~{minutes:.1f} dk, {len(pron)} okunuş")
+    print(f"✅ {project}/URETIM.md + URETIM.html — {len(images)} görsel, {len(clips)} klip, {len(scenes)} ses, ~{minutes:.1f} dk, {len(pron)} okunuş")
 
 
 if __name__ == "__main__":

@@ -5,6 +5,7 @@ import { AbsoluteFill, Audio, interpolate, Sequence, useVideoConfig } from "remo
 import { AssetsProvider, resolveAsset } from "./assets";
 import { Captions } from "./components/Captions";
 import { FilmGrain, Particles, ProgressBar, Vignette, Watermark } from "./components/Overlays";
+import { ChapterTags, SoundDesign } from "./components/SoundDesign";
 import { SceneRenderer, Sting } from "./scenes";
 import { SceneDurationProvider, ThemeProvider, useTheme } from "./theme";
 import { transitionFor } from "./transitions";
@@ -72,7 +73,7 @@ const Music = ({ music, speech }: { music: NonNullable<RenderInput["music"]>; sp
   );
 };
 
-const Body = ({ script, audio, music }: RenderInput) => {
+const Body = ({ script, audio, music, sfx }: RenderInput) => {
   const { fps } = useVideoConfig();
   const theme = useTheme();
   const timeline = buildTimeline({ script, audio }, fps);
@@ -108,6 +109,7 @@ const Body = ({ script, audio, music }: RenderInput) => {
       <Vignette />
       <FilmGrain />
       {isShort ? <ProgressBar /> : <Watermark />}
+      {isShort ? null : <ChapterTags timeline={timeline} />}
       {/* Altyazılar en üst katmanda: vinyet ve film greni onları karartmasın. */}
       {timeline.items.map((item, index) =>
         item.kind === "scene" ? (
@@ -123,13 +125,14 @@ const Body = ({ script, audio, music }: RenderInput) => {
         ) : null,
       )}
       {music ? <Music music={music} speech={speech} /> : null}
+      {sfx ? <SoundDesign sfx={sfx} timeline={timeline} /> : null}
     </AbsoluteFill>
   );
 };
 
 export const MetafictaVideo = (props: RenderInput) => (
   <ThemeProvider themeId={props.script.theme}>
-    <AssetsProvider assets={props.assets}>
+    <AssetsProvider assets={props.assets} clips={props.clips}>
       <Body {...props} />
     </AssetsProvider>
   </ThemeProvider>

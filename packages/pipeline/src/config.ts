@@ -23,6 +23,7 @@ export const PATHS = {
   videoEntry: path.join(REPO_ROOT, "packages/video/src/index.ts"),
   music: DATA_DIR ? path.join(DATA_DIR, "music") : path.join(REPO_ROOT, "assets/music"),
   characters: DATA_DIR ? path.join(DATA_DIR, "characters") : path.join(REPO_ROOT, "assets/characters"),
+  sfx: path.join(REPO_ROOT, "assets/sfx"),
 };
 
 /** Senaryo modeli. Varsayılan Claude Opus 5.5; .env'de METAFICTA_MODEL ile değiştirilebilir. */

@@ -27,8 +27,10 @@ export const FormatSchema = z.enum(["long", "short"]);
 export type VideoFormat = z.infer<typeof FormatSchema>;
 
 export const TransitionSchema = z
-  .enum(["fade", "slide", "wipe", "flash", "zoom", "none"])
-  .describe("Bu sahneye GİRİŞ geçişi. Vurgu anlarında 'flash', bölüm geçişlerinde 'wipe' veya 'zoom', genelde 'fade'.");
+  .enum(["fade", "slide", "wipe", "flash", "zoom", "whip", "burn", "none"])
+  .describe(
+    "Bu sahneye GİRİŞ geçişi. Vurgu anlarında 'flash', bölüm geçişlerinde 'wipe' veya 'zoom', hızlı aksiyonda 'whip' (hareket bulanıklıklı kaydırma), duygusal/sinematik anlarda 'burn' (ışık sızıntısıyla erime), genelde 'fade'.",
+  );
 export type TransitionKind = z.infer<typeof TransitionSchema>;
 
 export const CharacterSchema = z.object({
@@ -50,6 +52,10 @@ export const ImageRefSchema = z.object({
   characters: z
     .array(z.string())
     .describe("Görselde görünen karakterlerin id'leri (en fazla 4, `characters` listesinden). Karakter yoksa boş liste."),
+  motion: z
+    .string()
+    .optional()
+    .describe("İsteğe bağlı İngilizce image-to-video hareket prompt'u: bu görsel kısa bir video klibe çevrilecekse kamera ve sahne hareketi."),
 });
 export type ImageRef = z.infer<typeof ImageRefSchema>;
 

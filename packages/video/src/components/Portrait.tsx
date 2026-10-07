@@ -18,7 +18,7 @@ export const Portrait = ({ image, motion = "push-in", style }: { image: ImageRef
         ...style,
       }}
     >
-      <SceneImage image={image} motion={motion} darken={0.05} />
+      <SceneImage image={image} motion={motion} darken={0.05} atmosphere={false} />
       <div style={{ position: "absolute", inset: 0, background: `linear-gradient(180deg, transparent 55%, ${theme.colors.bg} 100%)` }} />
     </div>
   );
