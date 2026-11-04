@@ -14,6 +14,7 @@ public static class Catalog
         ("top-10", "Top 10"),
         ("did-you-know", "Bunu Biliyor muydun?"),
         ("tier-list", "Tier List"),
+        ("other-world", "Başka Bir Evrende"),
     ];
 
     public static readonly (string Id, string Label)[] Themes =
@@ -25,6 +26,7 @@ public static class Catalog
         ("ancient-sepia", "Kadim Sepya"),
         ("cosmic-void", "Kozmik Boşluk"),
         ("future-neon", "Gelecek Neonu"),
+        ("arcane-realm", "Kadim Büyü"),
     ];
 
     public static readonly (string Id, string Label)[] MusicMoods =
@@ -36,6 +38,7 @@ public static class Catalog
         ("ambient", "Ambiyans (Sepya)"),
         ("cosmic-ambient", "Kozmik ambiyans"),
         ("synthwave", "Synthwave (Gelecek)"),
+        ("dark-fantasy", "Karanlık fantastik (Kadim Büyü)"),
     ];
 
     public static string SeriesLabel(string id) => Series.FirstOrDefault(s => s.Id == id).Label ?? id;

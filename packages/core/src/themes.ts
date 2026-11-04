@@ -8,6 +8,7 @@ export const THEME_IDS = [
   "ancient-sepia",
   "cosmic-void",
   "future-neon",
+  "arcane-realm",
 ] as const;
 
 export const ThemeIdSchema = z.enum(THEME_IDS);
@@ -41,7 +42,7 @@ export interface Theme {
   /** Bu temadaki tüm yapay zekâ görsellerine eklenen İngilizce stil tarifi (görsel bütünlüğü için). */
   imageStyle: string;
   /** Mood tag used to pick background music. */
-  musicMood: "epic-orchestral" | "nordic" | "ethnic-mystery" | "steppe" | "ambient" | "cosmic-ambient" | "synthwave";
+  musicMood: "epic-orchestral" | "nordic" | "ethnic-mystery" | "steppe" | "ambient" | "cosmic-ambient" | "synthwave" | "dark-fantasy";
 }
 
 export const THEMES: Record<ThemeId, Theme> = {
@@ -114,6 +115,16 @@ export const THEMES: Record<ThemeId, Theme> = {
     grain: 0.04,
     imageStyle: "cinematic sci-fi concept art, futuristic megastructures, neon cyan and magenta lights, clean high-tech atmosphere",
     musicMood: "synthwave",
+  },
+  "arcane-realm": {
+    id: "arcane-realm",
+    label: "Kadim Büyü",
+    colors: { bg: "#06050d", bgAlt: "#1a1033", accent: "#c7a6ff", accentSoft: "#2fb7c4", text: "#f2eeff", muted: "#a9a1c4" },
+    fonts: { display: "Cinzel", body: "Inter" },
+    particles: "embers",
+    grain: 0.07,
+    imageStyle: "dark high fantasy cinematic concept art, arcane violet and teal glow, volumetric mist, intricate armor and robes, dramatic rim lighting",
+    musicMood: "dark-fantasy",
   },
 };
 

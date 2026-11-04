@@ -18,6 +18,7 @@ export const SERIES_IDS = [
   "top-10",
   "did-you-know",
   "tier-list",
+  "other-world",
   "standalone",
 ] as const;
 export const SeriesIdSchema = z.enum(SERIES_IDS);

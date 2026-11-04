@@ -12,6 +12,7 @@ Aynı proje her render'da aynı parçayı alır. Bir projeye özel parça isters
 | `ambient/` | ancient-sepia | Sakin, atmosferik |
 | `cosmic-ambient/` | cosmic-void | Uzay ambiyansı, synth pad |
 | `synthwave/` | future-neon | Elektronik, synthwave |
+| `dark-fantasy/` | arcane-realm | Karanlık fantastik, koro, büyülü atmosfer |
 
 **Kaynak:** YouTube Studio → Ses Kitaplığı (telif sorunu olmayan, ücretsiz) veya lisansını bildiğin parçalar.
 Desteklenen biçimler: `.mp3`, `.m4a`, `.wav`, `.ogg`.

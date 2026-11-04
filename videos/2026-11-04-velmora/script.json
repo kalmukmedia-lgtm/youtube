@@ -1,0 +1,772 @@
+{
+  "workingTitle": "Büyünün Olduğu Bir Evrende Doğsaydın Ne Olurdun?",
+  "titleOptions": [
+    "Büyünün Olduğu Bir Evrende Doğsaydın Ne Olurdun?",
+    "Başka Bir Evrende Doğsaydın: Savaşçı mı, Büyücü mü?",
+    "Velmora: Büyü Dünyasının Karanlık Sırrı"
+  ],
+  "hook": "Bir an düşün.",
+  "summary": "Büyünün, ırkların ve sınıfların olduğu Velmora evreninde doğan Arin'in hikâyesi: Uyanış Taşı, büyücü kulesi, diğer sınıflardaki alternatif hayatlar ve kulelerin karanlık sırrı.",
+  "scenes": [
+    {
+      "id": "s01",
+      "narration": "Bir an düşün. Bu dünyada değil de, büyünün nefes almak kadar sıradan olduğu bir dünyada doğdun. Yedi yaşına geldiğinde bir taşa dokunuyorsun ve o taş, hayatının geri kalanını belirliyor. Savaşçı mı olacaksın, büyücü mü, yoksa gölgelerde yaşayan bir suikastçı mı? Bu hikâyenin kahramanının adı Arin. Ve onun dünyası, ilk bakışta göründüğü kadar parlak değil.",
+      "type": "ColdOpen",
+      "headline": "BAŞKA BİR EVRENDE",
+      "image": {
+        "id": "awakening-stone",
+        "prompt": "Dramatic medium-wide shot. A village square at dusk, a seven-year-old boy with ash-brown hair placing his hand on a tall ancient monolith carved with runes, the stone glowing bright blue with a single streak of pitch-black at its core, villagers watching in awe, a hooded tower priest standing beside the stone. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ],
+        "motion": "The stone pulses and fills with bright blue light, villagers gasp, then for a single heartbeat the whole stone flashes pitch black before returning to blue, the hooded priest's face tightens, slow push-in. Keep the characters and composition identical to the start image, no text, 16:9."
+      }
+    },
+    {
+      "id": "s02",
+      "narration": "Bu dünyanın adı Velmora. Gökyüzünde iki ay var. Denizlerin üzerinde süzülen adalar, binlerce yıllık dev ağaçlar ve ufukta yükselen yedi devasa kule. Velmora'da her şey, tek bir güce bağlı. Öz.",
+      "transition": "burn",
+      "type": "CinematicImage",
+      "image": {
+        "id": "velmora-world",
+        "prompt": "Epic aerial establishing shot. The fantasy world of Velmora: floating islands above a glittering sea, ancient forests of colossal trees, a vast continent crossed by glowing rivers of light, seven gigantic towers rising on the horizon, two moons in a violet sky. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [],
+        "motion": "Slow aerial glide forward over the floating islands toward the seven towers, clouds drifting past, glowing rivers of light shimmering below, the two moons slowly rising. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "motion": "push-in"
+    },
+    {
+      "id": "s03",
+      "narration": "Önce bu dünyanın kurallarını öğrenelim.",
+      "transition": "wipe",
+      "type": "ChapterTitle",
+      "chapterNumber": 1,
+      "title": "Velmora",
+      "subtitle": "Doğduğun Dünya"
+    },
+    {
+      "id": "s04",
+      "narration": "Öz, Velmora'nın damarlarında akan görünmez bir enerji. Toprakta, suda, rüzgârda ve en çok da insanların içinde. Burada herkes bir Öz damarıyla doğar. Kiminin damarı bir dere kadar incedir, kimininki bir nehir kadar coşkun. Ve o damarın gücü, kim olacağını belirler.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "oz-veins",
+        "prompt": "Macro close-up. Glowing veins of blue-white arcane energy running beneath human skin and continuing into cracks in the earth around an open palm, the energy called Öz flowing like rivers of light, mystical and intimate. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "ÖZ",
+      "motion": "push-in"
+    },
+    {
+      "id": "s05",
+      "narration": "Öz'ün nasıl kullanılacağına ise Yedi Kule Konseyi karar verir. Her kule, bir büyü yolunu yönetir. Krallar bile konseyin sözünden çıkamaz. Çünkü Öz'ü kontrol eden, Velmora'yı kontrol eder.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "seven-towers",
+        "prompt": "Majestic low-angle wide shot. Seven colossal arcane towers of different colors standing in a circle around a grand city, each crowned with a glowing crystal, a hooded council of seven silhouetted on a high bridge between them, storm clouds above. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "YEDİ KULE",
+      "motion": "pull-out"
+    },
+    {
+      "id": "s06",
+      "narration": "Konseyin ilk yasası, kuleler kurulduğundan beri her meydanda okunur. Kulağa adil geliyor, değil mi? Bu cümleyi aklının bir köşesinde tut. Hikâyenin sonunda anlamı değişecek.",
+      "type": "Quote",
+      "quote": "Öz herkese verilmiştir; ama herkese ait değildir.",
+      "attribution": "Yedi Kule Yasası, Birinci Madde"
+    },
+    {
+      "id": "s07",
+      "narration": "Ama Velmora'nın bir yarası var. Yarıklar. Gökyüzünde ve toprakta aniden açılan, içinden canavarların döküldüğü yırtıklar. Kimse nereden geldiklerini bilmiyor. Bildikleri tek şey şu: Her yıl daha fazla Yarık açılıyor. Ve onlara karşı duran tek güç, Öz kullananlar.",
+      "transition": "flash",
+      "type": "CinematicImage",
+      "image": {
+        "id": "yarik-rift",
+        "prompt": "Dramatic wide shot. A giant glowing red rift tearing open across the sky above a burning frontier fortress, monstrous shadowy creatures pouring out of the crack, soldiers with glowing weapons standing on the walls. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [],
+        "motion": "The rift in the sky slowly tears wider with crackling red energy, monsters spill out and dive toward the fortress, embers and debris swirl, slight camera shake. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "overlayText": "YARIKLAR",
+      "motion": "push-in"
+    },
+    {
+      "id": "s08",
+      "narration": "Velmora'da beş ırk yaşar. İnsanlar en kalabalık olanlardır. Kısa yaşarlar ama her yola uyum sağlarlar. Elfler yüzyıllarca yaşar ve büyüye doğuştan yatkındır. Cüceler büyüyü taşa ve metale işler. Kurtkanlılar, içlerinde bir hayvan ruhu taşır. Ve en nadir olanlar, damarlarında ejderha kanı akan Drakkanlar.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "races-lineup",
+        "prompt": "Wide heroic lineup shot. Five fantasy races standing side by side on a misty hill at dawn: a human knight, a graceful elf with silver hair, a stout dwarf with glowing rune tattoos, a wolf-blooded warrior with feral eyes and wolf-fur mantle, and a tall dragon-blooded drakkan with ember-red scales on his cheeks and small horns. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "BEŞ IRK",
+      "motion": "pan-right"
+    },
+    {
+      "id": "s09",
+      "narration": "Irk, yolu belirlemez ama ona yön verir. Elflerden çıkan büyücüler, insanlardan daha uzun yaşar ve daha derin büyüler öğrenir. Cüceler neredeyse her zaman rün ustası olur. Kurtkanlılar doğuştan izcidir. Drakkanlar ise ateşe dayanıklı oldukları için savaşçıların en ön safındadır.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "races-lineup",
+        "prompt": "Wide heroic lineup shot. Five fantasy races standing side by side on a misty hill at dawn: a human knight, a graceful elf with silver hair, a stout dwarf with glowing rune tattoos, a wolf-blooded warrior with feral eyes and wolf-fur mantle, and a tall dragon-blooded drakkan with ember-red scales on his cheeks and small horns. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "motion": "pull-out"
+    },
+    {
+      "id": "s10",
+      "narration": "Şimdi hikâyemizin kahramanıyla tanışalım.",
+      "transition": "zoom",
+      "type": "ChapterTitle",
+      "chapterNumber": 2,
+      "title": "Uyanış",
+      "subtitle": "Arin'in Doğuşu"
+    },
+    {
+      "id": "s11",
+      "narration": "Arin, Yarıklara en yakın sınır köyü Karaçam'da doğdu. İki ayın birden dolunay olduğu bir gece. Köyün yaşlıları bunu bir işaret saydı. Ama neyin işareti olduğunu kimse söyleyemedi.",
+      "transition": "burn",
+      "type": "CinematicImage",
+      "image": {
+        "id": "karacam-village",
+        "prompt": "Wide establishing shot. A small frontier village of wooden houses and black pines on the edge of a dark valley at night, two full moons shining side by side in the sky, a faint red glow of a distant rift on the horizon, warm candle light in one window. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "motion": "push-in"
+    },
+    {
+      "id": "s12",
+      "narration": "Annesi Lira, köyün şifacısıydı. Ellerinden yayılan yeşil ışıkla kırık kemikleri kaynatır, ateşi düşürürdü. Babası ise Yarık savaşlarından tek kolunu bırakarak dönmüş eski bir askerdi. Arin büyürken iki şeyi iyi öğrendi. İnsanları iyileştirmeyi ve geceleri ufuktaki kızıl ışığa bakmamayı.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "arin-child",
+        "prompt": "Warm medium shot. Seven-year-old Arin, a small boy with tousled ash-brown hair and storm-grey eyes, watching his mother Lira, a village healer in simple green robes, heal a wounded farmer's arm with soft green light flowing from her hands inside a candle-lit wooden cottage. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ]
+      },
+      "motion": "pan-left"
+    },
+    {
+      "id": "s13",
+      "narration": "Velmora'da her çocuk yedi yaşına geldiğinde Uyanış Taşı'na dokunur. Taş, çocuğun Öz damarını okur ve bir renkle parlar. O renk, çocuğun hangi yola yatkın olduğunu söyler. Bu an, bir ömür boyu taşınacak bir etiket gibidir. Köylüler buna kader der.",
+      "transition": "flash",
+      "type": "CinematicImage",
+      "image": {
+        "id": "awakening-stone",
+        "prompt": "Dramatic medium-wide shot. A village square at dusk, a seven-year-old boy with ash-brown hair placing his hand on a tall ancient monolith carved with runes, the stone glowing bright blue with a single streak of pitch-black at its core, villagers watching in awe, a hooded tower priest standing beside the stone. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ],
+        "motion": "The stone pulses and fills with bright blue light, villagers gasp, then for a single heartbeat the whole stone flashes pitch black before returning to blue, the hooded priest's face tightens, slow push-in. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "overlayText": "UYANIŞ TAŞI",
+      "motion": "push-in"
+    },
+    {
+      "id": "s14",
+      "narration": "Kırmızı, bedenin gücüdür: Savaşçılar. Mavi, elementlere hükmedenler: Büyücüler. Yeşil, yaşamın kendisi: Şifacılar. Mor, gölgelerin dili: Suikastçılar. Amber ise doğanın sesi: İzciler. Bir de kimsenin yüksek sesle söylemediği altıncı bir renk var. Ama ona sonra geleceğiz.",
+      "type": "Timeline",
+      "title": "Öz'ün Renkleri",
+      "events": [
+        {
+          "date": "Kırmızı",
+          "label": "Savaşçı · Demir Yolu"
+        },
+        {
+          "date": "Mavi",
+          "label": "Büyücü · Kule Yolu"
+        },
+        {
+          "date": "Yeşil",
+          "label": "Şifacı · Yaşam Yolu"
+        },
+        {
+          "date": "Mor",
+          "label": "Suikastçı · Gölge Yolu"
+        },
+        {
+          "date": "Amber",
+          "label": "İzci · Rüzgâr Yolu"
+        },
+        {
+          "date": "Siyah",
+          "label": "???"
+        }
+      ],
+      "focusIndex": 5
+    },
+    {
+      "id": "s15",
+      "narration": "Arin taşa dokunduğunda taş maviye döndü. Meydandaki herkes alkışladı. Karaçam'dan yıllardır bir büyücü çıkmamıştı. Ama alkışlar arasında kimsenin fark etmediği bir şey oldu. Taş, sadece bir kalp atışı kadar, simsiyah oldu. Bunu gören tek kişi, töreni yöneten kule rahibiydi. Ve o, hiçbir şey söylemedi.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "awakening-stone",
+        "prompt": "Dramatic medium-wide shot. A village square at dusk, a seven-year-old boy with ash-brown hair placing his hand on a tall ancient monolith carved with runes, the stone glowing bright blue with a single streak of pitch-black at its core, villagers watching in awe, a hooded tower priest standing beside the stone. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ],
+        "motion": "The stone pulses and fills with bright blue light, villagers gasp, then for a single heartbeat the whole stone flashes pitch black before returning to blue, the hooded priest's face tightens, slow push-in. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "motion": "pull-out"
+    },
+    {
+      "id": "s16",
+      "narration": "Mavi ışık, Arin'in yolunu çizmişti.",
+      "transition": "wipe",
+      "type": "ChapterTitle",
+      "chapterNumber": 3,
+      "title": "Gümüş Kule",
+      "subtitle": "Büyücünün Yolu"
+    },
+    {
+      "id": "s17",
+      "narration": "On iki yaşında Arin, büyücülerin kulesi olan Gümüş Kule'ye kabul edildi. Kuleye her yıl binlerce çocuk başvurur. Sadece birkaç yüzü içeri girer. Arin, bir köy çocuğu olarak onlardan biriydi. Ve kuledeki ilk gün, büyünün masallardaki gibi olmadığını öğrendi.",
+      "transition": "burn",
+      "type": "CinematicImage",
+      "image": {
+        "id": "silver-tower",
+        "prompt": "Low-angle majestic shot. The Silver Tower, a colossal academy of mages made of white stone and silver spires, floating rings of runes orbiting its peak, students in blue robes crossing a long bridge toward its gates at sunrise. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "GÜMÜŞ KULE",
+      "motion": "push-in"
+    },
+    {
+      "id": "s18",
+      "narration": "Burada büyü bir sanat değil, bir bilimdir. Öğrenciler önce Öz'ü hissetmeyi öğrenir, sonra onu bir kalıba sokmayı. Tek bir alev topu için aylarca nefes çalışması gerekir. Hata yapanın bedeli ağırdır. Kontrolden çıkan Öz, önce sahibini yakar.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "mage-academy",
+        "prompt": "Wide interior shot. A vast circular library-classroom inside a mage tower, floating books and glowing runes in the air, young students in blue robes practicing small flames and frost in their palms, an elf archmage teacher walking between them. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "sereth"
+        ]
+      },
+      "motion": "pan-right"
+    },
+    {
+      "id": "s19",
+      "narration": "Büyücüler de kendi içinde ayrılır. En kalabalık olanlar element büyücüleridir. Ateş, buz, şimşek ve toprak. Savaş meydanlarında en çok korkulan onlardır. Usta bir şimşek büyücüsü, tek başına bir orduyu durdurabilir.",
+      "transition": "whip",
+      "type": "CinematicImage",
+      "image": {
+        "id": "elemental-mage",
+        "prompt": "Dynamic low-angle action shot. An elemental battle mage standing on a cliff summoning fire in one hand and lightning in the other, ice crystals forming around his feet, a storm raging behind him, robes whipping in the wind. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [],
+        "motion": "The mage raises both hands, fire spirals up one arm and lightning crackles down the other, ice spreads across the ground, wind whips the robes, camera slowly orbits. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "overlayText": "ELEMENT BÜYÜCÜLERİ",
+      "motion": "push-in"
+    },
+    {
+      "id": "s20",
+      "narration": "Rün ustaları ise büyüyü yazıyla yapar. Kılıçlara, kalkanlara ve kapılara kazınan rünler yıllarca güç taşır. Bu sanatın en iyileri cücelerdir. Velmora'daki her kalenin duvarında, bir cücenin imzası vardır.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "rune-master",
+        "prompt": "Close-up medium shot. A dwarf rune master with a braided beard engraving glowing violet runes into a massive war axe on an anvil inside a mountain forge, sparks and runic light reflecting on his face. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "RÜN USTALARI",
+      "motion": "push-in"
+    },
+    {
+      "id": "s21",
+      "narration": "Zihin büyücüleri ise en tehlikeli olanlardır, çünkü onları göremezsin. Yanılsamalar yaratır, anıları değiştirir, bir insanı en büyük korkusuyla yüzleştirirler. Konsey onları sıkı yasalarla bağlamıştır. Ama yasalar, onları uygulayanlar kadar güçlüdür.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "mind-mage",
+        "prompt": "Eerie medium shot. A mysterious mind mage in a pale mask surrounded by shifting illusions, mirror images of herself fading in and out, a frightened soldier seeing his worst nightmare as a ghostly projection, surreal and unsettling. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "ZİHİN BÜYÜCÜLERİ",
+      "motion": "pull-out"
+    },
+    {
+      "id": "s22",
+      "narration": "Ve çağırıcılar. Öz'lerini başka bir varlığa bağlayarak ruh hayvanlarını, hatta Yarıklardan gelen yaratıkları çağırabilirler. Ama her çağrının bir bedeli vardır. Çağırıcının ömrü, çağırdığı varlıkla paylaşılır.",
+      "transition": "burn",
+      "type": "CinematicImage",
+      "image": {
+        "id": "summoner",
+        "prompt": "Epic wide shot. A summoner kneeling in a stone circle with glowing teal chains of light connecting her chest to a colossal spectral wolf made of starlight rising behind her, forest at night. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [],
+        "motion": "Teal chains of light pulse from the summoner's chest, the spectral starlight wolf rises behind her and lets out a silent howl, stars swirling around it, slow upward tilt. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "overlayText": "ÇAĞIRICILAR",
+      "motion": "push-in"
+    },
+    {
+      "id": "s23",
+      "narration": "Bir de konuşulmayan yollar var. Kan büyüsü ve ölüleri çağırmak. İkisi de yedi kulenin yasasıyla yasaktır. Yakalananların Öz damarı kesilir. Bu, Velmora'da ölümden daha kötü bir cezadır.",
+      "transition": "flash",
+      "type": "CinematicImage",
+      "image": {
+        "id": "forbidden-magic",
+        "prompt": "Ominous low-angle shot. A forbidden blood mage in tattered dark robes inside a ruined crypt, crimson magic dripping from his fingers, skeletal hands rising from the ground around him, sinister red light. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "YASAK BÜYÜ",
+      "motion": "push-in"
+    },
+    {
+      "id": "s24",
+      "narration": "Her yolun beş basamağı vardır. Çırak, Kalfa, Usta, Büyük Usta ve Efsane. Her basamak, kulenin önünde yapılan bir sınavla kazanılır. Ve her sınavda, adayların bir kısmı bir daha asla büyü yapamaz hale gelir.",
+      "type": "Timeline",
+      "title": "Ustalık Basamakları",
+      "events": [
+        {
+          "date": "I",
+          "label": "Çırak"
+        },
+        {
+          "date": "II",
+          "label": "Kalfa"
+        },
+        {
+          "date": "III",
+          "label": "Usta"
+        },
+        {
+          "date": "IV",
+          "label": "Büyük Usta"
+        },
+        {
+          "date": "V",
+          "label": "Efsane"
+        }
+      ],
+      "focusIndex": 2
+    },
+    {
+      "id": "s25",
+      "narration": "Bin büyücüden yalnızca biri Usta olabilir. Yaşayan Efsanelerin sayısı ise sadece yedi. Yedi kulenin yedi efendisi.",
+      "type": "StatCounter",
+      "value": 1000,
+      "prefix": "1 / ",
+      "label": "Usta basamağına ulaşabilen büyücü oranı",
+      "image": {
+        "id": "silver-tower",
+        "prompt": "Low-angle majestic shot. The Silver Tower, a colossal academy of mages made of white stone and silver spires, floating rings of runes orbiting its peak, students in blue robes crossing a long bridge toward its gates at sunrise. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      }
+    },
+    {
+      "id": "s26",
+      "narration": "Arin, on altı yaşında Kalfa sınavını geçti. Hem de sınıfının en genci olarak. Ama hocası, elf başbüyücü Sereth, onda tuhaf bir şey fark etmişti. Arin büyü yaptığında, çevresindeki meşalelerin ışığı bir anlığına sönüyordu. Sanki onun büyüsü, etraftaki Öz'ü kendine çekiyordu.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "arin-teen-mage",
+        "prompt": "Dramatic medium shot. Sixteen-year-old Arin (a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build) in blue apprentice robes casting a large blue spell in an exam arena, while every torch around him dims and bends its flames toward him, an elf archmage (a tall ageless elf archmage woman with long silver hair, pointed ears, pale violet eyes, flowing midnight-blue robes embroidered with silver runes, holding a crystal-topped staff) watching with a worried expression from the stands. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin",
+          "sereth"
+        ]
+      },
+      "overlayText": "ON ALTI YAŞ",
+      "motion": "push-in"
+    },
+    {
+      "id": "s27",
+      "narration": "O gece Sereth, Arin'i odasına çağırdı ve ona yalnızca tek bir cümle söyledi. Arin bu cümleyi yıllarca anlamadı.",
+      "type": "Quote",
+      "quote": "Her büyü bir yerden alınır, Arin. Sorman gereken soru, kimden alındığıdır.",
+      "attribution": "Başbüyücü Sereth"
+    },
+    {
+      "id": "s28",
+      "narration": "Peki taş başka bir renk gösterseydi? Arin'in hayatı nasıl olurdu?",
+      "transition": "zoom",
+      "type": "ChapterTitle",
+      "chapterNumber": 4,
+      "title": "Diğer Hayatlar",
+      "subtitle": "Taş başka bir renk gösterseydi"
+    },
+    {
+      "id": "s29",
+      "narration": "Taş kırmızı yansaydı, Arin on yaşında kılıç okuluna gönderilirdi. Savaşçılar Öz'lerini dışarı değil, kendi bedenlerine akıtır. Kemikleri sertleşir, kasları bir insanın taşıyamayacağı yükleri kaldırır. On sekiz yaşında Arin, Yarık sınırında bir muhafız birliğinin en önünde dururdu. Ama savaşçılar, Velmora'da nadiren kırk yaşını görür.",
+      "transition": "whip",
+      "type": "CharacterCard",
+      "name": "SAVAŞÇI ARİN",
+      "epithet": "Demir Yolu",
+      "mythology": "Kırmızı Öz",
+      "image": {
+        "id": "alt-warrior",
+        "prompt": "Low-angle heroic shot. Arin as a warrior in an alternate life: a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build, older and battle-hardened, wearing heavy dented steel plate armor with a red cloak, red arcane energy glowing through cracks in his skin, holding a greatsword, standing at the front of a frontier guard line. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ]
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 92
+        },
+        {
+          "label": "Öz",
+          "value": 40
+        },
+        {
+          "label": "Çeviklik",
+          "value": 60
+        },
+        {
+          "label": "Dayanıklılık",
+          "value": 95
+        }
+      ]
+    },
+    {
+      "id": "s30",
+      "narration": "Yeşil yansaydı, annesinin yolundan giderdi. Şifacılar Velmora'nın en sevilen ama en yorgun insanlarıdır. Çünkü her iyileştirme, şifacının kendi Öz'ünden bir parça alır. Usta bir şifacı ölmek üzere olan birini kurtarabilir. Ama bunu ömrü boyunca ancak birkaç kez yapabilir.",
+      "type": "CharacterCard",
+      "name": "ŞİFACI ARİN",
+      "epithet": "Yaşam Yolu",
+      "mythology": "Yeşil Öz",
+      "image": {
+        "id": "alt-healer",
+        "prompt": "Soft medium shot. Arin as a healer in an alternate life: a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build, wearing simple green healer robes, kneeling beside a wounded soldier in a field hospital tent, gentle green light flowing from his hands, exhausted but determined. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ]
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 30
+        },
+        {
+          "label": "Öz",
+          "value": 85
+        },
+        {
+          "label": "Çeviklik",
+          "value": 45
+        },
+        {
+          "label": "Dayanıklılık",
+          "value": 55
+        }
+      ]
+    },
+    {
+      "id": "s31",
+      "narration": "Mor yansaydı, hayatı bambaşka olurdu. Gölge Yolu'na yatkın çocuklar törenden sonra ailelerinden alınır ve bir daha görülmez. Gölge Loncası onlara adlarını unutturarak yetiştirir. Suikastçılar gölgeleri bükerek görünmez olabilir. Resmî kayıtlarda yoklar. Ama her kralın sarayında en az bir tane vardır.",
+      "type": "CharacterCard",
+      "name": "SUİKASTÇI ARİN",
+      "epithet": "Gölge Yolu",
+      "mythology": "Mor Öz",
+      "image": {
+        "id": "alt-assassin",
+        "prompt": "Moody low-angle shot. Arin as an assassin in an alternate life: a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build, wearing a dark hooded leather outfit with a black mask over the lower face, twin curved daggers, violet shadow energy wrapping around him as he stands on a cathedral roof at night. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ],
+        "motion": "Arin crouches on the roof edge, violet shadows wrap around his body and he dissolves into darkness, his cloak fluttering as he vanishes, rain falling, slow push-in. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 55
+        },
+        {
+          "label": "Öz",
+          "value": 70
+        },
+        {
+          "label": "Çeviklik",
+          "value": 98
+        },
+        {
+          "label": "Dayanıklılık",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "id": "s32",
+      "narration": "Amber yansaydı, Arin ormanlara giderdi. İzciler doğanın Öz'ünü duyar. Bir kuşun ne zaman havalanacağını, bir Yarık'ın nerede açılacağını önceden hissederler. Yanlarında hep Öz'le bağ kurdukları bir hayvan dolaşır. Velmora'nın haritalarını çizenler de, Yarıkları ilk görenler de onlardır.",
+      "type": "CharacterCard",
+      "name": "İZCİ ARİN",
+      "epithet": "Rüzgâr Yolu",
+      "mythology": "Amber Öz",
+      "image": {
+        "id": "alt-ranger",
+        "prompt": "Wide adventurous shot. Arin as a ranger in an alternate life: a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build, wearing a green-brown hooded cloak and leather armor, drawing a longbow glowing with amber light, a large grey wolf companion at his side in an ancient misty forest. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ]
+      },
+      "stats": [
+        {
+          "label": "Güç",
+          "value": 60
+        },
+        {
+          "label": "Öz",
+          "value": 65
+        },
+        {
+          "label": "Çeviklik",
+          "value": 88
+        },
+        {
+          "label": "Dayanıklılık",
+          "value": 70
+        }
+      ]
+    },
+    {
+      "id": "s33",
+      "narration": "Peki aynı Arin'in iki farklı hayatı karşılaşsaydı? Savaşçı Arin yakın mesafede durdurulamaz. Büyücü Arin ise onu yaklaştırmadan bitirebilir. Hangisinin kazanacağını yorumlarda sen söyle.",
+      "transition": "flash",
+      "type": "Versus",
+      "left": {
+        "name": "SAVAŞÇI ARİN",
+        "epithet": "Demir Yolu",
+        "image": {
+          "id": "alt-warrior",
+          "prompt": "Low-angle heroic shot. Arin as a warrior in an alternate life: a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build, older and battle-hardened, wearing heavy dented steel plate armor with a red cloak, red arcane energy glowing through cracks in his skin, holding a greatsword, standing at the front of a frontier guard line. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+          "characters": [
+            "arin"
+          ]
+        },
+        "stats": [
+          {
+            "label": "Güç",
+            "value": 92
+          },
+          {
+            "label": "Öz",
+            "value": 40
+          },
+          {
+            "label": "Çeviklik",
+            "value": 60
+          }
+        ]
+      },
+      "right": {
+        "name": "BÜYÜCÜ ARİN",
+        "epithet": "Kule Yolu",
+        "image": {
+          "id": "arin-portrait",
+          "prompt": "Low-angle heroic medium shot. Portrait of Arin at eighteen: a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build, wearing deep blue apprentice mage robes with silver embroidery, a faint blue arcane glow swirling around his raised hand, standing on a tower balcony at night under two moons. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+          "characters": [
+            "arin"
+          ]
+        },
+        "stats": [
+          {
+            "label": "Güç",
+            "value": 45
+          },
+          {
+            "label": "Öz",
+            "value": 90
+          },
+          {
+            "label": "Çeviklik",
+            "value": 65
+          }
+        ]
+      },
+      "verdict": "hidden"
+    },
+    {
+      "id": "s34",
+      "narration": "Ama şimdi, Arin'in gerçek hikâyesine dönelim.",
+      "transition": "burn",
+      "type": "ChapterTitle",
+      "chapterNumber": 5,
+      "title": "Sönükler",
+      "subtitle": "Velmora'nın Sırrı"
+    },
+    {
+      "id": "s35",
+      "narration": "Uyanış Taşı her çocukta parlamaz. Hiç renk göstermeyenlere Sönük denir. Öz'süz doğdukları kabul edilir. Sönükler büyü okullarına giremez, toprak sahibi olamaz. Kulelerin gölgesindeki mahallelerde yaşar, en ağır işlerde çalışırlar. Ve her yıl, Sönük doğan çocukların sayısı artıyor.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "sonukler-district",
+        "prompt": "Bleak wide shot. A grey slum district at the foot of colossal glowing towers, gaunt people in ragged grey clothes with dull lifeless eyes carrying heavy crystal crates, children sitting in the mud, the towers' light never reaching the streets. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      },
+      "overlayText": "SÖNÜKLER",
+      "motion": "pan-left"
+    },
+    {
+      "id": "s36",
+      "narration": "Arin'in doğduğu yıl, Sönük çocukların oranı yüzde onmuş. Bu yıl, yüzde kırk. Konseyin açıklaması hep aynı. Yarıkların laneti.",
+      "type": "StatCounter",
+      "value": 40,
+      "prefix": "%",
+      "label": "Bu yıl Sönük ilan edilen çocukların oranı",
+      "image": {
+        "id": "sonukler-district",
+        "prompt": "Bleak wide shot. A grey slum district at the foot of colossal glowing towers, gaunt people in ragged grey clothes with dull lifeless eyes carrying heavy crystal crates, children sitting in the mud, the towers' light never reaching the streets. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": []
+      }
+    },
+    {
+      "id": "s37",
+      "narration": "Arin, kulenin gölgesindeki Sönük mahallesinde Mira adında bir kızla tanıştı. Mira'nın elinde çatlak bir kristal parçası vardı. Ve Mira ona dokunduğunda, Sönük olması gereken bir kızın elinde, kristal hafifçe parlıyordu. Mira bunu kimseye söylememişti. Arin'e söyledi.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "mira-sonuk",
+        "prompt": "Intimate medium shot. A sixteen-year-old girl named Mira with cropped black hair, dull grey eyes and soot-stained grey clothes, sitting on the steps of a slum street beneath glowing towers, holding a cracked crystal shard that faintly flickers with light in her palm, quiet defiance in her expression. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "mira"
+        ]
+      },
+      "overlayText": "MİRA",
+      "motion": "push-in"
+    },
+    {
+      "id": "s38",
+      "narration": "On sekiz yaşında Arin, ilk Yarık görevine gönderildi. Bir savaşçı, bir şifacı ve bir izciyle birlikte. Yarık'ın içinde bir canavar şifacıya saldırdığında Arin düşünmeden ellerini kaldırdı. Ve o an, mavi ışık gelmedi.",
+      "transition": "whip",
+      "type": "CinematicImage",
+      "image": {
+        "id": "rift-expedition",
+        "prompt": "Intense action shot. Eighteen-year-old Arin (a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build) in blue mage robes inside a glowing red rift dimension with a warrior, a healer and a ranger, a massive shadow beast lunging at the healer, Arin raising his hands. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ],
+        "motion": "The shadow beast lunges toward the healer, the warrior raises his shield, Arin throws up his hands and the light around them begins to dim, dust and embers swirl, dynamic handheld camera. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "overlayText": "İLK YARIK",
+      "motion": "push-in"
+    },
+    {
+      "id": "s39",
+      "narration": "Gelen, siyahtı. Arin'in çevresindeki bütün ışık söndü. Canavarın Öz'ü, bir nehrin denize akması gibi Arin'e aktı ve yaratık toz olup dağıldı. Sereth'in derslerinde adı bile geçmeyen bir yol vardı. Boşluk Yolu. Öz'ü yaratmayan, başkasından alan yol.",
+      "transition": "flash",
+      "type": "CinematicImage",
+      "image": {
+        "id": "void-awakening",
+        "prompt": "Epic low-angle shot. Arin (a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build) unleashing a terrifying pitch-black void aura, all light around him being sucked into his body, a huge monster disintegrating into dust as its glowing energy streams into Arin, his eyes turning completely black. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ],
+        "motion": "All light in the scene bends and streams into Arin's body, a black void aura erupts around him, the monster disintegrates into glowing dust that flows into him, his eyes turn black, slow push-in, camera shake. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "overlayText": "SİYAH ÖZ",
+      "motion": "push-in"
+    },
+    {
+      "id": "s40",
+      "narration": "Görevden döndüğünde Arin, kule rahibinin yıllar önce neden sustuğunu anladı. Gümüş Kule'nin altındaki mühürlü salonda binlerce ince kristal tel vardı. Her biri bir Sönük'e bağlıydı. Sönükler Öz'süz doğmuyordu. Uyanış Taşı onların Öz'ünü emiyordu. Ve o Öz, yedi kuleyi besliyordu.",
+      "transition": "burn",
+      "type": "CinematicImage",
+      "image": {
+        "id": "drain-ritual",
+        "prompt": "Ominous wide shot. A hidden sealed hall beneath a mage tower, thousands of thin glowing crystal threads stretching from the ceiling into the darkness, each thread connected to a sleeping grey figure far below, a giant crystal heart pulsing as it absorbs the light. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [],
+        "motion": "Thousands of crystal threads pulse with light flowing upward into a giant crystal heart, which beats slowly and brightens, dust floating in the air, slow upward crane shot. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "overlayText": "KULENİN SIRRI",
+      "motion": "push-in"
+    },
+    {
+      "id": "s41",
+      "narration": "Konseyin ilk yasasını hatırlıyor musun? Artık ne demek istediğini biliyorsun.",
+      "type": "Quote",
+      "quote": "Öz herkese verilmiştir; ama herkese ait değildir.",
+      "attribution": "Yedi Kule Yasası, Birinci Madde"
+    },
+    {
+      "id": "s42",
+      "narration": "Ama asıl korkunç gerçek bu değildi. Velmora'nın Öz'ü tükeniyordu. Kuleler daha fazlasını çektikçe toprak kuruyor, Yarıklar büyüyordu. Belki de Yarıklar bir lanet değildi. Belki de bu dünyanın açlıktan çatlayan yaralarıydı.",
+      "type": "CinematicImage",
+      "image": {
+        "id": "dying-world",
+        "prompt": "Apocalyptic aerial shot. The world of Velmora dying: dried cracked earth, withered colossal trees, glowing rivers of light fading to grey, enormous red rifts splitting the sky, the seven towers still shining brightly in the distance, feeding on everything around them. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [],
+        "motion": "The land cracks and the last glowing rivers fade to grey, red rifts slowly widen across the sky while the seven towers shine brighter, ash drifting, slow aerial pull-back. Keep the characters and composition identical to the start image, no text, 16:9."
+      },
+      "motion": "pull-out"
+    },
+    {
+      "id": "s43",
+      "narration": "Ve şimdi Velmora'da, Öz'ü kulelerden geri alabilecek tek bir kişi var. Adı Arin. Sönüklerin arasında doğan, kulelerde yetişen ve Boşluk Yolu'nun ilk yolcusu olan çocuk. Peki o bu dünyayı kurtaracak mı, yoksa onu bitirecek mi?",
+      "transition": "burn",
+      "type": "CinematicImage",
+      "image": {
+        "id": "arin-final",
+        "prompt": "Epic wide symmetrical shot. Arin (a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build) standing alone on a cliff facing the seven glowing towers at night, a black void aura flickering around him, his blue mage robes torn, wind blowing, two moons above, a mood of rebellion and destiny. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+        "characters": [
+          "arin"
+        ]
+      },
+      "motion": "push-in"
+    },
+    {
+      "id": "s44",
+      "narration": "Peki sen Velmora'da doğsaydın, taş hangi renkle parlardı? Savaşçı mı, büyücü mü, şifacı mı, suikastçı mı, izci mi? Yorumlara yaz. Bir sonraki bölümde Arin'in Boşluk Yolu'ndaki ilk adımlarını ve Velmora'nın karanlık geleceğini göreceğiz. Kaçırmamak için abone olmayı unutma.",
+      "type": "Outro",
+      "cta": "Sen hangi renkle parlardın? Yorumlara yaz!",
+      "nextVideoTeaser": "Bölüm 2: Boşluk Yolu"
+    }
+  ],
+  "description": "Büyünün nefes almak kadar sıradan olduğu bir dünyada doğsaydın ne olurdun? Velmora'da her çocuk yedi yaşında Uyanış Taşı'na dokunur ve taşın rengi kaderini belirler: savaşçı, büyücü, şifacı, suikastçı ya da izci. Bu videoda Arin'in hikâyesini, büyü okullarını, ustalık basamaklarını ve Yedi Kule'nin sakladığı karanlık sırrı anlatıyoruz.\n\nBu bir Metaficta özgün kurgu serisidir: Başka Bir Evrende, Bölüm 1.",
+  "tags": [
+    "fantastik",
+    "büyü",
+    "başka bir evrende",
+    "büyücü",
+    "savaşçı",
+    "suikastçı",
+    "şifacı",
+    "fantastik dünya",
+    "distopya",
+    "rpg",
+    "sınıflar",
+    "metaficta"
+  ],
+  "hashtags": [
+    "#fantastik",
+    "#büyü",
+    "#başkabirevrende"
+  ],
+  "thumbnail": {
+    "text": "SEN NE OLURDUN?",
+    "concept": "Siyah aurayla yedi kulenin karşısında duran Arin",
+    "image": {
+      "id": "arin-final",
+      "prompt": "Epic wide symmetrical shot. Arin (a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build) standing alone on a cliff facing the seven glowing towers at night, a black void aura flickering around him, his blue mage robes torn, wind blowing, two moons above, a mood of rebellion and destiny. Dark high fantasy cinematic film still, anamorphic lens, volumetric light rays and drifting mist, arcane violet and teal glow, dramatic chiaroscuro rim lighting, rich film color grading, shallow depth of field, hyper-detailed cinematic concept art, 16:9, main subject centered, no text, no letters, no watermark",
+      "characters": [
+        "arin"
+      ]
+    }
+  },
+  "characters": [
+    {
+      "id": "arin",
+      "name": "Arin",
+      "look": "a young man with tousled ash-brown hair falling to his jaw, sharp storm-grey eyes, a thin pale scar through his left eyebrow, lean athletic build"
+    },
+    {
+      "id": "sereth",
+      "name": "Sereth",
+      "look": "a tall ageless elf archmage woman with long silver hair, pointed ears, pale violet eyes, flowing midnight-blue robes embroidered with silver runes, holding a crystal-topped staff"
+    },
+    {
+      "id": "mira",
+      "name": "Mira",
+      "look": "a sixteen-year-old girl with cropped black hair, dull grey eyes and soot-stained grey clothes"
+    }
+  ],
+  "factChecks": [],
+  "sources": [
+    {
+      "title": "Metaficta özgün kurgu: Velmora evreni (EVREN.md)"
+    }
+  ],
+  "id": "2026-11-04-velmora",
+  "topic": "Büyünün ve sınıfların olduğu bir evrende doğsaydık ne olurdu?",
+  "format": "long",
+  "language": "tr",
+  "series": "other-world",
+  "theme": "arcane-realm",
+  "createdAt": "2026-11-04T00:00:00.000Z"
+}

@@ -26,6 +26,7 @@ export const DEFAULT_THEME: Record<SeriesId, ThemeId> = {
   "top-10": "olympus-gold",
   "did-you-know": "ancient-sepia",
   "tier-list": "olympus-gold",
+  "other-world": "arcane-realm",
   standalone: "cosmic-void",
 };
 
