@@ -33,6 +33,12 @@ TREE_COUNT = 2500
 ROCK_COUNT = 400
 random.seed(7)
 
+# Elle indirilen varlıklar bu klasördeyse internet yerine onlar kullanılır (bkz. blender/assets/OKU.md).
+LOCAL = next((p for p in (
+    os.path.join(os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else "", "assets"),
+    os.path.join(ROOT, "velmora_assets"),
+) if p and os.path.isdir(p)), None)
+
 API = "https://api.polyhaven.com"
 HEADERS = {"User-Agent": "Metaficta-Velmora-Blender/1.0"}
 
@@ -76,14 +82,58 @@ def pick(kind, words, avoid=(), count=1):
     return [aid for _, _, aid in scored[:count]]
 
 
+def local_files(sub, exts):
+    folder = os.path.join(LOCAL, sub) if LOCAL else None
+    if not folder or not os.path.isdir(folder):
+        return []
+    out = []
+    for dirpath, _, names in os.walk(folder):
+        out += [os.path.join(dirpath, n) for n in sorted(names) if n.lower().endswith(exts)]
+    return out
+
+
+def local_texture(sub):
+    maps = {}
+    for f in local_files(sub, (".jpg", ".jpeg", ".png", ".exr")):
+        n = os.path.basename(f).lower()
+        if "diff" in n or "albedo" in n or "color" in n:
+            maps.setdefault("diff", f)
+        elif "rough" in n:
+            maps.setdefault("rough", f)
+        elif "nor_gl" in n or ("nor" in n and "dx" not in n):
+            maps.setdefault("nor", f)
+    return maps
+
+
+def local_models(sub):
+    cols = []
+    for path in local_files(sub, (".blend",)):
+        with bpy.data.libraries.load(path, link=False) as (src, dst):
+            dst.objects = src.objects
+        meshes = [o for o in dst.objects if o and o.type == "MESH"]
+        if meshes:
+            col = bpy.data.collections.new("Asset_" + os.path.splitext(os.path.basename(path))[0])
+            for o in meshes:
+                col.objects.link(o)
+            cols.append(col)
+            print("  yerel model:", os.path.basename(path))
+    return cols
+
+
 def get_hdri():
+    found = local_files("gokyuzu", (".hdr", ".exr"))
+    if found:
+        return found[0]
     aid = pick("hdris", ["night", "moon", "dusk", "twilight", "stars"], avoid=["indoor", "studio", "urban", "city"])[0]
     files = fetch_json(f"{API}/files/{aid}")
     url = files["hdri"][RES]["hdr"]["url"]
     return download(url, os.path.join(ASSETS, "hdri", f"{aid}_{RES}.hdr"))
 
 
-def get_texture(words, avoid=()):
+def get_texture(words, avoid=(), local=None):
+    found = local_texture(local) if local else {}
+    if found:
+        return found
     aid = pick("textures", words, avoid)[0]
     files = fetch_json(f"{API}/files/{aid}")
     maps = {}
@@ -95,7 +145,10 @@ def get_texture(words, avoid=()):
     return maps
 
 
-def get_models(words, avoid=(), count=3):
+def get_models(words, avoid=(), count=3, local=None):
+    found = local_models(local) if local else []
+    if found:
+        return found
     objs = []
     for aid in pick("models", words, avoid, count):
         files = fetch_json(f"{API}/files/{aid}")
@@ -195,8 +248,8 @@ for v in land.data.vertices:
 bpy.ops.object.shade_smooth()
 
 mat, nt, bsdf = principled("Arazi")
-rock = safe("Kaya dokusu", lambda: get_texture(["rock", "cliff", "rocky"], avoid=["wall", "brick", "floor tiles"]), {})
-ground = safe("Zemin dokusu", lambda: get_texture(["forest", "ground", "grass", "moss", "leaves"], avoid=["wall", "brick", "floor tiles", "wood"]), {})
+rock = safe("Kaya dokusu", lambda: get_texture(["rock", "cliff", "rocky"], avoid=["wall", "brick", "floor tiles"], local="doku_kaya"), {})
+ground = safe("Zemin dokusu", lambda: get_texture(["forest", "ground", "grass", "moss", "leaves"], avoid=["wall", "brick", "floor tiles", "wood"], local="doku_zemin"), {})
 r_out, g_out = textured_layer(nt, rock, 0.08), textured_layer(nt, ground, 0.12)
 # Eğim maskesi: dik yerler kaya, düz yerler orman zemini
 geo = nt.nodes.new("ShaderNodeNewGeometry")
@@ -271,8 +324,8 @@ def scatter(name, collections, group, count, size, size_rand):
 
 
 print("Ağaçlar ve kayalar indiriliyor/yerleştiriliyor...")
-trees = safe("Ağaç modelleri", lambda: get_models(["tree", "pine", "fir", "spruce"], avoid=["dead", "trunk", "log", "stump", "branch", "palm"], count=3), [])
-rocks = safe("Kaya modelleri", lambda: get_models(["rock", "boulder", "stone"], avoid=["wall", "statue", "brick"], count=3), [])
+trees = safe("Ağaç modelleri", lambda: get_models(["tree", "pine", "fir", "spruce"], avoid=["dead", "trunk", "log", "stump", "branch", "palm"], count=3, local="agaclar"), [])
+rocks = safe("Kaya modelleri", lambda: get_models(["rock", "boulder", "stone"], avoid=["wall", "statue", "brick"], count=3, local="kayalar"), [])
 scatter("Orman", trees, "orman", TREE_COUNT, 1.0, 0.5)
 scatter("Kayalar", rocks, "kaya", ROCK_COUNT, 2.0, 0.7)
 
